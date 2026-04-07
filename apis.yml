@@ -8,11 +8,11 @@ description: >-
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Incident Management
-  - Operations
-  - DevOps
   - Automation
   - AWS
+  - DevOps
+  - Incident Management
+  - Operations
 url: >-
   https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/apis.yml
 created: '2026-03-16'
@@ -28,9 +28,9 @@ apis:
     humanURL: https://aws.amazon.com/systems-manager/features/#Incident_Manager
     baseURL: https://ssm-incidents.amazonaws.com
     tags:
+      - DevOps
       - Incident Management
       - Operations
-      - DevOps
     properties:
       - type: Documentation
         url: https://docs.aws.amazon.com/incident-manager/latest/APIReference/Welcome.html
