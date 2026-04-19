@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-structure/incident-manager-region-status-structure.json",
+  "name": "RegionStatus",
+  "description": "RegionStatus schema",
+  "type": "string",
+  "enum": [
+    "ACTIVE",
+    "CREATING",
+    "DELETING",
+    "FAILED"
+  ]
+}

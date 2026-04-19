@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-structure/incident-manager-update-deletion-protection-output-structure.json",
+  "name": "UpdateDeletionProtectionOutput",
+  "description": "UpdateDeletionProtectionOutput schema",
+  "type": "object",
+  "properties": {}
+}

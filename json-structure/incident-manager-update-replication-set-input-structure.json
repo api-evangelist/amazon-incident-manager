@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-structure/incident-manager-update-replication-set-input-structure.json",
+  "name": "UpdateReplicationSetInput",
+  "description": "UpdateReplicationSetInput schema",
+  "type": "object",
+  "properties": {
+    "actions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UpdateReplicationSetInputActionsList"
+        },
+        {
+          "description": "An action to add or delete a Region."
+        }
+      ]
+    },
+    "arn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the replication set you're updating."
+        }
+      ]
+    },
+    "clientToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ClientToken"
+        },
+        {
+          "description": "A token that ensures that the operation is called only once with the specified details."
+        }
+      ]
+    }
+  },
+  "required": [
+    "actions",
+    "arn"
+  ]
+}

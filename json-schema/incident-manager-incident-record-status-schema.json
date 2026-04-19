@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-schema/incident-manager-incident-record-status-schema.json",
+  "title": "IncidentRecordStatus",
+  "description": "IncidentRecordStatus schema",
+  "type": "string",
+  "enum": [
+    "OPEN",
+    "RESOLVED"
+  ]
+}

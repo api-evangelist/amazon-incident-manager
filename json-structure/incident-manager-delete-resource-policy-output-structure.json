@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-structure/incident-manager-delete-resource-policy-output-structure.json",
+  "name": "DeleteResourcePolicyOutput",
+  "description": "DeleteResourcePolicyOutput schema",
+  "type": "object",
+  "properties": {}
+}

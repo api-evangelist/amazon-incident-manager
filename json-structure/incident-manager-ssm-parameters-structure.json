@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-structure/incident-manager-ssm-parameters-structure.json",
+  "name": "SsmParameters",
+  "description": "SsmParameters schema",
+  "type": "object",
+  "additionalProperties": {
+    "type": "array",
+    "items": {
+      "$ref": "#/components/schemas/SsmParameterValuesMemberString"
+    },
+    "minItems": 0,
+    "maxItems": 100
+  }
+}

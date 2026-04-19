@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-structure/incident-manager-delete-incident-record-input-structure.json",
+  "name": "DeleteIncidentRecordInput",
+  "description": "DeleteIncidentRecordInput schema",
+  "type": "object",
+  "properties": {
+    "arn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the incident record you are deleting."
+        }
+      ]
+    }
+  },
+  "required": [
+    "arn"
+  ]
+}

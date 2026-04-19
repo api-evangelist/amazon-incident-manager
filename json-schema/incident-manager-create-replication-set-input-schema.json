@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-schema/incident-manager-create-replication-set-input-schema.json",
+  "title": "CreateReplicationSetInput",
+  "description": "CreateReplicationSetInput schema",
+  "type": "object",
+  "properties": {
+    "clientToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ClientToken"
+        },
+        {
+          "description": "A token that ensures that the operation is called only once with the specified details."
+        }
+      ]
+    },
+    "regions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RegionMapInput"
+        },
+        {
+          "description": "The Regions that Incident Manager replicates your data to. You can have up to three Regions in your replication set."
+        }
+      ]
+    },
+    "tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagMap"
+        },
+        {
+          "description": "A list of tags to add to the replication set."
+        }
+      ]
+    }
+  },
+  "required": [
+    "regions"
+  ]
+}

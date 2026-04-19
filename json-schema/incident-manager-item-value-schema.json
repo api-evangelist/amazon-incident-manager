@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-schema/incident-manager-item-value-schema.json",
+  "title": "ItemValue",
+  "description": "Describes a related item.",
+  "type": "object",
+  "properties": {
+    "arn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the related item, if the related item is an Amazon resource."
+        }
+      ]
+    },
+    "metricDefinition": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MetricDefinition"
+        },
+        {
+          "description": "The metric definition, if the related item is a metric in Amazon CloudWatch."
+        }
+      ]
+    },
+    "pagerDutyIncidentDetail": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PagerDutyIncidentDetail"
+        },
+        {
+          "description": "Details about an incident that is associated with a PagerDuty incident."
+        }
+      ]
+    },
+    "url": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Url"
+        },
+        {
+          "description": "The URL, if the related item is a non-Amazon Web Services resource."
+        }
+      ]
+    }
+  }
+}

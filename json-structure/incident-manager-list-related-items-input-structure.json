@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-structure/incident-manager-list-related-items-input-structure.json",
+  "name": "ListRelatedItemsInput",
+  "description": "ListRelatedItemsInput schema",
+  "type": "object",
+  "properties": {
+    "incidentRecordArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the incident record containing the listed related items."
+        }
+      ]
+    },
+    "maxResults": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MaxResults"
+        },
+        {
+          "description": "The maximum number of related items per page."
+        }
+      ]
+    },
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "The pagination token to continue to the next page of results."
+        }
+      ]
+    }
+  },
+  "required": [
+    "incidentRecordArn"
+  ]
+}

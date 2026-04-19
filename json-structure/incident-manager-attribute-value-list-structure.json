@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-structure/incident-manager-attribute-value-list-structure.json",
+  "name": "AttributeValueList",
+  "description": "Use the AttributeValueList to filter by string or integer values.",
+  "type": "object",
+  "properties": {
+    "integerValues": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IntegerList"
+        },
+        {
+          "description": "The list of integer values that the filter matches."
+        }
+      ]
+    },
+    "stringValues": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringList"
+        },
+        {
+          "description": "The list of string values that the filter matches."
+        }
+      ]
+    }
+  }
+}

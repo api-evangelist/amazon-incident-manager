@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-schema/incident-manager-list-timeline-events-output-schema.json",
+  "title": "ListTimelineEventsOutput",
+  "description": "ListTimelineEventsOutput schema",
+  "type": "object",
+  "properties": {
+    "eventSummaries": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EventSummaryList"
+        },
+        {
+          "description": "Details about each event that occurred during the incident."
+        }
+      ]
+    },
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "The pagination token to continue to the next page of results."
+        }
+      ]
+    }
+  },
+  "required": [
+    "eventSummaries"
+  ]
+}

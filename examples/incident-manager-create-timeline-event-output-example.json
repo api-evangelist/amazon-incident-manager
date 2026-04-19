@@ -1,0 +1,4 @@
+{
+  "eventId": "id-abc123",
+  "incidentRecordArn": "arn:aws:ssm-incidents::123456789012:response-plan/example"
+}

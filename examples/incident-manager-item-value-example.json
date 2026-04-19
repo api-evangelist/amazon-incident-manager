@@ -1,0 +1,6 @@
+{
+  "arn": "arn:aws:ssm-incidents::123456789012:response-plan/example",
+  "metricDefinition": "example-value",
+  "pagerDutyIncidentDetail": "id-abc123",
+  "url": "example-value"
+}

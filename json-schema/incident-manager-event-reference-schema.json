@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-schema/incident-manager-event-reference-schema.json",
+  "title": "EventReference",
+  "description": "An item referenced in a <code>TimelineEvent</code> that is involved in or somehow associated with an incident. You can specify an Amazon Resource Name (ARN) for an Amazon Web Services resource or a <code>RelatedItem</code> ID.",
+  "type": "object",
+  "properties": {
+    "relatedItemId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GeneratedId"
+        },
+        {
+          "description": "The ID of a <code>RelatedItem</code> referenced in a <code>TimelineEvent</code>."
+        }
+      ]
+    },
+    "resource": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of an Amazon Web Services resource referenced in a <code>TimelineEvent</code>."
+        }
+      ]
+    }
+  }
+}

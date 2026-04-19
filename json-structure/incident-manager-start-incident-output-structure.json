@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-structure/incident-manager-start-incident-output-structure.json",
+  "name": "StartIncidentOutput",
+  "description": "StartIncidentOutput schema",
+  "type": "object",
+  "properties": {
+    "incidentRecordArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The ARN of the newly created incident record."
+        }
+      ]
+    }
+  },
+  "required": [
+    "incidentRecordArn"
+  ]
+}

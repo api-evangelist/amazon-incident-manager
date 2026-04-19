@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-structure/incident-manager-get-timeline-event-output-structure.json",
+  "name": "GetTimelineEventOutput",
+  "description": "GetTimelineEventOutput schema",
+  "type": "object",
+  "properties": {
+    "event": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimelineEvent"
+        },
+        {
+          "description": "Details about the timeline event."
+        }
+      ]
+    }
+  },
+  "required": [
+    "event"
+  ]
+}

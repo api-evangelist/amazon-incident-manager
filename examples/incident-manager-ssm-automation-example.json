@@ -1,0 +1,8 @@
+{
+  "documentName": "example-incident",
+  "documentVersion": "example-value",
+  "dynamicParameters": "example-value",
+  "parameters": "example-value",
+  "roleArn": "arn:aws:ssm-incidents::123456789012:response-plan/example",
+  "targetAccount": "example-value"
+}

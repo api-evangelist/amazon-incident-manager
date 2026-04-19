@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-structure/incident-manager-condition-structure.json",
+  "name": "Condition",
+  "description": "A conditional statement with which to compare a value, after a timestamp, before a timestamp, or equal to a string or integer. If multiple conditions are specified, the conditionals become an <code>AND</code>ed statement. If multiple values are specified for a conditional, the values are <code>OR</code>d.",
+  "type": "object",
+  "properties": {
+    "after": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "After the specified timestamp."
+        }
+      ]
+    },
+    "before": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "Before the specified timestamp"
+        }
+      ]
+    },
+    "equals": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AttributeValueList"
+        },
+        {
+          "description": "The value is equal to the provided string or integer. "
+        }
+      ]
+    }
+  }
+}

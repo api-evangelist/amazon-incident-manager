@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-schema/incident-manager-dynamic-ssm-parameters-schema.json",
+  "title": "DynamicSsmParameters",
+  "description": "DynamicSsmParameters schema",
+  "type": "object",
+  "additionalProperties": {
+    "type": "object",
+    "properties": {
+      "variable": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/VariableType"
+          },
+          {
+            "description": "Variable dynamic parameters. A parameter value is determined when an incident is created."
+          }
+        ]
+      }
+    },
+    "description": "The dynamic SSM parameter value."
+  }
+}

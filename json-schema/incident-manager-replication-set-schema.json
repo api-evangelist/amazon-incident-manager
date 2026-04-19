@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-schema/incident-manager-replication-set-schema.json",
+  "title": "ReplicationSet",
+  "description": "The set of Amazon Web Services Region that your Incident Manager data will be replicated to and the KMS key used to encrypt the data. ",
+  "type": "object",
+  "properties": {
+    "arn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the replication set."
+        }
+      ]
+    },
+    "createdBy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "Details about who created the replication set."
+        }
+      ]
+    },
+    "createdTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "When the replication set was created."
+        }
+      ]
+    },
+    "deletionProtected": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Boolean"
+        },
+        {
+          "description": "Determines if the replication set deletion protection is enabled or not. If deletion protection is enabled, you can't delete the last Amazon Web Services Region in the replication set. "
+        }
+      ]
+    },
+    "lastModifiedBy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "Who last modified the replication set."
+        }
+      ]
+    },
+    "lastModifiedTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "When the replication set was last updated."
+        }
+      ]
+    },
+    "regionMap": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RegionInfoMap"
+        },
+        {
+          "description": "The map between each Amazon Web Services Region in your replication set and the KMS key that's used to encrypt the data in that Region."
+        }
+      ]
+    },
+    "status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ReplicationSetStatus"
+        },
+        {
+          "description": "The status of the replication set. If the replication set is still pending, you can't use Incident Manager functionality."
+        }
+      ]
+    }
+  },
+  "required": [
+    "createdBy",
+    "createdTime",
+    "deletionProtected",
+    "lastModifiedBy",
+    "lastModifiedTime",
+    "regionMap",
+    "status"
+  ]
+}

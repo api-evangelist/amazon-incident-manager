@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-schema/incident-manager-timeline-event-schema.json",
+  "title": "TimelineEvent",
+  "description": "A significant event that happened during the incident. ",
+  "type": "object",
+  "properties": {
+    "eventData": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EventData"
+        },
+        {
+          "description": "A short description of the event."
+        }
+      ]
+    },
+    "eventId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UUID"
+        },
+        {
+          "description": "The ID of the timeline event."
+        }
+      ]
+    },
+    "eventReferences": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EventReferenceList"
+        },
+        {
+          "description": "A list of references in a <code>TimelineEvent</code>."
+        }
+      ]
+    },
+    "eventTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The time that the event occurred."
+        }
+      ]
+    },
+    "eventType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimelineEventType"
+        },
+        {
+          "description": "The type of event that occurred. Currently Incident Manager supports only the <code>Custom Event</code> type."
+        }
+      ]
+    },
+    "eventUpdatedTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The time that the timeline event was last updated."
+        }
+      ]
+    },
+    "incidentRecordArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the incident that the event occurred during."
+        }
+      ]
+    }
+  },
+  "required": [
+    "eventData",
+    "eventId",
+    "eventTime",
+    "eventType",
+    "eventUpdatedTime",
+    "incidentRecordArn"
+  ]
+}

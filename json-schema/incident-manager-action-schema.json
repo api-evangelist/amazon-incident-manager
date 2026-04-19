@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-schema/incident-manager-action-schema.json",
+  "title": "Action",
+  "description": "The action that starts at the beginning of an incident. The response plan defines the action.",
+  "type": "object",
+  "properties": {
+    "ssmAutomation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SsmAutomation"
+        },
+        {
+          "description": "The Systems Manager automation document to start as the runbook at the beginning of the incident."
+        }
+      ]
+    }
+  }
+}

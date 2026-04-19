@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-structure/incident-manager-ssm-target-account-structure.json",
+  "name": "SsmTargetAccount",
+  "description": "SsmTargetAccount schema",
+  "type": "string",
+  "enum": [
+    "RESPONSE_PLAN_OWNER_ACCOUNT",
+    "IMPACTED_ACCOUNT"
+  ]
+}

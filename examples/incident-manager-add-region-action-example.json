@@ -1,0 +1,4 @@
+{
+  "regionName": "example-incident",
+  "sseKmsKeyId": "id-abc123"
+}

@@ -1,0 +1,541 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "amzn": "https://amazonaws.com/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "Action": "amzn:Action",
+    "AddRegionAction": "amzn:AddRegionAction",
+    "AttributeValueList": "amzn:AttributeValueList",
+    "AutomationExecution": "amzn:AutomationExecution",
+    "ChatChannel": "amzn:ChatChannel",
+    "Condition": "amzn:Condition",
+    "CreateReplicationSetInput": "amzn:CreateReplicationSetInput",
+    "CreateReplicationSetOutput": "amzn:CreateReplicationSetOutput",
+    "CreateResponsePlanInput": "amzn:CreateResponsePlanInput",
+    "CreateResponsePlanOutput": "amzn:CreateResponsePlanOutput",
+    "CreateTimelineEventInput": "amzn:CreateTimelineEventInput",
+    "CreateTimelineEventOutput": "amzn:CreateTimelineEventOutput",
+    "DeleteIncidentRecordInput": "amzn:DeleteIncidentRecordInput",
+    "DeleteIncidentRecordOutput": "amzn:DeleteIncidentRecordOutput",
+    "DeleteRegionAction": "amzn:DeleteRegionAction",
+    "DeleteReplicationSetInput": "amzn:DeleteReplicationSetInput",
+    "DeleteReplicationSetOutput": "amzn:DeleteReplicationSetOutput",
+    "DeleteResourcePolicyInput": "amzn:DeleteResourcePolicyInput",
+    "DeleteResourcePolicyOutput": "amzn:DeleteResourcePolicyOutput",
+    "DeleteResponsePlanInput": "amzn:DeleteResponsePlanInput",
+    "DeleteResponsePlanOutput": "amzn:DeleteResponsePlanOutput",
+    "DeleteTimelineEventInput": "amzn:DeleteTimelineEventInput",
+    "DeleteTimelineEventOutput": "amzn:DeleteTimelineEventOutput",
+    "DynamicSsmParameterValue": "amzn:DynamicSsmParameterValue",
+    "DynamicSsmParameters": "amzn:DynamicSsmParameters",
+    "EmptyChatChannel": "amzn:EmptyChatChannel",
+    "EventReference": "amzn:EventReference",
+    "EventSummary": "amzn:EventSummary",
+    "Filter": "amzn:Filter",
+    "GetIncidentRecordInput": "amzn:GetIncidentRecordInput",
+    "GetIncidentRecordOutput": "amzn:GetIncidentRecordOutput",
+    "GetReplicationSetInput": "amzn:GetReplicationSetInput",
+    "GetReplicationSetOutput": "amzn:GetReplicationSetOutput",
+    "GetResourcePoliciesInput": "amzn:GetResourcePoliciesInput",
+    "GetResourcePoliciesOutput": "amzn:GetResourcePoliciesOutput",
+    "GetResponsePlanInput": "amzn:GetResponsePlanInput",
+    "GetResponsePlanOutput": "amzn:GetResponsePlanOutput",
+    "GetTimelineEventInput": "amzn:GetTimelineEventInput",
+    "GetTimelineEventOutput": "amzn:GetTimelineEventOutput",
+    "IncidentRecord": "amzn:IncidentRecord",
+    "IncidentRecordSource": "amzn:IncidentRecordSource",
+    "IncidentRecordSummary": "amzn:IncidentRecordSummary",
+    "IncidentTemplate": "amzn:IncidentTemplate",
+    "Integration": "amzn:Integration",
+    "ItemIdentifier": "amzn:ItemIdentifier",
+    "ItemValue": "amzn:ItemValue",
+    "ListIncidentRecordsInput": "amzn:ListIncidentRecordsInput",
+    "ListIncidentRecordsOutput": "amzn:ListIncidentRecordsOutput",
+    "ListRelatedItemsInput": "amzn:ListRelatedItemsInput",
+    "ListRelatedItemsOutput": "amzn:ListRelatedItemsOutput",
+    "ListReplicationSetsInput": "amzn:ListReplicationSetsInput",
+    "ListReplicationSetsOutput": "amzn:ListReplicationSetsOutput",
+    "ListResponsePlansInput": "amzn:ListResponsePlansInput",
+    "ListResponsePlansOutput": "amzn:ListResponsePlansOutput",
+    "ListTagsForResourceRequest": "amzn:ListTagsForResourceRequest",
+    "ListTagsForResourceResponse": "amzn:ListTagsForResourceResponse",
+    "ListTimelineEventsInput": "amzn:ListTimelineEventsInput",
+    "ListTimelineEventsOutput": "amzn:ListTimelineEventsOutput",
+    "NotificationTargetItem": "amzn:NotificationTargetItem",
+    "PagerDutyConfiguration": "amzn:PagerDutyConfiguration",
+    "PagerDutyIncidentConfiguration": "amzn:PagerDutyIncidentConfiguration",
+    "PagerDutyIncidentDetail": "amzn:PagerDutyIncidentDetail",
+    "PutResourcePolicyInput": "amzn:PutResourcePolicyInput",
+    "PutResourcePolicyOutput": "amzn:PutResourcePolicyOutput",
+    "RegionInfo": "amzn:RegionInfo",
+    "RegionInfoMap": "amzn:RegionInfoMap",
+    "RegionMapInput": "amzn:RegionMapInput",
+    "RegionMapInputValue": "amzn:RegionMapInputValue",
+    "RelatedItem": "amzn:RelatedItem",
+    "RelatedItemsUpdate": "amzn:RelatedItemsUpdate",
+    "ReplicationSet": "amzn:ReplicationSet",
+    "ResourcePolicy": "amzn:ResourcePolicy",
+    "ResponsePlanSummary": "amzn:ResponsePlanSummary",
+    "SsmAutomation": "amzn:SsmAutomation",
+    "SsmParameters": "amzn:SsmParameters",
+    "StartIncidentInput": "amzn:StartIncidentInput",
+    "StartIncidentOutput": "amzn:StartIncidentOutput",
+    "TagMap": "amzn:TagMap",
+    "TagMapUpdate": "amzn:TagMapUpdate",
+    "TagResourceRequest": "amzn:TagResourceRequest",
+    "TagResourceResponse": "amzn:TagResourceResponse",
+    "TimelineEvent": "amzn:TimelineEvent",
+    "TriggerDetails": "amzn:TriggerDetails",
+    "UntagResourceRequest": "amzn:UntagResourceRequest",
+    "UntagResourceResponse": "amzn:UntagResourceResponse",
+    "UpdateDeletionProtectionInput": "amzn:UpdateDeletionProtectionInput",
+    "UpdateDeletionProtectionOutput": "amzn:UpdateDeletionProtectionOutput",
+    "UpdateIncidentRecordInput": "amzn:UpdateIncidentRecordInput",
+    "UpdateIncidentRecordOutput": "amzn:UpdateIncidentRecordOutput",
+    "UpdateRelatedItemsInput": "amzn:UpdateRelatedItemsInput",
+    "UpdateRelatedItemsOutput": "amzn:UpdateRelatedItemsOutput",
+    "UpdateReplicationSetAction": "amzn:UpdateReplicationSetAction",
+    "UpdateReplicationSetInput": "amzn:UpdateReplicationSetInput",
+    "UpdateReplicationSetOutput": "amzn:UpdateReplicationSetOutput",
+    "UpdateResponsePlanInput": "amzn:UpdateResponsePlanInput",
+    "UpdateResponsePlanOutput": "amzn:UpdateResponsePlanOutput",
+    "UpdateTimelineEventInput": "amzn:UpdateTimelineEventInput",
+    "UpdateTimelineEventOutput": "amzn:UpdateTimelineEventOutput",
+    "actions": {
+      "@id": "amzn:actions",
+      "@type": "xsd:string"
+    },
+    "addRegionAction": {
+      "@id": "amzn:addRegionAction",
+      "@type": "xsd:string"
+    },
+    "after": {
+      "@id": "amzn:after",
+      "@type": "xsd:string"
+    },
+    "arn": {
+      "@id": "amzn:arn",
+      "@type": "xsd:string"
+    },
+    "autoResolve": {
+      "@id": "amzn:autoResolve",
+      "@type": "xsd:string"
+    },
+    "automationExecutions": {
+      "@id": "amzn:automationExecutions",
+      "@type": "xsd:string"
+    },
+    "before": {
+      "@id": "amzn:before",
+      "@type": "xsd:string"
+    },
+    "chatChannel": {
+      "@id": "amzn:chatChannel",
+      "@type": "xsd:string"
+    },
+    "chatbotSns": {
+      "@id": "amzn:chatbotSns",
+      "@type": "xsd:string"
+    },
+    "clientToken": {
+      "@id": "amzn:clientToken",
+      "@type": "xsd:string"
+    },
+    "condition": {
+      "@id": "amzn:condition",
+      "@type": "xsd:string"
+    },
+    "createdBy": {
+      "@id": "amzn:createdBy",
+      "@type": "xsd:string"
+    },
+    "createdTime": {
+      "@id": "amzn:createdTime",
+      "@type": "xsd:string"
+    },
+    "creationTime": {
+      "@id": "amzn:creationTime",
+      "@type": "xsd:string"
+    },
+    "dedupeString": {
+      "@id": "amzn:dedupeString",
+      "@type": "xsd:string"
+    },
+    "deleteRegionAction": {
+      "@id": "amzn:deleteRegionAction",
+      "@type": "xsd:string"
+    },
+    "deletionProtected": {
+      "@id": "amzn:deletionProtected",
+      "@type": "xsd:string"
+    },
+    "displayName": {
+      "@id": "amzn:displayName",
+      "@type": "xsd:string"
+    },
+    "documentName": {
+      "@id": "amzn:documentName",
+      "@type": "xsd:string"
+    },
+    "documentVersion": {
+      "@id": "amzn:documentVersion",
+      "@type": "xsd:string"
+    },
+    "dynamicParameters": {
+      "@id": "amzn:dynamicParameters",
+      "@type": "xsd:string"
+    },
+    "empty": {
+      "@id": "amzn:empty",
+      "@type": "xsd:string"
+    },
+    "engagements": {
+      "@id": "amzn:engagements",
+      "@type": "xsd:string"
+    },
+    "equals": {
+      "@id": "amzn:equals",
+      "@type": "xsd:string"
+    },
+    "event": {
+      "@id": "amzn:event",
+      "@type": "xsd:string"
+    },
+    "eventData": {
+      "@id": "amzn:eventData",
+      "@type": "xsd:string"
+    },
+    "eventId": {
+      "@id": "amzn:eventId",
+      "@type": "xsd:string"
+    },
+    "eventReferences": {
+      "@id": "amzn:eventReferences",
+      "@type": "xsd:string"
+    },
+    "eventSummaries": {
+      "@id": "amzn:eventSummaries",
+      "@type": "xsd:string"
+    },
+    "eventTime": {
+      "@id": "amzn:eventTime",
+      "@type": "xsd:string"
+    },
+    "eventType": {
+      "@id": "amzn:eventType",
+      "@type": "xsd:string"
+    },
+    "eventUpdatedTime": {
+      "@id": "amzn:eventUpdatedTime",
+      "@type": "xsd:string"
+    },
+    "filters": {
+      "@id": "amzn:filters",
+      "@type": "xsd:string"
+    },
+    "generatedId": {
+      "@id": "amzn:generatedId",
+      "@type": "xsd:string"
+    },
+    "id": {
+      "@id": "amzn:id",
+      "@type": "xsd:string"
+    },
+    "identifier": {
+      "@id": "amzn:identifier",
+      "@type": "xsd:string"
+    },
+    "impact": {
+      "@id": "amzn:impact",
+      "@type": "xsd:string"
+    },
+    "incidentRecord": {
+      "@id": "amzn:incidentRecord",
+      "@type": "xsd:string"
+    },
+    "incidentRecordArn": {
+      "@id": "amzn:incidentRecordArn",
+      "@type": "xsd:string"
+    },
+    "incidentRecordSource": {
+      "@id": "amzn:incidentRecordSource",
+      "@type": "xsd:string"
+    },
+    "incidentRecordSummaries": {
+      "@id": "amzn:incidentRecordSummaries",
+      "@type": "xsd:string"
+    },
+    "incidentTags": {
+      "@id": "amzn:incidentTags",
+      "@type": "xsd:string"
+    },
+    "incidentTemplate": {
+      "@id": "amzn:incidentTemplate",
+      "@type": "xsd:string"
+    },
+    "incidentTemplateDedupeString": {
+      "@id": "amzn:incidentTemplateDedupeString",
+      "@type": "xsd:string"
+    },
+    "incidentTemplateImpact": {
+      "@id": "amzn:incidentTemplateImpact",
+      "@type": "xsd:string"
+    },
+    "incidentTemplateNotificationTargets": {
+      "@id": "amzn:incidentTemplateNotificationTargets",
+      "@type": "xsd:string"
+    },
+    "incidentTemplateSummary": {
+      "@id": "amzn:incidentTemplateSummary",
+      "@type": "xsd:string"
+    },
+    "incidentTemplateTags": {
+      "@id": "amzn:incidentTemplateTags",
+      "@type": "xsd:string"
+    },
+    "incidentTemplateTitle": {
+      "@id": "amzn:incidentTemplateTitle",
+      "@type": "xsd:string"
+    },
+    "integerValues": {
+      "@id": "amzn:integerValues",
+      "@type": "xsd:string"
+    },
+    "integrations": {
+      "@id": "amzn:integrations",
+      "@type": "xsd:string"
+    },
+    "invokedBy": {
+      "@id": "amzn:invokedBy",
+      "@type": "xsd:string"
+    },
+    "itemToAdd": {
+      "@id": "amzn:itemToAdd",
+      "@type": "xsd:string"
+    },
+    "itemToRemove": {
+      "@id": "amzn:itemToRemove",
+      "@type": "xsd:string"
+    },
+    "key": {
+      "@id": "amzn:key",
+      "@type": "xsd:string"
+    },
+    "lastModifiedBy": {
+      "@id": "amzn:lastModifiedBy",
+      "@type": "xsd:string"
+    },
+    "lastModifiedTime": {
+      "@id": "amzn:lastModifiedTime",
+      "@type": "xsd:string"
+    },
+    "maxResults": {
+      "@id": "amzn:maxResults",
+      "@type": "xsd:string"
+    },
+    "metricDefinition": {
+      "@id": "amzn:metricDefinition",
+      "@type": "xsd:string"
+    },
+    "name": "schema:name",
+    "nextToken": {
+      "@id": "amzn:nextToken",
+      "@type": "xsd:string"
+    },
+    "notificationTargets": {
+      "@id": "amzn:notificationTargets",
+      "@type": "xsd:string"
+    },
+    "pagerDutyConfiguration": {
+      "@id": "amzn:pagerDutyConfiguration",
+      "@type": "xsd:string"
+    },
+    "pagerDutyIncidentConfiguration": {
+      "@id": "amzn:pagerDutyIncidentConfiguration",
+      "@type": "xsd:string"
+    },
+    "pagerDutyIncidentDetail": {
+      "@id": "amzn:pagerDutyIncidentDetail",
+      "@type": "xsd:string"
+    },
+    "parameters": {
+      "@id": "amzn:parameters",
+      "@type": "xsd:string"
+    },
+    "policy": {
+      "@id": "amzn:policy",
+      "@type": "xsd:string"
+    },
+    "policyDocument": {
+      "@id": "amzn:policyDocument",
+      "@type": "xsd:string"
+    },
+    "policyId": {
+      "@id": "amzn:policyId",
+      "@type": "xsd:string"
+    },
+    "ramResourceShareRegion": {
+      "@id": "amzn:ramResourceShareRegion",
+      "@type": "xsd:string"
+    },
+    "rawData": {
+      "@id": "amzn:rawData",
+      "@type": "xsd:string"
+    },
+    "regionMap": {
+      "@id": "amzn:regionMap",
+      "@type": "xsd:string"
+    },
+    "regionName": {
+      "@id": "amzn:regionName",
+      "@type": "xsd:string"
+    },
+    "regions": {
+      "@id": "amzn:regions",
+      "@type": "xsd:string"
+    },
+    "relatedItemId": {
+      "@id": "amzn:relatedItemId",
+      "@type": "xsd:string"
+    },
+    "relatedItems": {
+      "@id": "amzn:relatedItems",
+      "@type": "xsd:string"
+    },
+    "relatedItemsUpdate": {
+      "@id": "amzn:relatedItemsUpdate",
+      "@type": "xsd:string"
+    },
+    "replicationSet": {
+      "@id": "amzn:replicationSet",
+      "@type": "xsd:string"
+    },
+    "replicationSetArns": {
+      "@id": "amzn:replicationSetArns",
+      "@type": "xsd:string"
+    },
+    "resolvedTime": {
+      "@id": "amzn:resolvedTime",
+      "@type": "xsd:string"
+    },
+    "resource": {
+      "@id": "amzn:resource",
+      "@type": "xsd:string"
+    },
+    "resourceArn": {
+      "@id": "amzn:resourceArn",
+      "@type": "xsd:string"
+    },
+    "resourcePolicies": {
+      "@id": "amzn:resourcePolicies",
+      "@type": "xsd:string"
+    },
+    "responsePlanArn": {
+      "@id": "amzn:responsePlanArn",
+      "@type": "xsd:string"
+    },
+    "responsePlanSummaries": {
+      "@id": "amzn:responsePlanSummaries",
+      "@type": "xsd:string"
+    },
+    "roleArn": {
+      "@id": "amzn:roleArn",
+      "@type": "xsd:string"
+    },
+    "secretId": {
+      "@id": "amzn:secretId",
+      "@type": "xsd:string"
+    },
+    "serviceId": {
+      "@id": "amzn:serviceId",
+      "@type": "xsd:string"
+    },
+    "snsTopicArn": {
+      "@id": "amzn:snsTopicArn",
+      "@type": "xsd:string"
+    },
+    "sortBy": {
+      "@id": "amzn:sortBy",
+      "@type": "xsd:string"
+    },
+    "sortOrder": {
+      "@id": "amzn:sortOrder",
+      "@type": "xsd:string"
+    },
+    "source": {
+      "@id": "amzn:source",
+      "@type": "xsd:string"
+    },
+    "sseKmsKeyId": {
+      "@id": "amzn:sseKmsKeyId",
+      "@type": "xsd:string"
+    },
+    "ssmAutomation": {
+      "@id": "amzn:ssmAutomation",
+      "@type": "xsd:string"
+    },
+    "ssmExecutionArn": {
+      "@id": "amzn:ssmExecutionArn",
+      "@type": "xsd:string"
+    },
+    "status": {
+      "@id": "amzn:status",
+      "@type": "xsd:string"
+    },
+    "statusMessage": {
+      "@id": "amzn:statusMessage",
+      "@type": "xsd:string"
+    },
+    "statusUpdateDateTime": {
+      "@id": "amzn:statusUpdateDateTime",
+      "@type": "xsd:string"
+    },
+    "stringValues": {
+      "@id": "amzn:stringValues",
+      "@type": "xsd:string"
+    },
+    "summary": {
+      "@id": "amzn:summary",
+      "@type": "xsd:string"
+    },
+    "tags": {
+      "@id": "amzn:tags",
+      "@type": "xsd:string"
+    },
+    "targetAccount": {
+      "@id": "amzn:targetAccount",
+      "@type": "xsd:string"
+    },
+    "timestamp": {
+      "@id": "amzn:timestamp",
+      "@type": "xsd:string"
+    },
+    "title": {
+      "@id": "amzn:title",
+      "@type": "xsd:string"
+    },
+    "triggerArn": {
+      "@id": "amzn:triggerArn",
+      "@type": "xsd:string"
+    },
+    "triggerDetails": {
+      "@id": "amzn:triggerDetails",
+      "@type": "xsd:string"
+    },
+    "type": {
+      "@id": "amzn:type",
+      "@type": "xsd:string"
+    },
+    "url": "schema:url",
+    "value": {
+      "@id": "amzn:value",
+      "@type": "xsd:string"
+    },
+    "variable": {
+      "@id": "amzn:variable",
+      "@type": "xsd:string"
+    }
+  }
+}

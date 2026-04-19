@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-structure/incident-manager-create-response-plan-output-structure.json",
+  "name": "CreateResponsePlanOutput",
+  "description": "CreateResponsePlanOutput schema",
+  "type": "object",
+  "properties": {
+    "arn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the response plan."
+        }
+      ]
+    }
+  },
+  "required": [
+    "arn"
+  ]
+}

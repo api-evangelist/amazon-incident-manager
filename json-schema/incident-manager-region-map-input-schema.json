@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-schema/incident-manager-region-map-input-schema.json",
+  "title": "RegionMapInput",
+  "description": "RegionMapInput schema",
+  "type": "object",
+  "additionalProperties": {
+    "type": "object",
+    "properties": {
+      "sseKmsKeyId": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/SseKmsKey"
+          },
+          {
+            "description": "The KMS key used to encrypt the data in your replication set."
+          }
+        ]
+      }
+    },
+    "description": "The mapping between a Amazon Web Services Region and the key that's used to encrypt the data."
+  }
+}

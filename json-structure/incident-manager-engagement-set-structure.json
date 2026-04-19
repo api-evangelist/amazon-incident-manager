@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-structure/incident-manager-engagement-set-structure.json",
+  "name": "EngagementSet",
+  "description": "EngagementSet schema",
+  "type": "array",
+  "items": {
+    "type": "string",
+    "pattern": "^arn:aws(-cn|-us-gov)?:ssm-contacts:[a-z0-9-]*:([0-9]{12}):contact/[a-z0-9_-]+$",
+    "minLength": 0,
+    "maxLength": 2048
+  }
+}

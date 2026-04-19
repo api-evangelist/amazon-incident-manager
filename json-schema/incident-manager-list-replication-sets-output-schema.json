@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-schema/incident-manager-list-replication-sets-output-schema.json",
+  "title": "ListReplicationSetsOutput",
+  "description": "ListReplicationSetsOutput schema",
+  "type": "object",
+  "properties": {
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "The pagination token to continue to the next page of results."
+        }
+      ]
+    },
+    "replicationSetArns": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ReplicationSetArnList"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the list replication set."
+        }
+      ]
+    }
+  },
+  "required": [
+    "replicationSetArns"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-schema/incident-manager-pager-duty-incident-configuration-schema.json",
+  "title": "PagerDutyIncidentConfiguration",
+  "description": "Details about the PagerDuty service where the response plan creates an incident.",
+  "type": "object",
+  "properties": {
+    "serviceId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PagerDutyIncidentConfigurationServiceIdString"
+        },
+        {
+          "description": "The ID of the PagerDuty service that the response plan associates with an incident when it launches."
+        }
+      ]
+    }
+  },
+  "required": [
+    "serviceId"
+  ]
+}

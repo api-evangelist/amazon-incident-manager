@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-structure/incident-manager-delete-timeline-event-input-structure.json",
+  "name": "DeleteTimelineEventInput",
+  "description": "DeleteTimelineEventInput schema",
+  "type": "object",
+  "properties": {
+    "eventId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UUID"
+        },
+        {
+          "description": "The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID."
+        }
+      ]
+    },
+    "incidentRecordArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the incident that includes the timeline event."
+        }
+      ]
+    }
+  },
+  "required": [
+    "eventId",
+    "incidentRecordArn"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-structure/incident-manager-update-deletion-protection-input-structure.json",
+  "name": "UpdateDeletionProtectionInput",
+  "description": "UpdateDeletionProtectionInput schema",
+  "type": "object",
+  "properties": {
+    "arn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the replication set to update."
+        }
+      ]
+    },
+    "clientToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ClientToken"
+        },
+        {
+          "description": "A token that ensures that the operation is called only once with the specified details."
+        }
+      ]
+    },
+    "deletionProtected": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Boolean"
+        },
+        {
+          "description": "Specifies if deletion protection is turned on or off in your account. "
+        }
+      ]
+    }
+  },
+  "required": [
+    "arn",
+    "deletionProtected"
+  ]
+}

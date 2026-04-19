@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-schema/incident-manager-tag-map-schema.json",
+  "title": "TagMap",
+  "description": "TagMap schema",
+  "type": "object",
+  "additionalProperties": {
+    "type": "string",
+    "pattern": "^[A-Za-z0-9 _=@:.+-/]*$",
+    "minLength": 0,
+    "maxLength": 256
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-structure/incident-manager-resource-policy-list-structure.json",
+  "name": "ResourcePolicyList",
+  "description": "ResourcePolicyList schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "policyDocument",
+      "policyId",
+      "ramResourceShareRegion"
+    ],
+    "properties": {
+      "policyDocument": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Policy"
+          },
+          {
+            "description": "The JSON blob that describes the policy."
+          }
+        ]
+      },
+      "policyId": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/PolicyId"
+          },
+          {
+            "description": "The ID of the resource policy."
+          }
+        ]
+      },
+      "ramResourceShareRegion": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/String"
+          },
+          {
+            "description": "The Amazon Web Services Region that policy allows resources to be used in."
+          }
+        ]
+      }
+    },
+    "description": "The resource policy that allows Incident Manager to perform actions on resources on your behalf."
+  }
+}

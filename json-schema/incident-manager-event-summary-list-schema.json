@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-schema/incident-manager-event-summary-list-schema.json",
+  "title": "EventSummaryList",
+  "description": "EventSummaryList schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "eventId",
+      "eventTime",
+      "eventType",
+      "eventUpdatedTime",
+      "incidentRecordArn"
+    ],
+    "properties": {
+      "eventId": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/UUID"
+          },
+          {
+            "description": "The timeline event ID."
+          }
+        ]
+      },
+      "eventReferences": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/EventReferenceList"
+          },
+          {
+            "description": "A list of references in a <code>TimelineEvent</code>."
+          }
+        ]
+      },
+      "eventTime": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Timestamp"
+          },
+          {
+            "description": "The time that the event occurred."
+          }
+        ]
+      },
+      "eventType": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/TimelineEventType"
+          },
+          {
+            "description": "The type of event. The timeline event must be <code>Custom Event</code>."
+          }
+        ]
+      },
+      "eventUpdatedTime": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Timestamp"
+          },
+          {
+            "description": "The time that the timeline event was last updated."
+          }
+        ]
+      },
+      "incidentRecordArn": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Arn"
+          },
+          {
+            "description": "The Amazon Resource Name (ARN) of the incident that the event happened during."
+          }
+        ]
+      }
+    },
+    "description": "Details about a timeline event during an incident."
+  }
+}

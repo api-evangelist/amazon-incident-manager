@@ -1,0 +1,15 @@
+{
+  "actions": "example-value",
+  "arn": "arn:aws:ssm-incidents::123456789012:response-plan/example",
+  "chatChannel": "example-value",
+  "clientToken": "example-value",
+  "displayName": "example-incident",
+  "engagements": "example-value",
+  "incidentTemplateDedupeString": "id-abc123",
+  "incidentTemplateImpact": "id-abc123",
+  "incidentTemplateNotificationTargets": "id-abc123",
+  "incidentTemplateSummary": "id-abc123",
+  "incidentTemplateTags": "id-abc123",
+  "incidentTemplateTitle": "id-abc123",
+  "integrations": "example-value"
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-schema/incident-manager-replication-set-status-schema.json",
+  "title": "ReplicationSetStatus",
+  "description": "ReplicationSetStatus schema",
+  "type": "string",
+  "enum": [
+    "ACTIVE",
+    "CREATING",
+    "UPDATING",
+    "DELETING",
+    "FAILED"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-structure/incident-manager-variable-type-structure.json",
+  "name": "VariableType",
+  "description": "VariableType schema",
+  "type": "string",
+  "enum": [
+    "INCIDENT_RECORD_ARN",
+    "INVOLVED_RESOURCES"
+  ]
+}

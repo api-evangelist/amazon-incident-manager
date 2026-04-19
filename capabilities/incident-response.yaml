@@ -1,0 +1,121 @@
+naftiko: "1.0.0-alpha1"
+info:
+  label: Amazon Incident Manager - Incident Response
+  description: Unified capability for operations teams to manage incident response plans, respond to active incidents, update timelines, and coordinate responders.
+  tags:
+    - AWS
+    - Incident Management
+    - DevOps
+    - Operations
+    - Automation
+  created: "2026-04-19"
+  modified: "2026-04-19"
+binds:
+  - namespace: env
+    keys:
+      AWS_ACCESS_KEY_ID: AWS_ACCESS_KEY_ID
+      AWS_SECRET_ACCESS_KEY: AWS_SECRET_ACCESS_KEY
+capability:
+  consumes:
+    - import: ssm-incidents
+      location: ./shared/ssm-incidents.yaml
+  exposes:
+    - type: rest
+      port: 8080
+      namespace: incident-response-api
+      description: Unified REST API for incident response management.
+      resources:
+        - path: /v1/response-plans
+          name: response-plans
+          description: Manage incident response plans
+          operations:
+            - method: GET
+              name: list-response-plans
+              description: List all response plans
+              call: "ssm-incidents.list-response-plans"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/incidents
+          name: incidents
+          description: Manage active incidents
+          operations:
+            - method: GET
+              name: list-incidents
+              description: List active incidents
+              call: "ssm-incidents.list-incident-records"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+            - method: POST
+              name: create-incident
+              description: Create a new incident
+              call: "ssm-incidents.create-incident"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+    - type: mcp
+      port: 9090
+      namespace: incident-response-mcp
+      transport: http
+      description: MCP server for AI-assisted incident response.
+      tools:
+        - name: list-response-plans
+          description: List all incident response plans
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "ssm-incidents.list-response-plans"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: create-response-plan
+          description: Create a new incident response plan with escalation contacts
+          hints:
+            readOnly: false
+          call: "ssm-incidents.create-response-plan"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-incidents
+          description: List active and recent incidents
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "ssm-incidents.list-incident-records"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: create-incident
+          description: Start a new incident and trigger response plan
+          hints:
+            readOnly: false
+          call: "ssm-incidents.create-incident"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: update-incident
+          description: Update the summary or status of an active incident
+          hints:
+            readOnly: false
+          call: "ssm-incidents.update-incident-record"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-incident
+          description: Get details of a specific incident
+          hints:
+            readOnly: true
+          call: "ssm-incidents.get-incident-record"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-timeline-events
+          description: List timeline events for an incident
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "ssm-incidents.list-timeline-events"
+          outputParameters:
+            - type: object
+              mapping: "$."

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-structure/incident-manager-integration-structure.json",
+  "name": "Integration",
+  "description": "Information about third-party services integrated into a response plan.",
+  "type": "object",
+  "properties": {
+    "pagerDutyConfiguration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PagerDutyConfiguration"
+        },
+        {
+          "description": "Information about the PagerDuty service where the response plan creates an incident."
+        }
+      ]
+    }
+  }
+}

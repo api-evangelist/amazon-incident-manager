@@ -1,0 +1,4 @@
+{
+  "nextToken": "example-value",
+  "replicationSetArns": "arn:aws:ssm-incidents::123456789012:response-plan/example"
+}

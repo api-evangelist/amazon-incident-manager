@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-schema/incident-manager-get-incident-record-output-schema.json",
+  "title": "GetIncidentRecordOutput",
+  "description": "GetIncidentRecordOutput schema",
+  "type": "object",
+  "properties": {
+    "incidentRecord": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IncidentRecord"
+        },
+        {
+          "description": "Details the structure of the incident record."
+        }
+      ]
+    }
+  },
+  "required": [
+    "incidentRecord"
+  ]
+}

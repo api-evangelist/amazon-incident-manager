@@ -1,0 +1,122 @@
+naftiko: "1.0.0-alpha1"
+info:
+  label: AWS Systems Manager Incident Manager API
+  description: Manages response plans, incidents, timelines, and replication sets for automated incident response.
+  tags:
+    - AWS
+    - Incident Management
+    - DevOps
+    - Operations
+    - Automation
+  created: "2026-04-19"
+  modified: "2026-04-19"
+binds:
+  - namespace: env
+    keys:
+      AWS_ACCESS_KEY_ID: AWS_ACCESS_KEY_ID
+      AWS_SECRET_ACCESS_KEY: AWS_SECRET_ACCESS_KEY
+capability:
+  consumes:
+    - type: http
+      namespace: ssm-incidents
+      baseUri: https://ssm-incidents.amazonaws.com
+      description: AWS SSM Incidents REST API
+      authentication:
+        type: apikey
+        key: Authorization
+        value: "{{AWS_ACCESS_KEY_ID}}"
+        placement: header
+      resources:
+        - name: response-plans
+          path: /responsePlans
+          description: Incident response plans
+          operations:
+            - name: list-response-plans
+              method: GET
+              description: List response plans
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: create-response-plan
+              method: POST
+              description: Create a response plan
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: incidents
+          path: /incidents
+          description: Active incidents
+          operations:
+            - name: list-incident-records
+              method: GET
+              description: List incident records
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: create-incident
+              method: POST
+              description: Create an incident
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+  exposes:
+    - type: rest
+      port: 8100
+      namespace: ssm-incidents-rest
+      resources:
+        - path: /v1/response-plans
+          name: response-plans
+          description: Manage response plans
+          operations:
+            - method: GET
+              name: list-response-plans
+              description: List response plans
+              call: "ssm-incidents.list-response-plans"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+    - type: mcp
+      port: 9100
+      namespace: ssm-incidents-mcp
+      transport: http
+      tools:
+        - name: list-response-plans
+          description: List incident response plans
+          hints:
+            readOnly: true
+          call: "ssm-incidents.list-response-plans"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: create-response-plan
+          description: Create a new incident response plan
+          hints:
+            readOnly: false
+          call: "ssm-incidents.create-response-plan"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-incidents
+          description: List active incident records
+          hints:
+            readOnly: true
+          call: "ssm-incidents.list-incident-records"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: create-incident
+          description: Start a new incident
+          hints:
+            readOnly: false
+          call: "ssm-incidents.create-incident"
+          outputParameters:
+            - type: object
+              mapping: "$."

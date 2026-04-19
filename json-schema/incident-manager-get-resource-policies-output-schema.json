@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-schema/incident-manager-get-resource-policies-output-schema.json",
+  "title": "GetResourcePoliciesOutput",
+  "description": "GetResourcePoliciesOutput schema",
+  "type": "object",
+  "properties": {
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "The pagination token to continue to the next page of results."
+        }
+      ]
+    },
+    "resourcePolicies": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourcePolicyList"
+        },
+        {
+          "description": "Details about the resource policy attached to the response plan."
+        }
+      ]
+    }
+  },
+  "required": [
+    "resourcePolicies"
+  ]
+}

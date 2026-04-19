@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-structure/incident-manager-region-info-map-structure.json",
+  "name": "RegionInfoMap",
+  "description": "RegionInfoMap schema",
+  "type": "object",
+  "additionalProperties": {
+    "type": "object",
+    "required": [
+      "status",
+      "statusUpdateDateTime"
+    ],
+    "properties": {
+      "sseKmsKeyId": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/SseKmsKey"
+          },
+          {
+            "description": "The ID of the KMS key used to encrypt the data in this Amazon Web Services Region."
+          }
+        ]
+      },
+      "status": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/RegionStatus"
+          },
+          {
+            "description": "The status of the Amazon Web Services Region in the replication set."
+          }
+        ]
+      },
+      "statusMessage": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/String"
+          },
+          {
+            "description": "Information displayed about the status of the Amazon Web Services Region."
+          }
+        ]
+      },
+      "statusUpdateDateTime": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Timestamp"
+          },
+          {
+            "description": "The most recent date and time that Incident Manager updated the Amazon Web Services Region's status."
+          }
+        ]
+      }
+    },
+    "description": "Information about a Amazon Web Services Region in your replication set."
+  }
+}

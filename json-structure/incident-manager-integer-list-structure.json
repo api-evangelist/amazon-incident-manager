@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-structure/incident-manager-integer-list-structure.json",
+  "name": "IntegerList",
+  "description": "IntegerList schema",
+  "type": "array",
+  "items": {
+    "type": "int32"
+  }
+}

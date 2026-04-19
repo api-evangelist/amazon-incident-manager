@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-structure/incident-manager-empty-chat-channel-structure.json",
+  "name": "EmptyChatChannel",
+  "description": "Used to remove the chat channel from an incident record or response plan.",
+  "type": "object",
+  "properties": {}
+}

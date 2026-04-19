@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-structure/incident-manager-automation-execution-structure.json",
+  "name": "AutomationExecution",
+  "description": "The Systems Manager automation document process to start as the runbook at the beginning of the incident.",
+  "type": "object",
+  "properties": {
+    "ssmExecutionArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the automation process."
+        }
+      ]
+    }
+  }
+}

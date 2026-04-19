@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-structure/incident-manager-notification-target-item-structure.json",
+  "name": "NotificationTargetItem",
+  "description": "The SNS targets that are notified when updates are made to an incident.",
+  "type": "object",
+  "properties": {
+    "snsTopicArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the SNS topic."
+        }
+      ]
+    }
+  }
+}

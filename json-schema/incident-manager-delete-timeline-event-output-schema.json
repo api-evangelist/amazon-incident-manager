@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-schema/incident-manager-delete-timeline-event-output-schema.json",
+  "title": "DeleteTimelineEventOutput",
+  "description": "DeleteTimelineEventOutput schema",
+  "type": "object",
+  "properties": {}
+}

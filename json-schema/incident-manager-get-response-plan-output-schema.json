@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-schema/incident-manager-get-response-plan-output-schema.json",
+  "title": "GetResponsePlanOutput",
+  "description": "GetResponsePlanOutput schema",
+  "type": "object",
+  "properties": {
+    "actions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ActionsList"
+        },
+        {
+          "description": "The actions that this response plan takes at the beginning of the incident."
+        }
+      ]
+    },
+    "arn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The ARN of the response plan."
+        }
+      ]
+    },
+    "chatChannel": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ChatChannel"
+        },
+        {
+          "description": "The Chatbot chat channel used for collaboration during an incident."
+        }
+      ]
+    },
+    "displayName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResponsePlanDisplayName"
+        },
+        {
+          "description": "The long format name of the response plan. Can contain spaces."
+        }
+      ]
+    },
+    "engagements": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EngagementSet"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident."
+        }
+      ]
+    },
+    "incidentTemplate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IncidentTemplate"
+        },
+        {
+          "description": "Details used to create the incident when using this response plan."
+        }
+      ]
+    },
+    "integrations": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Integrations"
+        },
+        {
+          "description": "Information about third-party services integrated into the Incident Manager response plan."
+        }
+      ]
+    },
+    "name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResponsePlanName"
+        },
+        {
+          "description": "The short format name of the response plan. The name can't contain spaces."
+        }
+      ]
+    }
+  },
+  "required": [
+    "arn",
+    "incidentTemplate",
+    "name"
+  ]
+}

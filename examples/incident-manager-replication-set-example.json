@@ -1,0 +1,10 @@
+{
+  "arn": "arn:aws:ssm-incidents::123456789012:response-plan/example",
+  "createdBy": "example-value",
+  "createdTime": "2025-03-15T14:30:00Z",
+  "deletionProtected": "example-value",
+  "lastModifiedBy": "example-value",
+  "lastModifiedTime": "2025-03-15T14:30:00Z",
+  "regionMap": "example-value",
+  "status": "OPEN"
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-schema/incident-manager-item-type-schema.json",
+  "title": "ItemType",
+  "description": "ItemType schema",
+  "type": "string",
+  "enum": [
+    "ANALYSIS",
+    "INCIDENT",
+    "METRIC",
+    "PARENT",
+    "ATTACHMENT",
+    "OTHER",
+    "AUTOMATION",
+    "INVOLVED_RESOURCE",
+    "TASK"
+  ]
+}

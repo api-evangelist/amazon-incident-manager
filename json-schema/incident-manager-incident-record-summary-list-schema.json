@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-schema/incident-manager-incident-record-summary-list-schema.json",
+  "title": "IncidentRecordSummaryList",
+  "description": "IncidentRecordSummaryList schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "arn",
+      "creationTime",
+      "impact",
+      "incidentRecordSource",
+      "status",
+      "title"
+    ],
+    "properties": {
+      "arn": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Arn"
+          },
+          {
+            "description": "The Amazon Resource Name (ARN) of the incident."
+          }
+        ]
+      },
+      "creationTime": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Timestamp"
+          },
+          {
+            "description": "The time the incident was created."
+          }
+        ]
+      },
+      "impact": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Impact"
+          },
+          {
+            "description": "Defines the impact to customers and applications."
+          }
+        ]
+      },
+      "incidentRecordSource": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/IncidentRecordSource"
+          },
+          {
+            "description": "What caused Incident Manager to create the incident."
+          }
+        ]
+      },
+      "resolvedTime": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Timestamp"
+          },
+          {
+            "description": "The time the incident was resolved."
+          }
+        ]
+      },
+      "status": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/IncidentRecordStatus"
+          },
+          {
+            "description": "The current status of the incident."
+          }
+        ]
+      },
+      "title": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/IncidentTitle"
+          },
+          {
+            "description": "The title of the incident. This value is either provided by the response plan or overwritten on creation."
+          }
+        ]
+      }
+    },
+    "description": "Details describing an incident record."
+  }
+}

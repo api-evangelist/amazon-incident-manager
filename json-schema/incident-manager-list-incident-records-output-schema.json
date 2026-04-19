@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-schema/incident-manager-list-incident-records-output-schema.json",
+  "title": "ListIncidentRecordsOutput",
+  "description": "ListIncidentRecordsOutput schema",
+  "type": "object",
+  "properties": {
+    "incidentRecordSummaries": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IncidentRecordSummaryList"
+        },
+        {
+          "description": "The details of each listed incident record."
+        }
+      ]
+    },
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "The pagination token to continue to the next page of results."
+        }
+      ]
+    }
+  },
+  "required": [
+    "incidentRecordSummaries"
+  ]
+}

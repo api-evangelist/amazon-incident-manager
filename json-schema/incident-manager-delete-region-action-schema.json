@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-schema/incident-manager-delete-region-action-schema.json",
+  "title": "DeleteRegionAction",
+  "description": "Defines the information about the Amazon Web Services Region you're deleting from your replication set.",
+  "type": "object",
+  "properties": {
+    "regionName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RegionName"
+        },
+        {
+          "description": "The name of the Amazon Web Services Region you're deleting from the replication set."
+        }
+      ]
+    }
+  },
+  "required": [
+    "regionName"
+  ]
+}

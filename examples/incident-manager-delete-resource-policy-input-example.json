@@ -1,0 +1,4 @@
+{
+  "policyId": "id-abc123",
+  "resourceArn": "arn:aws:ssm-incidents::123456789012:response-plan/example"
+}

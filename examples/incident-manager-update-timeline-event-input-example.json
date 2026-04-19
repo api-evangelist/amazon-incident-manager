@@ -1,0 +1,9 @@
+{
+  "clientToken": "example-value",
+  "eventData": "example-value",
+  "eventId": "id-abc123",
+  "eventReferences": "example-value",
+  "eventTime": "2025-03-15T14:30:00Z",
+  "eventType": "example-value",
+  "incidentRecordArn": "arn:aws:ssm-incidents::123456789012:response-plan/example"
+}

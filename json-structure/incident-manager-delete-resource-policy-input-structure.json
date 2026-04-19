@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-structure/incident-manager-delete-resource-policy-input-structure.json",
+  "name": "DeleteResourcePolicyInput",
+  "description": "DeleteResourcePolicyInput schema",
+  "type": "object",
+  "properties": {
+    "policyId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PolicyId"
+        },
+        {
+          "description": "The ID of the resource policy you're deleting."
+        }
+      ]
+    },
+    "resourceArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the resource you're deleting the policy from."
+        }
+      ]
+    }
+  },
+  "required": [
+    "policyId",
+    "resourceArn"
+  ]
+}

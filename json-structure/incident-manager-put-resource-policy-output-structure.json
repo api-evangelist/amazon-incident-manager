@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-structure/incident-manager-put-resource-policy-output-structure.json",
+  "name": "PutResourcePolicyOutput",
+  "description": "PutResourcePolicyOutput schema",
+  "type": "object",
+  "properties": {
+    "policyId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PolicyId"
+        },
+        {
+          "description": "The ID of the resource policy."
+        }
+      ]
+    }
+  },
+  "required": [
+    "policyId"
+  ]
+}

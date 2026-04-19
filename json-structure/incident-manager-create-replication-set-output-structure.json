@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-structure/incident-manager-create-replication-set-output-structure.json",
+  "name": "CreateReplicationSetOutput",
+  "description": "CreateReplicationSetOutput schema",
+  "type": "object",
+  "properties": {
+    "arn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the replication set. "
+        }
+      ]
+    }
+  },
+  "required": [
+    "arn"
+  ]
+}

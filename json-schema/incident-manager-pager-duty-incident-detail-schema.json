@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-schema/incident-manager-pager-duty-incident-detail-schema.json",
+  "title": "PagerDutyIncidentDetail",
+  "description": "Details about the PagerDuty incident associated with an incident created by an Incident Manager response plan.",
+  "type": "object",
+  "properties": {
+    "autoResolve": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Boolean"
+        },
+        {
+          "description": "Indicates whether to resolve the PagerDuty incident when you resolve the associated Incident Manager incident."
+        }
+      ]
+    },
+    "id": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PagerDutyIncidentDetailIdString"
+        },
+        {
+          "description": "The ID of the incident associated with the PagerDuty service for the response plan."
+        }
+      ]
+    },
+    "secretId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PagerDutyIncidentDetailSecretIdString"
+        },
+        {
+          "description": "The ID of the Amazon Web Services Secrets Manager secret that stores your PagerDuty key, either a General Access REST API Key or User Token REST API Key, and other user credentials."
+        }
+      ]
+    }
+  },
+  "required": [
+    "id"
+  ]
+}

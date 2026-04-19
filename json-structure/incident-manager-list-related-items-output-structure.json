@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-structure/incident-manager-list-related-items-output-structure.json",
+  "name": "ListRelatedItemsOutput",
+  "description": "ListRelatedItemsOutput schema",
+  "type": "object",
+  "properties": {
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "The pagination token to continue to the next page of results."
+        }
+      ]
+    },
+    "relatedItems": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RelatedItemList"
+        },
+        {
+          "description": "Details about each related item."
+        }
+      ]
+    }
+  },
+  "required": [
+    "relatedItems"
+  ]
+}

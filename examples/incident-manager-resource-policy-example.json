@@ -1,0 +1,5 @@
+{
+  "policyDocument": "example-value",
+  "policyId": "id-abc123",
+  "ramResourceShareRegion": "example-value"
+}

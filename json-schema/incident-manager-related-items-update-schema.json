@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-schema/incident-manager-related-items-update-schema.json",
+  "title": "RelatedItemsUpdate",
+  "description": "Details about the related item you're adding.",
+  "type": "object",
+  "properties": {
+    "itemToAdd": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RelatedItem"
+        },
+        {
+          "description": "Details about the related item you're adding."
+        }
+      ]
+    },
+    "itemToRemove": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ItemIdentifier"
+        },
+        {
+          "description": "Details about the related item you're deleting."
+        }
+      ]
+    }
+  }
+}

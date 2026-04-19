@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-structure/incident-manager-response-plan-summary-structure.json",
+  "name": "ResponsePlanSummary",
+  "description": "Details of the response plan that are used when creating an incident.",
+  "type": "object",
+  "properties": {
+    "arn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the response plan."
+        }
+      ]
+    },
+    "displayName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResponsePlanDisplayName"
+        },
+        {
+          "description": "The human readable name of the response plan. This can include spaces."
+        }
+      ]
+    },
+    "name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResponsePlanName"
+        },
+        {
+          "description": "The name of the response plan. This can't include spaces."
+        }
+      ]
+    }
+  },
+  "required": [
+    "arn",
+    "name"
+  ]
+}

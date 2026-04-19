@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-structure/incident-manager-timeline-event-sort-structure.json",
+  "name": "TimelineEventSort",
+  "description": "TimelineEventSort schema",
+  "type": "string",
+  "enum": [
+    "EVENT_TIME"
+  ]
+}

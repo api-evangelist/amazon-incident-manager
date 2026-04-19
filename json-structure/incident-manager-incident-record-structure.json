@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-structure/incident-manager-incident-record-structure.json",
+  "name": "IncidentRecord",
+  "description": "The record of the incident that's created when an incident occurs.",
+  "type": "object",
+  "properties": {
+    "arn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the incident record."
+        }
+      ]
+    },
+    "automationExecutions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AutomationExecutionSet"
+        },
+        {
+          "description": "The runbook, or automation document, that's run at the beginning of the incident."
+        }
+      ]
+    },
+    "chatChannel": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ChatChannel"
+        },
+        {
+          "description": "The chat channel used for collaboration during an incident."
+        }
+      ]
+    },
+    "creationTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The time that Incident Manager created the incident record."
+        }
+      ]
+    },
+    "dedupeString": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DedupeString"
+        },
+        {
+          "description": "The string Incident Manager uses to prevent duplicate incidents from being created by the same incident in the same account."
+        }
+      ]
+    },
+    "impact": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Impact"
+        },
+        {
+          "description": "The impact of the incident on customers and applications."
+        }
+      ]
+    },
+    "incidentRecordSource": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IncidentRecordSource"
+        },
+        {
+          "description": "Details about the action that started the incident."
+        }
+      ]
+    },
+    "lastModifiedBy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "Who modified the incident most recently."
+        }
+      ]
+    },
+    "lastModifiedTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The time at which the incident was most recently modified."
+        }
+      ]
+    },
+    "notificationTargets": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NotificationTargetSet"
+        },
+        {
+          "description": "The Amazon SNS targets that are notified when updates are made to an incident."
+        }
+      ]
+    },
+    "resolvedTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The time at which the incident was resolved. This appears as a timeline event."
+        }
+      ]
+    },
+    "status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IncidentRecordStatus"
+        },
+        {
+          "description": "The current status of the incident."
+        }
+      ]
+    },
+    "summary": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IncidentSummary"
+        },
+        {
+          "description": "The summary of the incident. The summary is a brief synopsis of what occurred, what's currently happening, and context of the incident."
+        }
+      ]
+    },
+    "title": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IncidentTitle"
+        },
+        {
+          "description": "The title of the incident."
+        }
+      ]
+    }
+  },
+  "required": [
+    "arn",
+    "creationTime",
+    "dedupeString",
+    "impact",
+    "incidentRecordSource",
+    "lastModifiedBy",
+    "lastModifiedTime",
+    "status",
+    "title"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-structure/incident-manager-related-item-structure.json",
+  "name": "RelatedItem",
+  "description": "Resources that responders use to triage and mitigate the incident.",
+  "type": "object",
+  "properties": {
+    "generatedId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GeneratedId"
+        },
+        {
+          "description": "<p>A unique ID for a <code>RelatedItem</code>.</p> <important> <p>Don't specify this parameter when you add a <code>RelatedItem</code> by using the <a>UpdateRelatedItems</a> API action.</p> </important>"
+        }
+      ]
+    },
+    "identifier": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ItemIdentifier"
+        },
+        {
+          "description": "Details about the related item."
+        }
+      ]
+    },
+    "title": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RelatedItemTitleString"
+        },
+        {
+          "description": "The title of the related item."
+        }
+      ]
+    }
+  },
+  "required": [
+    "identifier"
+  ]
+}

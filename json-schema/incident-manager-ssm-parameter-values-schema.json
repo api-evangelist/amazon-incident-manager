@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-schema/incident-manager-ssm-parameter-values-schema.json",
+  "title": "SsmParameterValues",
+  "description": "SsmParameterValues schema",
+  "type": "array",
+  "items": {
+    "type": "string",
+    "minLength": 0,
+    "maxLength": 512
+  }
+}

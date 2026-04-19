@@ -1,0 +1,9 @@
+{
+  "arn": "arn:aws:ssm-incidents::123456789012:response-plan/example",
+  "creationTime": "2025-03-15T14:30:00Z",
+  "impact": "example-value",
+  "incidentRecordSource": "id-abc123",
+  "resolvedTime": "2025-03-15T14:30:00Z",
+  "status": "OPEN",
+  "title": "example-value"
+}

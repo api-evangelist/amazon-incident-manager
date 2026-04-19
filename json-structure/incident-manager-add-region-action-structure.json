@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-structure/incident-manager-add-region-action-structure.json",
+  "name": "AddRegionAction",
+  "description": "Defines the Amazon Web Services Region and KMS key to add to the replication set. ",
+  "type": "object",
+  "properties": {
+    "regionName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RegionName"
+        },
+        {
+          "description": "The Amazon Web Services Region name to add to the replication set."
+        }
+      ]
+    },
+    "sseKmsKeyId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SseKmsKey"
+        },
+        {
+          "description": "The KMS key ID to use to encrypt your replication set."
+        }
+      ]
+    }
+  },
+  "required": [
+    "regionName"
+  ]
+}

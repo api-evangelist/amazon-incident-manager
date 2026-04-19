@@ -1,0 +1,5 @@
+{
+  "actions": "example-value",
+  "arn": "arn:aws:ssm-incidents::123456789012:response-plan/example",
+  "clientToken": "example-value"
+}

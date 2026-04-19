@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-structure/incident-manager-create-timeline-event-output-structure.json",
+  "name": "CreateTimelineEventOutput",
+  "description": "CreateTimelineEventOutput schema",
+  "type": "object",
+  "properties": {
+    "eventId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UUID"
+        },
+        {
+          "description": "The ID of the event for easy reference later. "
+        }
+      ]
+    },
+    "incidentRecordArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The ARN of the incident record that you added the event to."
+        }
+      ]
+    }
+  },
+  "required": [
+    "eventId",
+    "incidentRecordArn"
+  ]
+}

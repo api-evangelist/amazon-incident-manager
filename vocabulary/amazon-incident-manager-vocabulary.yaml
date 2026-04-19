@@ -1,0 +1,98 @@
+vocabulary: "1.0.0"
+info:
+  provider: Amazon Incident Manager
+  description: Vocabulary for AWS Systems Manager Incident Manager covering incidents, response plans, timelines, and replication sets.
+  created: "2026-04-19"
+  modified: "2026-04-19"
+operational:
+  apis:
+    - namespace: ssm-incidents
+      version: "2018-05-10"
+      baseUrl: https://ssm-incidents.amazonaws.com
+      status: active
+  resources:
+    - name: response-plans
+      api: ssm-incidents
+      actions: [list, create, delete, get, update]
+    - name: incidents
+      api: ssm-incidents
+      actions: [list, create, get, update]
+    - name: timeline-events
+      api: ssm-incidents
+      actions: [list, create, delete, get, update]
+    - name: related-items
+      api: ssm-incidents
+      actions: [list, add, remove]
+    - name: replication-sets
+      api: ssm-incidents
+      actions: [list, create, delete, update]
+  actions:
+    - name: list
+      methods: [GET, POST]
+      pattern: read
+    - name: create
+      methods: [POST]
+      pattern: write
+    - name: get
+      methods: [GET]
+      pattern: read
+    - name: update
+      methods: [PATCH, PUT]
+      pattern: write
+    - name: delete
+      methods: [DELETE]
+      pattern: destructive
+  enums:
+    incident-status:
+      - OPEN
+      - RESOLVED
+    impact:
+      - '1'
+      - '2'
+      - '3'
+      - '4'
+      - '5'
+  authentication:
+    schemes:
+      - type: AWS Signature Version 4
+        placement: header
+capability:
+  workflows:
+    - name: Incident Response
+      file: capabilities/incident-response.yaml
+      apis: [ssm-incidents]
+      toolCount: 7
+      personas: [Operations Engineer, Site Reliability Engineer]
+  personas:
+    - id: operations-engineer
+      name: Operations Engineer
+      description: Manages incident response plans and responds to operational incidents
+    - id: sre
+      name: Site Reliability Engineer
+      description: Monitors system reliability and coordinates incident resolution
+  domains:
+    - name: Incident Management
+      description: Creating, tracking, and resolving operational incidents
+    - name: Response Automation
+      description: Automated incident response plans and escalation
+  namespaces:
+    - name: ssm-incidents
+      type: consumed
+    - name: incident-response-api
+      type: rest
+      port: 8080
+    - name: incident-response-mcp
+      type: mcp
+      port: 9090
+  binds:
+    - AWS_ACCESS_KEY_ID
+    - AWS_SECRET_ACCESS_KEY
+crossReference:
+  - resource: response-plans
+    operations: [listResponsePlans, createResponsePlan, getResponsePlan]
+    workflows: [Incident Response]
+    personas: [Operations Engineer, Site Reliability Engineer]
+  - resource: incidents
+    operations: [createIncident, listIncidentRecords, getIncidentRecord, updateIncidentRecord]
+    workflows: [Incident Response]
+    personas: [Operations Engineer, Site Reliability Engineer]

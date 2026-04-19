@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-structure/incident-manager-get-replication-set-output-structure.json",
+  "name": "GetReplicationSetOutput",
+  "description": "GetReplicationSetOutput schema",
+  "type": "object",
+  "properties": {
+    "replicationSet": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ReplicationSet"
+        },
+        {
+          "description": "Details of the replication set."
+        }
+      ]
+    }
+  },
+  "required": [
+    "replicationSet"
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-structure/incident-manager-create-response-plan-input-structure.json",
+  "name": "CreateResponsePlanInput",
+  "description": "CreateResponsePlanInput schema",
+  "type": "object",
+  "properties": {
+    "actions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ActionsList"
+        },
+        {
+          "description": "The actions that the response plan starts at the beginning of an incident."
+        }
+      ]
+    },
+    "chatChannel": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ChatChannel"
+        },
+        {
+          "description": "The Chatbot chat channel used for collaboration during an incident."
+        }
+      ]
+    },
+    "clientToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ClientToken"
+        },
+        {
+          "description": "A token ensuring that the operation is called only once with the specified details."
+        }
+      ]
+    },
+    "displayName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResponsePlanDisplayName"
+        },
+        {
+          "description": "The long format of the response plan name. This field can contain spaces."
+        }
+      ]
+    },
+    "engagements": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EngagementSet"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident."
+        }
+      ]
+    },
+    "incidentTemplate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IncidentTemplate"
+        },
+        {
+          "description": "Details used to create an incident when using this response plan."
+        }
+      ]
+    },
+    "integrations": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Integrations"
+        },
+        {
+          "description": "Information about third-party services integrated into the response plan."
+        }
+      ]
+    },
+    "name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResponsePlanName"
+        },
+        {
+          "description": "The short format name of the response plan. Can't include spaces."
+        }
+      ]
+    },
+    "tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagMap"
+        },
+        {
+          "description": "A list of tags that you are adding to the response plan."
+        }
+      ]
+    }
+  },
+  "required": [
+    "incidentTemplate",
+    "name"
+  ]
+}

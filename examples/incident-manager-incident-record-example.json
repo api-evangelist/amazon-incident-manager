@@ -1,0 +1,16 @@
+{
+  "arn": "arn:aws:ssm-incidents::123456789012:response-plan/example",
+  "automationExecutions": "example-value",
+  "chatChannel": "example-value",
+  "creationTime": "2025-03-15T14:30:00Z",
+  "dedupeString": "example-value",
+  "impact": "example-value",
+  "incidentRecordSource": "id-abc123",
+  "lastModifiedBy": "example-value",
+  "lastModifiedTime": "2025-03-15T14:30:00Z",
+  "notificationTargets": "example-value",
+  "resolvedTime": "2025-03-15T14:30:00Z",
+  "status": "OPEN",
+  "summary": "example-value",
+  "title": "example-value"
+}

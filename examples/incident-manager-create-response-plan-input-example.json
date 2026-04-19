@@ -1,0 +1,11 @@
+{
+  "actions": "example-value",
+  "chatChannel": "example-value",
+  "clientToken": "example-value",
+  "displayName": "example-incident",
+  "engagements": "example-value",
+  "incidentTemplate": "id-abc123",
+  "integrations": "example-value",
+  "name": "example-incident",
+  "tags": "example-value"
+}

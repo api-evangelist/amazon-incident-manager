@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-structure/incident-manager-incident-record-source-structure.json",
+  "name": "IncidentRecordSource",
+  "description": "Details about what created the incident record and when it was created.",
+  "type": "object",
+  "properties": {
+    "createdBy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The principal that started the incident."
+        }
+      ]
+    },
+    "invokedBy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ServicePrincipal"
+        },
+        {
+          "description": "The service principal that assumed the role specified in <code>createdBy</code>. If no service principal assumed the role this will be left blank."
+        }
+      ]
+    },
+    "resourceArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The resource that caused the incident to be created."
+        }
+      ]
+    },
+    "source": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IncidentSource"
+        },
+        {
+          "description": "The service that started the incident. This can be manually created from Incident Manager, automatically created using an Amazon CloudWatch alarm, or Amazon EventBridge event."
+        }
+      ]
+    }
+  },
+  "required": [
+    "createdBy",
+    "source"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-structure/incident-manager-chat-channel-structure.json",
+  "name": "ChatChannel",
+  "description": "The Chatbot chat channel used for collaboration during an incident.",
+  "type": "object",
+  "properties": {
+    "chatbotSns": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ChatbotSnsConfigurationSet"
+        },
+        {
+          "description": "The Amazon SNS targets that Chatbot uses to notify the chat channel of updates to an incident. You can also make updates to the incident through the chat channel by using the Amazon SNS topics. "
+        }
+      ]
+    },
+    "empty": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EmptyChatChannel"
+        },
+        {
+          "description": "Used to remove the chat channel from an incident record or response plan."
+        }
+      ]
+    }
+  }
+}

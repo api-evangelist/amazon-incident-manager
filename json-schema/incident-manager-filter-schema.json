@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-schema/incident-manager-filter-schema.json",
+  "title": "Filter",
+  "description": "Filter the selection by using a condition.",
+  "type": "object",
+  "properties": {
+    "condition": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Condition"
+        },
+        {
+          "description": "The condition accepts before or after a specified time, equal to a string, or equal to an integer."
+        }
+      ]
+    },
+    "key": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FilterKeyString"
+        },
+        {
+          "description": "The key that you're filtering on."
+        }
+      ]
+    }
+  },
+  "required": [
+    "condition",
+    "key"
+  ]
+}

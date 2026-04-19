@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-schema/incident-manager-delete-response-plan-input-schema.json",
+  "title": "DeleteResponsePlanInput",
+  "description": "DeleteResponsePlanInput schema",
+  "type": "object",
+  "properties": {
+    "arn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the response plan."
+        }
+      ]
+    }
+  },
+  "required": [
+    "arn"
+  ]
+}

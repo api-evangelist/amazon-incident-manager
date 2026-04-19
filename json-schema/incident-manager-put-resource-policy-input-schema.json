@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-schema/incident-manager-put-resource-policy-input-schema.json",
+  "title": "PutResourcePolicyInput",
+  "description": "PutResourcePolicyInput schema",
+  "type": "object",
+  "properties": {
+    "policy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Policy"
+        },
+        {
+          "description": "Details of the resource policy."
+        }
+      ]
+    },
+    "resourceArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the response plan to add the resource policy to."
+        }
+      ]
+    }
+  },
+  "required": [
+    "policy",
+    "resourceArn"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-structure/incident-manager-pager-duty-configuration-structure.json",
+  "name": "PagerDutyConfiguration",
+  "description": "Details about the PagerDuty configuration for a response plan.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PagerDutyConfigurationNameString"
+        },
+        {
+          "description": "The name of the PagerDuty configuration."
+        }
+      ]
+    },
+    "pagerDutyIncidentConfiguration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PagerDutyIncidentConfiguration"
+        },
+        {
+          "description": "Details about the PagerDuty service associated with the configuration."
+        }
+      ]
+    },
+    "secretId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PagerDutyConfigurationSecretIdString"
+        },
+        {
+          "description": "The ID of the Amazon Web Services Secrets Manager secret that stores your PagerDuty key, either a General Access REST API Key or User Token REST API Key, and other user credentials."
+        }
+      ]
+    }
+  },
+  "required": [
+    "name",
+    "pagerDutyIncidentConfiguration",
+    "secretId"
+  ]
+}

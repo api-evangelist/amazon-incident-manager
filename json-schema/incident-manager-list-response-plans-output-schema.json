@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-schema/incident-manager-list-response-plans-output-schema.json",
+  "title": "ListResponsePlansOutput",
+  "description": "ListResponsePlansOutput schema",
+  "type": "object",
+  "properties": {
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "The pagination token to continue to the next page of results."
+        }
+      ]
+    },
+    "responsePlanSummaries": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResponsePlanSummaryList"
+        },
+        {
+          "description": "Details of each response plan."
+        }
+      ]
+    }
+  },
+  "required": [
+    "responsePlanSummaries"
+  ]
+}

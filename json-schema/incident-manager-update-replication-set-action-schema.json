@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-schema/incident-manager-update-replication-set-action-schema.json",
+  "title": "UpdateReplicationSetAction",
+  "description": "Details used when updating the replication set.",
+  "type": "object",
+  "properties": {
+    "addRegionAction": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AddRegionAction"
+        },
+        {
+          "description": "Details about the Amazon Web Services Region that you're adding to the replication set."
+        }
+      ]
+    },
+    "deleteRegionAction": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeleteRegionAction"
+        },
+        {
+          "description": "Details about the Amazon Web Services Region that you're deleting to the replication set."
+        }
+      ]
+    }
+  }
+}

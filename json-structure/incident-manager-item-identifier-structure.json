@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/json-structure/incident-manager-item-identifier-structure.json",
+  "name": "ItemIdentifier",
+  "description": "Details and type of a related item.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ItemType"
+        },
+        {
+          "description": "The type of related item. "
+        }
+      ]
+    },
+    "value": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ItemValue"
+        },
+        {
+          "description": "Details about the related item."
+        }
+      ]
+    }
+  },
+  "required": [
+    "type",
+    "value"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "rawData": "example-value",
+  "source": "example-value",
+  "timestamp": "2025-03-15T14:30:00Z",
+  "triggerArn": "arn:aws:ssm-incidents::123456789012:response-plan/example"
+}

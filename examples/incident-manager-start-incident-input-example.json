@@ -1,0 +1,8 @@
+{
+  "clientToken": "example-value",
+  "impact": "example-value",
+  "relatedItems": "example-value",
+  "responsePlanArn": "arn:aws:ssm-incidents::123456789012:response-plan/example",
+  "title": "example-value",
+  "triggerDetails": "example-value"
+}
