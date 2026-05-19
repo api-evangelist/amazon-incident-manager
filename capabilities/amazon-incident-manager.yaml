@@ -1,0 +1,1351 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: AWS Systems Manager Incident Manager
+  description: 'AWS Systems Manager Incident Manager. 29 operations. Lead operation: Amazon Incident Manager Create Replication
+    Set. Self-contained Naftiko capability covering one Amazon Incident Manager business surface.'
+  tags:
+  - Amazon Incident Manager
+  - AWS Systems Manager Incident Manager
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AMAZON_INCIDENT_MANAGER_API_KEY: AMAZON_INCIDENT_MANAGER_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: amazon-incident-manager
+    baseUri: http://ssm-incidents.{region}.amazonaws.com
+    description: AWS Systems Manager Incident Manager business capability. Self-contained, no shared references.
+    resources:
+    - name: createReplicationSet
+      path: /createReplicationSet
+      operations:
+      - name: createreplicationset
+        method: POST
+        description: Amazon Incident Manager Create Replication Set
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: createResponsePlan
+      path: /createResponsePlan
+      operations:
+      - name: createresponseplan
+        method: POST
+        description: Amazon Incident Manager Create Response Plan
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: createTimelineEvent
+      path: /createTimelineEvent
+      operations:
+      - name: createtimelineevent
+        method: POST
+        description: Amazon Incident Manager Create Timeline Event
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: deleteIncidentRecord
+      path: /deleteIncidentRecord
+      operations:
+      - name: deleteincidentrecord
+        method: POST
+        description: Amazon Incident Manager Delete Incident Record
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: deleteReplicationSet#arn
+      path: /deleteReplicationSet#arn
+      operations:
+      - name: deletereplicationset
+        method: POST
+        description: Amazon Incident Manager Delete Replication Set
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: arn
+          in: query
+          type: string
+          description: The Amazon Resource Name (ARN) of the replication set you're deleting.
+          required: true
+    - name: deleteResourcePolicy
+      path: /deleteResourcePolicy
+      operations:
+      - name: deleteresourcepolicy
+        method: POST
+        description: Amazon Incident Manager Delete Resource Policy
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: deleteResponsePlan
+      path: /deleteResponsePlan
+      operations:
+      - name: deleteresponseplan
+        method: POST
+        description: Amazon Incident Manager Delete Response Plan
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: deleteTimelineEvent
+      path: /deleteTimelineEvent
+      operations:
+      - name: deletetimelineevent
+        method: POST
+        description: Amazon Incident Manager Delete Timeline Event
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: getIncidentRecord#arn
+      path: /getIncidentRecord#arn
+      operations:
+      - name: getincidentrecord
+        method: GET
+        description: Amazon Incident Manager Get Incident Record
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: arn
+          in: query
+          type: string
+          description: The Amazon Resource Name (ARN) of the incident record.
+          required: true
+    - name: getReplicationSet#arn
+      path: /getReplicationSet#arn
+      operations:
+      - name: getreplicationset
+        method: GET
+        description: Amazon Incident Manager Get Replication Set
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: arn
+          in: query
+          type: string
+          description: The Amazon Resource Name (ARN) of the replication set you want to retrieve.
+          required: true
+    - name: getResourcePolicies#resourceArn
+      path: /getResourcePolicies#resourceArn
+      operations:
+      - name: getresourcepolicies
+        method: POST
+        description: Amazon Incident Manager Get Resource Policies
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceArn
+          in: query
+          type: string
+          description: The Amazon Resource Name (ARN) of the response plan with the attached resource policy.
+          required: true
+        - name: maxResults
+          in: query
+          type: string
+          description: Pagination limit
+        - name: nextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: getResponsePlan#arn
+      path: /getResponsePlan#arn
+      operations:
+      - name: getresponseplan
+        method: GET
+        description: Amazon Incident Manager Get Response Plan
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: arn
+          in: query
+          type: string
+          description: The Amazon Resource Name (ARN) of the response plan.
+          required: true
+    - name: getTimelineEvent#eventId&incidentRecordArn
+      path: /getTimelineEvent#eventId&incidentRecordArn
+      operations:
+      - name: gettimelineevent
+        method: GET
+        description: Amazon Incident Manager Get Timeline Event
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: eventId
+          in: query
+          type: string
+          description: The ID of the event. You can get an event's ID when you create it, or by using <code>ListTimelineEvents</code>.
+          required: true
+        - name: incidentRecordArn
+          in: query
+          type: string
+          description: The Amazon Resource Name (ARN) of the incident that includes the timeline event.
+          required: true
+    - name: listIncidentRecords
+      path: /listIncidentRecords
+      operations:
+      - name: listincidentrecords
+        method: POST
+        description: Amazon Incident Manager List Incident Records
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: maxResults
+          in: query
+          type: string
+          description: Pagination limit
+        - name: nextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: listRelatedItems
+      path: /listRelatedItems
+      operations:
+      - name: listrelateditems
+        method: POST
+        description: Amazon Incident Manager List Related Items
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: maxResults
+          in: query
+          type: string
+          description: Pagination limit
+        - name: nextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: listReplicationSets
+      path: /listReplicationSets
+      operations:
+      - name: listreplicationsets
+        method: POST
+        description: Amazon Incident Manager List Replication Sets
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: maxResults
+          in: query
+          type: string
+          description: Pagination limit
+        - name: nextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: listResponsePlans
+      path: /listResponsePlans
+      operations:
+      - name: listresponseplans
+        method: POST
+        description: Amazon Incident Manager List Response Plans
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: maxResults
+          in: query
+          type: string
+          description: Pagination limit
+        - name: nextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: listTimelineEvents
+      path: /listTimelineEvents
+      operations:
+      - name: listtimelineevents
+        method: POST
+        description: Amazon Incident Manager List Timeline Events
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: maxResults
+          in: query
+          type: string
+          description: Pagination limit
+        - name: nextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: putResourcePolicy
+      path: /putResourcePolicy
+      operations:
+      - name: putresourcepolicy
+        method: POST
+        description: Amazon Incident Manager Put Resource Policy
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: startIncident
+      path: /startIncident
+      operations:
+      - name: startincident
+        method: POST
+        description: Amazon Incident Manager Start Incident
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: tags-resourceArn
+      path: /tags/{resourceArn}
+      operations:
+      - name: listtagsforresource
+        method: GET
+        description: Amazon Incident Manager List Tags for Resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceArn
+          in: path
+          type: string
+          description: The Amazon Resource Name (ARN) of the response plan.
+          required: true
+      - name: tagresource
+        method: POST
+        description: Amazon Incident Manager Tag Resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceArn
+          in: path
+          type: string
+          description: The Amazon Resource Name (ARN) of the response plan you're adding the tags to.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: tags-resourceArn}#tagKeys
+      path: /tags/{resourceArn}#tagKeys
+      operations:
+      - name: untagresource
+        method: DELETE
+        description: Amazon Incident Manager Untag Resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceArn
+          in: path
+          type: string
+          description: The Amazon Resource Name (ARN) of the response plan you're removing a tag from.
+          required: true
+        - name: tagKeys
+          in: query
+          type: array
+          description: The name of the tag to remove from the response plan.
+          required: true
+    - name: updateDeletionProtection
+      path: /updateDeletionProtection
+      operations:
+      - name: updatedeletionprotection
+        method: POST
+        description: Amazon Incident Manager Update Deletion Protection
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: updateIncidentRecord
+      path: /updateIncidentRecord
+      operations:
+      - name: updateincidentrecord
+        method: POST
+        description: Amazon Incident Manager Update Incident Record
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: updateRelatedItems
+      path: /updateRelatedItems
+      operations:
+      - name: updaterelateditems
+        method: POST
+        description: Amazon Incident Manager Update Related Items
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: updateReplicationSet
+      path: /updateReplicationSet
+      operations:
+      - name: updatereplicationset
+        method: POST
+        description: Amazon Incident Manager Update Replication Set
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: updateResponsePlan
+      path: /updateResponsePlan
+      operations:
+      - name: updateresponseplan
+        method: POST
+        description: Amazon Incident Manager Update Response Plan
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: updateTimelineEvent
+      path: /updateTimelineEvent
+      operations:
+      - name: updatetimelineevent
+        method: POST
+        description: Amazon Incident Manager Update Timeline Event
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.AMAZON_INCIDENT_MANAGER_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: amazon-incident-manager-rest
+    port: 8080
+    description: REST adapter for AWS Systems Manager Incident Manager. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/createreplicationset
+      name: createreplicationset
+      description: REST surface for createReplicationSet.
+      operations:
+      - method: POST
+        name: createreplicationset
+        description: Amazon Incident Manager Create Replication Set
+        call: amazon-incident-manager.createreplicationset
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/createresponseplan
+      name: createresponseplan
+      description: REST surface for createResponsePlan.
+      operations:
+      - method: POST
+        name: createresponseplan
+        description: Amazon Incident Manager Create Response Plan
+        call: amazon-incident-manager.createresponseplan
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/createtimelineevent
+      name: createtimelineevent
+      description: REST surface for createTimelineEvent.
+      operations:
+      - method: POST
+        name: createtimelineevent
+        description: Amazon Incident Manager Create Timeline Event
+        call: amazon-incident-manager.createtimelineevent
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/deleteincidentrecord
+      name: deleteincidentrecord
+      description: REST surface for deleteIncidentRecord.
+      operations:
+      - method: POST
+        name: deleteincidentrecord
+        description: Amazon Incident Manager Delete Incident Record
+        call: amazon-incident-manager.deleteincidentrecord
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/deletereplicationset-arn
+      name: deletereplicationset-arn
+      description: REST surface for deleteReplicationSet#arn.
+      operations:
+      - method: POST
+        name: deletereplicationset
+        description: Amazon Incident Manager Delete Replication Set
+        call: amazon-incident-manager.deletereplicationset
+        with:
+          arn: rest.arn
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/deleteresourcepolicy
+      name: deleteresourcepolicy
+      description: REST surface for deleteResourcePolicy.
+      operations:
+      - method: POST
+        name: deleteresourcepolicy
+        description: Amazon Incident Manager Delete Resource Policy
+        call: amazon-incident-manager.deleteresourcepolicy
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/deleteresponseplan
+      name: deleteresponseplan
+      description: REST surface for deleteResponsePlan.
+      operations:
+      - method: POST
+        name: deleteresponseplan
+        description: Amazon Incident Manager Delete Response Plan
+        call: amazon-incident-manager.deleteresponseplan
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/deletetimelineevent
+      name: deletetimelineevent
+      description: REST surface for deleteTimelineEvent.
+      operations:
+      - method: POST
+        name: deletetimelineevent
+        description: Amazon Incident Manager Delete Timeline Event
+        call: amazon-incident-manager.deletetimelineevent
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/getincidentrecord-arn
+      name: getincidentrecord-arn
+      description: REST surface for getIncidentRecord#arn.
+      operations:
+      - method: GET
+        name: getincidentrecord
+        description: Amazon Incident Manager Get Incident Record
+        call: amazon-incident-manager.getincidentrecord
+        with:
+          arn: rest.arn
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/getreplicationset-arn
+      name: getreplicationset-arn
+      description: REST surface for getReplicationSet#arn.
+      operations:
+      - method: GET
+        name: getreplicationset
+        description: Amazon Incident Manager Get Replication Set
+        call: amazon-incident-manager.getreplicationset
+        with:
+          arn: rest.arn
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/getresourcepolicies-resourcearn
+      name: getresourcepolicies-resourcearn
+      description: REST surface for getResourcePolicies#resourceArn.
+      operations:
+      - method: POST
+        name: getresourcepolicies
+        description: Amazon Incident Manager Get Resource Policies
+        call: amazon-incident-manager.getresourcepolicies
+        with:
+          resourceArn: rest.resourceArn
+          maxResults: rest.maxResults
+          nextToken: rest.nextToken
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/getresponseplan-arn
+      name: getresponseplan-arn
+      description: REST surface for getResponsePlan#arn.
+      operations:
+      - method: GET
+        name: getresponseplan
+        description: Amazon Incident Manager Get Response Plan
+        call: amazon-incident-manager.getresponseplan
+        with:
+          arn: rest.arn
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/gettimelineevent-eventid-incidentrecordarn
+      name: gettimelineevent-eventid-incidentrecordarn
+      description: REST surface for getTimelineEvent#eventId&incidentRecordArn.
+      operations:
+      - method: GET
+        name: gettimelineevent
+        description: Amazon Incident Manager Get Timeline Event
+        call: amazon-incident-manager.gettimelineevent
+        with:
+          eventId: rest.eventId
+          incidentRecordArn: rest.incidentRecordArn
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/listincidentrecords
+      name: listincidentrecords
+      description: REST surface for listIncidentRecords.
+      operations:
+      - method: POST
+        name: listincidentrecords
+        description: Amazon Incident Manager List Incident Records
+        call: amazon-incident-manager.listincidentrecords
+        with:
+          maxResults: rest.maxResults
+          nextToken: rest.nextToken
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/listrelateditems
+      name: listrelateditems
+      description: REST surface for listRelatedItems.
+      operations:
+      - method: POST
+        name: listrelateditems
+        description: Amazon Incident Manager List Related Items
+        call: amazon-incident-manager.listrelateditems
+        with:
+          maxResults: rest.maxResults
+          nextToken: rest.nextToken
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/listreplicationsets
+      name: listreplicationsets
+      description: REST surface for listReplicationSets.
+      operations:
+      - method: POST
+        name: listreplicationsets
+        description: Amazon Incident Manager List Replication Sets
+        call: amazon-incident-manager.listreplicationsets
+        with:
+          maxResults: rest.maxResults
+          nextToken: rest.nextToken
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/listresponseplans
+      name: listresponseplans
+      description: REST surface for listResponsePlans.
+      operations:
+      - method: POST
+        name: listresponseplans
+        description: Amazon Incident Manager List Response Plans
+        call: amazon-incident-manager.listresponseplans
+        with:
+          maxResults: rest.maxResults
+          nextToken: rest.nextToken
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/listtimelineevents
+      name: listtimelineevents
+      description: REST surface for listTimelineEvents.
+      operations:
+      - method: POST
+        name: listtimelineevents
+        description: Amazon Incident Manager List Timeline Events
+        call: amazon-incident-manager.listtimelineevents
+        with:
+          maxResults: rest.maxResults
+          nextToken: rest.nextToken
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/putresourcepolicy
+      name: putresourcepolicy
+      description: REST surface for putResourcePolicy.
+      operations:
+      - method: POST
+        name: putresourcepolicy
+        description: Amazon Incident Manager Put Resource Policy
+        call: amazon-incident-manager.putresourcepolicy
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/startincident
+      name: startincident
+      description: REST surface for startIncident.
+      operations:
+      - method: POST
+        name: startincident
+        description: Amazon Incident Manager Start Incident
+        call: amazon-incident-manager.startincident
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/tags/{resourcearn}
+      name: tags-resourcearn
+      description: REST surface for tags-resourceArn.
+      operations:
+      - method: GET
+        name: listtagsforresource
+        description: Amazon Incident Manager List Tags for Resource
+        call: amazon-incident-manager.listtagsforresource
+        with:
+          resourceArn: rest.resourceArn
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: tagresource
+        description: Amazon Incident Manager Tag Resource
+        call: amazon-incident-manager.tagresource
+        with:
+          resourceArn: rest.resourceArn
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/tags/resourcearn-tagkeys
+      name: tags-resourcearn-tagkeys
+      description: REST surface for tags-resourceArn}#tagKeys.
+      operations:
+      - method: DELETE
+        name: untagresource
+        description: Amazon Incident Manager Untag Resource
+        call: amazon-incident-manager.untagresource
+        with:
+          resourceArn: rest.resourceArn
+          tagKeys: rest.tagKeys
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/updatedeletionprotection
+      name: updatedeletionprotection
+      description: REST surface for updateDeletionProtection.
+      operations:
+      - method: POST
+        name: updatedeletionprotection
+        description: Amazon Incident Manager Update Deletion Protection
+        call: amazon-incident-manager.updatedeletionprotection
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/updateincidentrecord
+      name: updateincidentrecord
+      description: REST surface for updateIncidentRecord.
+      operations:
+      - method: POST
+        name: updateincidentrecord
+        description: Amazon Incident Manager Update Incident Record
+        call: amazon-incident-manager.updateincidentrecord
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/updaterelateditems
+      name: updaterelateditems
+      description: REST surface for updateRelatedItems.
+      operations:
+      - method: POST
+        name: updaterelateditems
+        description: Amazon Incident Manager Update Related Items
+        call: amazon-incident-manager.updaterelateditems
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/updatereplicationset
+      name: updatereplicationset
+      description: REST surface for updateReplicationSet.
+      operations:
+      - method: POST
+        name: updatereplicationset
+        description: Amazon Incident Manager Update Replication Set
+        call: amazon-incident-manager.updatereplicationset
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/updateresponseplan
+      name: updateresponseplan
+      description: REST surface for updateResponsePlan.
+      operations:
+      - method: POST
+        name: updateresponseplan
+        description: Amazon Incident Manager Update Response Plan
+        call: amazon-incident-manager.updateresponseplan
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/updatetimelineevent
+      name: updatetimelineevent
+      description: REST surface for updateTimelineEvent.
+      operations:
+      - method: POST
+        name: updatetimelineevent
+        description: Amazon Incident Manager Update Timeline Event
+        call: amazon-incident-manager.updatetimelineevent
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: amazon-incident-manager-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for AWS Systems Manager Incident Manager. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: amazon-incident-manager-create-replication
+      description: Amazon Incident Manager Create Replication Set
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-incident-manager.createreplicationset
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-incident-manager-create-response
+      description: Amazon Incident Manager Create Response Plan
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-incident-manager.createresponseplan
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-incident-manager-create-timeline
+      description: Amazon Incident Manager Create Timeline Event
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-incident-manager.createtimelineevent
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-incident-manager-delete-incident
+      description: Amazon Incident Manager Delete Incident Record
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-incident-manager.deleteincidentrecord
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-incident-manager-delete-replication
+      description: Amazon Incident Manager Delete Replication Set
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-incident-manager.deletereplicationset
+      with:
+        arn: tools.arn
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-incident-manager-delete-resource
+      description: Amazon Incident Manager Delete Resource Policy
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-incident-manager.deleteresourcepolicy
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-incident-manager-delete-response
+      description: Amazon Incident Manager Delete Response Plan
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-incident-manager.deleteresponseplan
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-incident-manager-delete-timeline
+      description: Amazon Incident Manager Delete Timeline Event
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-incident-manager.deletetimelineevent
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-incident-manager-get-incident
+      description: Amazon Incident Manager Get Incident Record
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-incident-manager.getincidentrecord
+      with:
+        arn: tools.arn
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-incident-manager-get-replication
+      description: Amazon Incident Manager Get Replication Set
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-incident-manager.getreplicationset
+      with:
+        arn: tools.arn
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-incident-manager-get-resource
+      description: Amazon Incident Manager Get Resource Policies
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-incident-manager.getresourcepolicies
+      with:
+        resourceArn: tools.resourceArn
+        maxResults: tools.maxResults
+        nextToken: tools.nextToken
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-incident-manager-get-response
+      description: Amazon Incident Manager Get Response Plan
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-incident-manager.getresponseplan
+      with:
+        arn: tools.arn
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-incident-manager-get-timeline
+      description: Amazon Incident Manager Get Timeline Event
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-incident-manager.gettimelineevent
+      with:
+        eventId: tools.eventId
+        incidentRecordArn: tools.incidentRecordArn
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-incident-manager-list-incident
+      description: Amazon Incident Manager List Incident Records
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-incident-manager.listincidentrecords
+      with:
+        maxResults: tools.maxResults
+        nextToken: tools.nextToken
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-incident-manager-list-related
+      description: Amazon Incident Manager List Related Items
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-incident-manager.listrelateditems
+      with:
+        maxResults: tools.maxResults
+        nextToken: tools.nextToken
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-incident-manager-list-replication
+      description: Amazon Incident Manager List Replication Sets
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-incident-manager.listreplicationsets
+      with:
+        maxResults: tools.maxResults
+        nextToken: tools.nextToken
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-incident-manager-list-response
+      description: Amazon Incident Manager List Response Plans
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-incident-manager.listresponseplans
+      with:
+        maxResults: tools.maxResults
+        nextToken: tools.nextToken
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-incident-manager-list-timeline
+      description: Amazon Incident Manager List Timeline Events
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-incident-manager.listtimelineevents
+      with:
+        maxResults: tools.maxResults
+        nextToken: tools.nextToken
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-incident-manager-put-resource
+      description: Amazon Incident Manager Put Resource Policy
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-incident-manager.putresourcepolicy
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-incident-manager-start-incident
+      description: Amazon Incident Manager Start Incident
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-incident-manager.startincident
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-incident-manager-list-tags
+      description: Amazon Incident Manager List Tags for Resource
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-incident-manager.listtagsforresource
+      with:
+        resourceArn: tools.resourceArn
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-incident-manager-tag-resource
+      description: Amazon Incident Manager Tag Resource
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-incident-manager.tagresource
+      with:
+        resourceArn: tools.resourceArn
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-incident-manager-untag-resource
+      description: Amazon Incident Manager Untag Resource
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: amazon-incident-manager.untagresource
+      with:
+        resourceArn: tools.resourceArn
+        tagKeys: tools.tagKeys
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-incident-manager-update-deletion
+      description: Amazon Incident Manager Update Deletion Protection
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-incident-manager.updatedeletionprotection
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-incident-manager-update-incident
+      description: Amazon Incident Manager Update Incident Record
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-incident-manager.updateincidentrecord
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-incident-manager-update-related
+      description: Amazon Incident Manager Update Related Items
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-incident-manager.updaterelateditems
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-incident-manager-update-replication
+      description: Amazon Incident Manager Update Replication Set
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-incident-manager.updatereplicationset
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-incident-manager-update-response
+      description: Amazon Incident Manager Update Response Plan
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-incident-manager.updateresponseplan
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-incident-manager-update-timeline
+      description: Amazon Incident Manager Update Timeline Event
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-incident-manager.updatetimelineevent
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
