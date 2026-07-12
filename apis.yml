@@ -40,6 +40,14 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/amazon-incident-manager.yaml
 common:
+- type: TrustCenter
+  url: security/amazon-incident-manager-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/amazon-incident-manager-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/amazon-incident-manager-domain-security.yml
+- type: Authentication
+  url: authentication/amazon-incident-manager-authentication.yml
 - type: Portal
   url: https://aws.amazon.com/systems-manager/features/#Incident_Manager
 - type: Website
