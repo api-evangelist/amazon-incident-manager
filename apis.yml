@@ -40,6 +40,8 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/amazon-incident-manager.yaml
 common:
+- type: AgenticAccess
+  url: agentic-access/amazon-incident-manager-agentic-access.yml
 - type: TrustCenter
   url: security/amazon-incident-manager-trust-center.yml
 - type: VulnerabilityDisclosure
