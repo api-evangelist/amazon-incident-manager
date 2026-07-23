@@ -1,0 +1,550 @@
+openapi: 3.0.0
+info:
+  version: 2018-05-10
+  x-release: v4
+  title: AWS Systems Manager Incident Manager CreateReplicationSet CreateResponsePlan API
+  description: <p>Systems Manager Incident Manager is an incident management console designed to help users mitigate and recover from incidents affecting their Amazon Web Services-hosted applications. An incident is any unplanned interruption or reduction in quality of services. </p> <p>Incident Manager increases incident resolution by notifying responders of impact, highlighting relevant troubleshooting data, and providing collaboration tools to get services back up and running. To achieve the primary goal of reducing the time-to-resolution of critical incidents, Incident Manager automates response plans and enables responder team escalation. </p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: ssm-incidents
+  x-aws-signingName: ssm-incidents
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/ssm-incidents-2018-05-10.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://ssm-incidents.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The SSM Incidents multi-region endpoint
+- url: https://ssm-incidents.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The SSM Incidents multi-region endpoint
+- url: http://ssm-incidents.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The SSM Incidents endpoint for China (Beijing) and China (Ningxia)
+- url: https://ssm-incidents.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The SSM Incidents endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: CreateResponsePlan
+paths:
+  /createResponsePlan:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: CreateResponsePlan
+      description: Creates a response plan that automates the initial response to incidents. A response plan engages contacts, starts chat channel collaboration, and initiates runbooks at the beginning of an incident.
+      responses:
+        '201':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateResponsePlanOutput'
+        '480':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+        '481':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+        '482':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+        '483':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '484':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+        '485':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - incidentTemplate
+              - name
+              properties:
+                actions:
+                  description: The actions that the response plan starts at the beginning of an incident.
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Action'
+                  minItems: 0
+                  maxItems: 1
+                chatChannel:
+                  description: The Chatbot chat channel used for collaboration during an incident.
+                  type: object
+                  properties:
+                    chatbotSns:
+                      allOf:
+                      - $ref: '#/components/schemas/ChatbotSnsConfigurationSet'
+                      - description: 'The Amazon SNS targets that Chatbot uses to notify the chat channel of updates to an incident. You can also make updates to the incident through the chat channel by using the Amazon SNS topics. '
+                    empty:
+                      allOf:
+                      - $ref: '#/components/schemas/EmptyChatChannel'
+                      - description: Used to remove the chat channel from an incident record or response plan.
+                clientToken:
+                  description: A token ensuring that the operation is called only once with the specified details.
+                  type: string
+                  minLength: 0
+                  maxLength: 128
+                displayName:
+                  description: The long format of the response plan name. This field can contain spaces.
+                  type: string
+                  minLength: 0
+                  maxLength: 200
+                engagements:
+                  description: The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/SsmContactsArn'
+                  minItems: 0
+                  maxItems: 5
+                incidentTemplate:
+                  description: Basic details used in creating a response plan. The response plan is then used to create an incident record.
+                  type: object
+                  properties:
+                    dedupeString:
+                      allOf:
+                      - $ref: '#/components/schemas/DedupeString'
+                      - description: 'Used to stop Incident Manager from creating multiple incident records for the same incident. '
+                    impact:
+                      allOf:
+                      - $ref: '#/components/schemas/Impact'
+                      - description: 'The impact of the incident on your customers and applications. '
+                    incidentTags:
+                      allOf:
+                      - $ref: '#/components/schemas/TagMap'
+                      - description: Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager assigns the tags specified in the template to the incident.
+                    notificationTargets:
+                      allOf:
+                      - $ref: '#/components/schemas/NotificationTargetSet'
+                      - description: The Amazon SNS targets that are notified when updates are made to an incident.
+                    summary:
+                      allOf:
+                      - $ref: '#/components/schemas/IncidentSummary'
+                      - description: The summary of the incident. The summary is a brief synopsis of what occurred, what's currently happening, and context.
+                    title:
+                      allOf:
+                      - $ref: '#/components/schemas/IncidentTitle'
+                      - description: 'The title of the incident. '
+                integrations:
+                  description: Information about third-party services integrated into the response plan.
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Integration'
+                  minItems: 0
+                  maxItems: 1
+                name:
+                  description: The short format name of the response plan. Can't include spaces.
+                  type: string
+                  pattern: ^[a-zA-Z0-9-_]*$
+                  minLength: 1
+                  maxLength: 200
+                tags:
+                  description: A list of tags that you are adding to the response plan.
+                  type: object
+                  minProperties: 1
+                  maxProperties: 50
+                  additionalProperties:
+                    $ref: '#/components/schemas/TagValue'
+      summary: Amazon Incident Manager Create Response Plan
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - CreateResponsePlan
+components:
+  schemas:
+    RoleArn:
+      type: string
+      pattern: ^arn:aws(-cn|-us-gov)?:iam::([0-9]{12})?:role/.+$
+      minLength: 0
+      maxLength: 1000
+    NotificationTargetSet:
+      type: array
+      items:
+        $ref: '#/components/schemas/NotificationTargetItem'
+      minItems: 0
+      maxItems: 10
+    NotificationTargetItem:
+      type: object
+      properties:
+        snsTopicArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The Amazon Resource Name (ARN) of the SNS topic.
+      description: The SNS targets that are notified when updates are made to an incident.
+    Integration:
+      type: object
+      properties:
+        pagerDutyConfiguration:
+          allOf:
+          - $ref: '#/components/schemas/PagerDutyConfiguration'
+          - description: Information about the PagerDuty service where the response plan creates an incident.
+      description: Information about third-party services integrated into a response plan.
+    AccessDeniedException: {}
+    SsmAutomationDocumentNameString:
+      type: string
+      pattern: ^[a-zA-Z0-9_\-.:/]{3,128}$
+    IncidentSummary:
+      type: string
+      minLength: 0
+      maxLength: 8000
+    IncidentTitle:
+      type: string
+      minLength: 0
+      maxLength: 200
+    PagerDutyConfigurationSecretIdString:
+      type: string
+      minLength: 1
+      maxLength: 512
+    PagerDutyConfigurationNameString:
+      type: string
+      minLength: 1
+      maxLength: 200
+    CreateResponsePlanOutput:
+      type: object
+      required:
+      - arn
+      properties:
+        arn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The Amazon Resource Name (ARN) of the response plan.
+    ThrottlingException: {}
+    ConflictException: {}
+    VariableType:
+      type: string
+      enum:
+      - INCIDENT_RECORD_ARN
+      - INVOLVED_RESOURCES
+    SsmAutomation:
+      type: object
+      required:
+      - documentName
+      - roleArn
+      properties:
+        documentName:
+          allOf:
+          - $ref: '#/components/schemas/SsmAutomationDocumentNameString'
+          - description: The automation document's name.
+        documentVersion:
+          allOf:
+          - $ref: '#/components/schemas/SsmAutomationDocumentVersionString'
+          - description: The automation document's version to use when running.
+        dynamicParameters:
+          allOf:
+          - $ref: '#/components/schemas/DynamicSsmParameters'
+          - description: The key-value pair to resolve dynamic parameter values when processing a Systems Manager Automation runbook.
+        parameters:
+          allOf:
+          - $ref: '#/components/schemas/SsmParameters'
+          - description: The key-value pair parameters to use when running the automation document.
+        roleArn:
+          allOf:
+          - $ref: '#/components/schemas/RoleArn'
+          - description: The Amazon Resource Name (ARN) of the role that the automation document will assume when running commands.
+        targetAccount:
+          allOf:
+          - $ref: '#/components/schemas/SsmTargetAccount'
+          - description: The account that the automation document will be run in. This can be in either the management account or an application account.
+      description: Details about the Systems Manager automation document that will be used as a runbook during an incident.
+    SsmContactsArn:
+      type: string
+      pattern: ^arn:aws(-cn|-us-gov)?:ssm-contacts:[a-z0-9-]*:([0-9]{12}):contact/[a-z0-9_-]+$
+      minLength: 0
+      maxLength: 2048
+    Arn:
+      type: string
+      pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
+      minLength: 0
+      maxLength: 1000
+    PagerDutyConfiguration:
+      type: object
+      required:
+      - name
+      - pagerDutyIncidentConfiguration
+      - secretId
+      properties:
+        name:
+          allOf:
+          - $ref: '#/components/schemas/PagerDutyConfigurationNameString'
+          - description: The name of the PagerDuty configuration.
+        pagerDutyIncidentConfiguration:
+          allOf:
+          - $ref: '#/components/schemas/PagerDutyIncidentConfiguration'
+          - description: Details about the PagerDuty service associated with the configuration.
+        secretId:
+          allOf:
+          - $ref: '#/components/schemas/PagerDutyConfigurationSecretIdString'
+          - description: The ID of the Amazon Web Services Secrets Manager secret that stores your PagerDuty key, either a General Access REST API Key or User Token REST API Key, and other user credentials.
+      description: Details about the PagerDuty configuration for a response plan.
+    DynamicSsmParameters:
+      type: object
+      minProperties: 1
+      maxProperties: 200
+      additionalProperties:
+        $ref: '#/components/schemas/DynamicSsmParameterValue'
+    SsmParameters:
+      type: object
+      minProperties: 1
+      maxProperties: 200
+      additionalProperties:
+        $ref: '#/components/schemas/SsmParameterValues'
+    TagMap:
+      type: object
+      minProperties: 1
+      maxProperties: 50
+      additionalProperties:
+        $ref: '#/components/schemas/TagValue'
+    SsmParameterValuesMemberString:
+      type: string
+      minLength: 0
+      maxLength: 512
+    SsmAutomationDocumentVersionString:
+      type: string
+      minLength: 0
+      maxLength: 128
+    DynamicSsmParameterValue:
+      type: object
+      properties:
+        variable:
+          allOf:
+          - $ref: '#/components/schemas/VariableType'
+          - description: Variable dynamic parameters. A parameter value is determined when an incident is created.
+      description: The dynamic SSM parameter value.
+    PagerDutyIncidentConfiguration:
+      type: object
+      required:
+      - serviceId
+      properties:
+        serviceId:
+          allOf:
+          - $ref: '#/components/schemas/PagerDutyIncidentConfigurationServiceIdString'
+          - description: The ID of the PagerDuty service that the response plan associates with an incident when it launches.
+      description: Details about the PagerDuty service where the response plan creates an incident.
+    Action:
+      type: object
+      properties:
+        ssmAutomation:
+          allOf:
+          - $ref: '#/components/schemas/SsmAutomation'
+          - description: The Systems Manager automation document to start as the runbook at the beginning of the incident.
+      description: The action that starts at the beginning of an incident. The response plan defines the action.
+    SnsArn:
+      type: string
+      minLength: 0
+      maxLength: 1000
+    EmptyChatChannel:
+      type: object
+      properties: {}
+      description: Used to remove the chat channel from an incident record or response plan.
+    PagerDutyIncidentConfigurationServiceIdString:
+      type: string
+      minLength: 1
+      maxLength: 200
+    InternalServerException: {}
+    SsmTargetAccount:
+      type: string
+      enum:
+      - RESPONSE_PLAN_OWNER_ACCOUNT
+      - IMPACTED_ACCOUNT
+    Impact:
+      type: integer
+      minimum: 1
+      maximum: 5
+    ChatbotSnsConfigurationSet:
+      type: array
+      items:
+        $ref: '#/components/schemas/SnsArn'
+      minItems: 1
+      maxItems: 5
+    ResourceNotFoundException: {}
+    ValidationException: {}
+    DedupeString:
+      type: string
+      minLength: 0
+      maxLength: 1000
+    TagValue:
+      type: string
+      pattern: ^[A-Za-z0-9 _=@:.+-/]*$
+      minLength: 0
+      maxLength: 256
+    SsmParameterValues:
+      type: array
+      items:
+        $ref: '#/components/schemas/SsmParameterValuesMemberString'
+      minItems: 0
+      maxItems: 100
+  parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/ssm-incidents/
+x-hasEquivalentPaths: true

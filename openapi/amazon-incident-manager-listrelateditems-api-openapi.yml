@@ -1,0 +1,402 @@
+openapi: 3.0.0
+info:
+  version: 2018-05-10
+  x-release: v4
+  title: AWS Systems Manager Incident Manager CreateReplicationSet ListRelatedItems API
+  description: <p>Systems Manager Incident Manager is an incident management console designed to help users mitigate and recover from incidents affecting their Amazon Web Services-hosted applications. An incident is any unplanned interruption or reduction in quality of services. </p> <p>Incident Manager increases incident resolution by notifying responders of impact, highlighting relevant troubleshooting data, and providing collaboration tools to get services back up and running. To achieve the primary goal of reducing the time-to-resolution of critical incidents, Incident Manager automates response plans and enables responder team escalation. </p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: ssm-incidents
+  x-aws-signingName: ssm-incidents
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/ssm-incidents-2018-05-10.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://ssm-incidents.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The SSM Incidents multi-region endpoint
+- url: https://ssm-incidents.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The SSM Incidents multi-region endpoint
+- url: http://ssm-incidents.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The SSM Incidents endpoint for China (Beijing) and China (Ningxia)
+- url: https://ssm-incidents.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The SSM Incidents endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: ListRelatedItems
+paths:
+  /listRelatedItems:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: ListRelatedItems
+      description: List all related items for an incident record.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListRelatedItemsOutput'
+        '480':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+        '481':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+        '482':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '483':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+      parameters:
+      - name: maxResults
+        in: query
+        schema:
+          type: string
+        description: Pagination limit
+        required: false
+      - name: nextToken
+        in: query
+        schema:
+          type: string
+        description: Pagination token
+        required: false
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - incidentRecordArn
+              properties:
+                incidentRecordArn:
+                  description: The Amazon Resource Name (ARN) of the incident record containing the listed related items.
+                  type: string
+                  pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
+                  minLength: 0
+                  maxLength: 1000
+                maxResults:
+                  description: The maximum number of related items per page.
+                  type: integer
+                  minimum: 1
+                  maximum: 100
+                nextToken:
+                  description: The pagination token to continue to the next page of results.
+                  type: string
+                  minLength: 0
+                  maxLength: 2000
+      summary: Amazon Incident Manager List Related Items
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - ListRelatedItems
+components:
+  parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    PagerDutyIncidentDetail:
+      type: object
+      required:
+      - id
+      properties:
+        autoResolve:
+          allOf:
+          - $ref: '#/components/schemas/Boolean'
+          - description: Indicates whether to resolve the PagerDuty incident when you resolve the associated Incident Manager incident.
+        id:
+          allOf:
+          - $ref: '#/components/schemas/PagerDutyIncidentDetailIdString'
+          - description: The ID of the incident associated with the PagerDuty service for the response plan.
+        secretId:
+          allOf:
+          - $ref: '#/components/schemas/PagerDutyIncidentDetailSecretIdString'
+          - description: The ID of the Amazon Web Services Secrets Manager secret that stores your PagerDuty key, either a General Access REST API Key or User Token REST API Key, and other user credentials.
+      description: Details about the PagerDuty incident associated with an incident created by an Incident Manager response plan.
+    ItemValue:
+      type: object
+      properties:
+        arn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The Amazon Resource Name (ARN) of the related item, if the related item is an Amazon resource.
+        metricDefinition:
+          allOf:
+          - $ref: '#/components/schemas/MetricDefinition'
+          - description: The metric definition, if the related item is a metric in Amazon CloudWatch.
+        pagerDutyIncidentDetail:
+          allOf:
+          - $ref: '#/components/schemas/PagerDutyIncidentDetail'
+          - description: Details about an incident that is associated with a PagerDuty incident.
+        url:
+          allOf:
+          - $ref: '#/components/schemas/Url'
+          - description: The URL, if the related item is a non-Amazon Web Services resource.
+      description: Describes a related item.
+    PagerDutyIncidentDetailIdString:
+      type: string
+      minLength: 1
+      maxLength: 200
+    AccessDeniedException: {}
+    ThrottlingException: {}
+    Boolean:
+      type: boolean
+    Arn:
+      type: string
+      pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
+      minLength: 0
+      maxLength: 1000
+    PagerDutyIncidentDetailSecretIdString:
+      type: string
+      minLength: 1
+      maxLength: 512
+    ItemIdentifier:
+      type: object
+      required:
+      - type
+      - value
+      properties:
+        type:
+          allOf:
+          - $ref: '#/components/schemas/ItemType'
+          - description: 'The type of related item. '
+        value:
+          allOf:
+          - $ref: '#/components/schemas/ItemValue'
+          - description: Details about the related item.
+      description: Details and type of a related item.
+    ListRelatedItemsOutput:
+      type: object
+      required:
+      - relatedItems
+      properties:
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The pagination token to continue to the next page of results.
+        relatedItems:
+          allOf:
+          - $ref: '#/components/schemas/RelatedItemList'
+          - description: Details about each related item.
+    RelatedItemTitleString:
+      type: string
+      minLength: 0
+      maxLength: 200
+    RelatedItemList:
+      type: array
+      items:
+        $ref: '#/components/schemas/RelatedItem'
+      minItems: 0
+      maxItems: 100
+    NextToken:
+      type: string
+      minLength: 0
+      maxLength: 2000
+    InternalServerException: {}
+    RelatedItem:
+      type: object
+      required:
+      - identifier
+      properties:
+        generatedId:
+          allOf:
+          - $ref: '#/components/schemas/GeneratedId'
+          - description: <p>A unique ID for a <code>RelatedItem</code>.</p> <important> <p>Don't specify this parameter when you add a <code>RelatedItem</code> by using the <a>UpdateRelatedItems</a> API action.</p> </important>
+        identifier:
+          allOf:
+          - $ref: '#/components/schemas/ItemIdentifier'
+          - description: Details about the related item.
+        title:
+          allOf:
+          - $ref: '#/components/schemas/RelatedItemTitleString'
+          - description: The title of the related item.
+      description: Resources that responders use to triage and mitigate the incident.
+    MetricDefinition:
+      type: string
+      minLength: 0
+      maxLength: 4000
+    GeneratedId:
+      type: string
+      pattern: ^related-item/(ANALYSIS|INCIDENT|METRIC|PARENT|ATTACHMENT|OTHER|AUTOMATION|INVOLVED_RESOURCE|TASK)/([0-9]|[A-F]){32}$
+      minLength: 0
+      maxLength: 200
+    Url:
+      type: string
+      minLength: 0
+      maxLength: 1000
+    ItemType:
+      type: string
+      enum:
+      - ANALYSIS
+      - INCIDENT
+      - METRIC
+      - PARENT
+      - ATTACHMENT
+      - OTHER
+      - AUTOMATION
+      - INVOLVED_RESOURCE
+      - TASK
+    ValidationException: {}
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/ssm-incidents/
+x-hasEquivalentPaths: true

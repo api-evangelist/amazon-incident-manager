@@ -1,0 +1,436 @@
+openapi: 3.0.0
+info:
+  version: 2018-05-10
+  x-release: v4
+  title: AWS Systems Manager Incident Manager CreateReplicationSet GetIncidentRecord#arn API
+  description: <p>Systems Manager Incident Manager is an incident management console designed to help users mitigate and recover from incidents affecting their Amazon Web Services-hosted applications. An incident is any unplanned interruption or reduction in quality of services. </p> <p>Incident Manager increases incident resolution by notifying responders of impact, highlighting relevant troubleshooting data, and providing collaboration tools to get services back up and running. To achieve the primary goal of reducing the time-to-resolution of critical incidents, Incident Manager automates response plans and enables responder team escalation. </p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: ssm-incidents
+  x-aws-signingName: ssm-incidents
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/ssm-incidents-2018-05-10.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://ssm-incidents.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The SSM Incidents multi-region endpoint
+- url: https://ssm-incidents.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The SSM Incidents multi-region endpoint
+- url: http://ssm-incidents.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The SSM Incidents endpoint for China (Beijing) and China (Ningxia)
+- url: https://ssm-incidents.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The SSM Incidents endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: GetIncidentRecord#arn
+paths:
+  /getIncidentRecord#arn:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    get:
+      operationId: GetIncidentRecord
+      description: Returns the details for the specified incident record.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetIncidentRecordOutput'
+        '480':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+        '481':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+        '482':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+        '483':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '484':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+      parameters:
+      - name: arn
+        in: query
+        required: true
+        description: The Amazon Resource Name (ARN) of the incident record.
+        schema:
+          type: string
+          pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
+          minLength: 0
+          maxLength: 1000
+      summary: Amazon Incident Manager Get Incident Record
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - GetIncidentRecord#arn
+components:
+  parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    NotificationTargetSet:
+      type: array
+      items:
+        $ref: '#/components/schemas/NotificationTargetItem'
+      minItems: 0
+      maxItems: 10
+    NotificationTargetItem:
+      type: object
+      properties:
+        snsTopicArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The Amazon Resource Name (ARN) of the SNS topic.
+      description: The SNS targets that are notified when updates are made to an incident.
+    AccessDeniedException: {}
+    IncidentSummary:
+      type: string
+      minLength: 0
+      maxLength: 8000
+    IncidentTitle:
+      type: string
+      minLength: 0
+      maxLength: 200
+    ThrottlingException: {}
+    IncidentRecordSource:
+      type: object
+      required:
+      - createdBy
+      - source
+      properties:
+        createdBy:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The principal that started the incident.
+        invokedBy:
+          allOf:
+          - $ref: '#/components/schemas/ServicePrincipal'
+          - description: The service principal that assumed the role specified in <code>createdBy</code>. If no service principal assumed the role this will be left blank.
+        resourceArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The resource that caused the incident to be created.
+        source:
+          allOf:
+          - $ref: '#/components/schemas/IncidentSource'
+          - description: The service that started the incident. This can be manually created from Incident Manager, automatically created using an Amazon CloudWatch alarm, or Amazon EventBridge event.
+      description: Details about what created the incident record and when it was created.
+    Arn:
+      type: string
+      pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
+      minLength: 0
+      maxLength: 1000
+    Timestamp:
+      type: string
+      format: date-time
+    ServicePrincipal:
+      type: string
+      minLength: 0
+      maxLength: 1000
+    ChatChannel:
+      type: object
+      properties:
+        chatbotSns:
+          allOf:
+          - $ref: '#/components/schemas/ChatbotSnsConfigurationSet'
+          - description: 'The Amazon SNS targets that Chatbot uses to notify the chat channel of updates to an incident. You can also make updates to the incident through the chat channel by using the Amazon SNS topics. '
+        empty:
+          allOf:
+          - $ref: '#/components/schemas/EmptyChatChannel'
+          - description: Used to remove the chat channel from an incident record or response plan.
+      description: The Chatbot chat channel used for collaboration during an incident.
+    GetIncidentRecordOutput:
+      type: object
+      required:
+      - incidentRecord
+      properties:
+        incidentRecord:
+          allOf:
+          - $ref: '#/components/schemas/IncidentRecord'
+          - description: Details the structure of the incident record.
+    SnsArn:
+      type: string
+      minLength: 0
+      maxLength: 1000
+    EmptyChatChannel:
+      type: object
+      properties: {}
+      description: Used to remove the chat channel from an incident record or response plan.
+    IncidentRecordStatus:
+      type: string
+      enum:
+      - OPEN
+      - RESOLVED
+    InternalServerException: {}
+    Impact:
+      type: integer
+      minimum: 1
+      maximum: 5
+    AutomationExecution:
+      type: object
+      properties:
+        ssmExecutionArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The Amazon Resource Name (ARN) of the automation process.
+      description: The Systems Manager automation document process to start as the runbook at the beginning of the incident.
+    IncidentSource:
+      type: string
+      minLength: 0
+      maxLength: 50
+    ChatbotSnsConfigurationSet:
+      type: array
+      items:
+        $ref: '#/components/schemas/SnsArn'
+      minItems: 1
+      maxItems: 5
+    ResourceNotFoundException: {}
+    AutomationExecutionSet:
+      type: array
+      items:
+        $ref: '#/components/schemas/AutomationExecution'
+      minItems: 0
+      maxItems: 100
+    ValidationException: {}
+    DedupeString:
+      type: string
+      minLength: 0
+      maxLength: 1000
+    IncidentRecord:
+      type: object
+      required:
+      - arn
+      - creationTime
+      - dedupeString
+      - impact
+      - incidentRecordSource
+      - lastModifiedBy
+      - lastModifiedTime
+      - status
+      - title
+      properties:
+        arn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The Amazon Resource Name (ARN) of the incident record.
+        automationExecutions:
+          allOf:
+          - $ref: '#/components/schemas/AutomationExecutionSet'
+          - description: The runbook, or automation document, that's run at the beginning of the incident.
+        chatChannel:
+          allOf:
+          - $ref: '#/components/schemas/ChatChannel'
+          - description: The chat channel used for collaboration during an incident.
+        creationTime:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The time that Incident Manager created the incident record.
+        dedupeString:
+          allOf:
+          - $ref: '#/components/schemas/DedupeString'
+          - description: The string Incident Manager uses to prevent duplicate incidents from being created by the same incident in the same account.
+        impact:
+          allOf:
+          - $ref: '#/components/schemas/Impact'
+          - description: The impact of the incident on customers and applications.
+        incidentRecordSource:
+          allOf:
+          - $ref: '#/components/schemas/IncidentRecordSource'
+          - description: Details about the action that started the incident.
+        lastModifiedBy:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: Who modified the incident most recently.
+        lastModifiedTime:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The time at which the incident was most recently modified.
+        notificationTargets:
+          allOf:
+          - $ref: '#/components/schemas/NotificationTargetSet'
+          - description: The Amazon SNS targets that are notified when updates are made to an incident.
+        resolvedTime:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The time at which the incident was resolved. This appears as a timeline event.
+        status:
+          allOf:
+          - $ref: '#/components/schemas/IncidentRecordStatus'
+          - description: The current status of the incident.
+        summary:
+          allOf:
+          - $ref: '#/components/schemas/IncidentSummary'
+          - description: The summary of the incident. The summary is a brief synopsis of what occurred, what's currently happening, and context of the incident.
+        title:
+          allOf:
+          - $ref: '#/components/schemas/IncidentTitle'
+          - description: The title of the incident.
+      description: The record of the incident that's created when an incident occurs.
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/ssm-incidents/
+x-hasEquivalentPaths: true
