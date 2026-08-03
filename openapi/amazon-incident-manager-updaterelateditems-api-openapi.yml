@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  version: 2018-05-10
+  version: "1.0.0"
   x-release: v4
   title: AWS Systems Manager Incident Manager CreateReplicationSet UpdateRelatedItems API
   description: <p>Systems Manager Incident Manager is an incident management console designed to help users mitigate and recover from incidents affecting their Amazon Web Services-hosted applications. An incident is any unplanned interruption or reduction in quality of services. </p> <p>Incident Manager increases incident resolution by notifying responders of impact, highlighting relevant troubleshooting data, and providing collaboration tools to get services back up and running. To achieve the primary goal of reducing the time-to-resolution of critical incidents, Incident Manager automates response plans and enables responder team escalation. </p>
@@ -24,7 +24,6 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/ssm-incidents-2018-05-10.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
-      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct

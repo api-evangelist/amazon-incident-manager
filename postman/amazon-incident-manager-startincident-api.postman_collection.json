@@ -1,0 +1,702 @@
+{
+  "info": {
+    "_postman_id": "fd05232a-0d5f-42dc-8019-7f26e90cf85e",
+    "name": "AWS Systems Manager Incident Manager CreateReplicationSet StartIncident API",
+    "description": "<p>Systems Manager Incident Manager is an incident management console designed to help users mitigate and recover from incidents affecting their Amazon Web Services-hosted applications. An incident is any unplanned interruption or reduction in quality of services. </p> <p>Incident Manager increases incident resolution by notifying responders of impact, highlighting relevant troubleshooting data, and providing collaboration tools to get services back up and running. To achieve the primary goal of reducing the time-to-resolution of critical incidents, Incident Manager automates response plans and enables responder team escalation. </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:27:20.000Z",
+    "updatedAt": "2026-07-28T10:27:21.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-fd05232a-0d5f-42dc-8019-7f26e90cf85e"
+  },
+  "item": [
+    {
+      "name": "startIncident",
+      "item": [
+        {
+          "name": "Amazon Incident Manager Start Incident",
+          "id": "2e03743b-fe92-464c-9a67-8877362fcfc3",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"responsePlanArn\": \"arn:aws:d8gs5o:cs6c8i::]o_{y<\",\n  \"clientToken\": \"<string>\",\n  \"impact\": \"<integer>\",\n  \"relatedItems\": [\n    {\n      \"identifier\": {\n        \"type\": \"PARENT\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:0f2:05o817::&0{,\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/PARENT/6CD0C27DAF3B841518E32616FBFD13FF\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"OTHER\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:0:vqw::GXn>UZ5\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/AUTOMATION/D20350B664AFE2BC5A1EFFAD6FFE1F0E\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INCIDENT\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:nj1qcibj:88dpson9h:735138704898:w\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/METRIC/A648DFED802BF97C93C33708CADCD1BA\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INVOLVED_RESOURCE\",\n        \"value\": {\n          \"arn\": \"arn:aws:b7l-89rb-u:752qa0pzi:065532348437:CCnN(J|j\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ATTACHMENT/C5F760DBBEE4462EFD1E68A84E0B07A5\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"PARENT\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:e4r26d6o2:blz4p9t5ai:396673097835:e\\\\12(?(C\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/METRIC/878A1B8F64FF9E20EF0DFC22C55FCD4C\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INCIDENT\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:a19:xxy2yl:640677682944:jVY1\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ATTACHMENT/3D3FC7BC4A596C1CA3B28ADFEA91C89D\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"TASK\",\n        \"value\": {\n          \"arn\": \"arn:aws-cn:3vv-v47w1t:e61tg::9[P\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INVOLVED_RESOURCE/8D5B3E6B26146F1FEC00FEDD01DC444F\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"TASK\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:x1z5:j7:058093896420:yTT&XpwL\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ANALYSIS/AD53F1F082CBB4FA8FDDFBD28C792BF6\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"TASK\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov::5f7::N^\\\\^\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INCIDENT/DCDDEA3052B02BDEB69D4347E0391DAB\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"AUTOMATION\",\n        \"value\": {\n          \"arn\": \"arn:aws:xg06qa80:uj1q::Nn\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INVOLVED_RESOURCE/BCD370D9C1F6BD4EE33CDBACC73F4FB1\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"ATTACHMENT\",\n        \"value\": {\n          \"arn\": \"arn:aws:s0ozmu9f:hm29bm:418330302703:@=K=<t\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/PARENT/7E1195AE45C4B07DCF4AD6F6F5DB3AC6\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INVOLVED_RESOURCE\",\n        \"value\": {\n          \"arn\": \"arn:aws-cn:agsl:ibuxrwx0n1::0%,t\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ANALYSIS/AA0CC56FEF06ECBE419CAAC62DE6AA1C\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INCIDENT\",\n        \"value\": {\n          \"arn\": \"arn:aws:lgv23-r:-uurvu:091270553142:ac^\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INCIDENT/ABC094CA97085A7AFA0BA08CD04BA58B\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"ANALYSIS\",\n        \"value\": {\n          \"arn\": \"arn:aws:phnmi:6::oMJ\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/TASK/934BC4A7BABF5F46F46FADC5EDAAC5AF\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INVOLVED_RESOURCE\",\n        \"value\": {\n          \"arn\": \"arn:aws:7ej2t:e415::eqru,=<\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INVOLVED_RESOURCE/DE05D6BA5E30C5B8BBFF1B67DF1FDA1D\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"METRIC\",\n        \"value\": {\n          \"arn\": \"arn:aws-cn:dwugoujipp:nmheb20j7t::/\\\"\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ATTACHMENT/E2B0ABECAAE8AB0B56C387D8CA7CBE31\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"PARENT\",\n        \"value\": {\n          \"arn\": \"arn:aws:9hri59b0:u::2\\\\K'lx[vJsx\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/OTHER/FBF5CC6E964D5CEADAD963C74724F3AD\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"OTHER\",\n        \"value\": {\n          \"arn\": \"arn:aws:3ehw6kfo:e::<ZBv\\\"\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INVOLVED_RESOURCE/71F6F4ABAB2A5B889E841FECDD5F2FBE\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"PARENT\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:b0ov0v9ucv:oljgy274pq:745977709882:.?7s&\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/TASK/50A54AB262EF26F2A12CB43211DF888B\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"OTHER\",\n        \"value\": {\n          \"arn\": \"arn:aws:ao:v8nuyuztg::)qA~9\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ANALYSIS/FEEA4EC2EA37C35B3A7FDFFA28DCFCC5\",\n      \"title\": \"<string>\"\n    }\n  ],\n  \"title\": \"<string>\",\n  \"triggerDetails\": {\n    \"rawData\": \"<string>\",\n    \"source\": \"<string>\",\n    \"timestamp\": \"<dateTime>\",\n    \"triggerArn\": \"arn:aws-cn:i3e08nl2qv:u557d3b:822115844947:2(PF\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/startIncident",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "startIncident"
+              ]
+            },
+            "description": "Used to start an incident from CloudWatch alarms, EventBridge events, or manually. "
+          },
+          "response": [
+            {
+              "id": "b071e907-005a-49ad-b71d-c2a50e679a20",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"responsePlanArn\": \"arn:aws:d8gs5o:cs6c8i::]o_{y<\",\n  \"clientToken\": \"<string>\",\n  \"impact\": \"<integer>\",\n  \"relatedItems\": [\n    {\n      \"identifier\": {\n        \"type\": \"PARENT\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:0f2:05o817::&0{,\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/PARENT/6CD0C27DAF3B841518E32616FBFD13FF\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"OTHER\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:0:vqw::GXn>UZ5\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/AUTOMATION/D20350B664AFE2BC5A1EFFAD6FFE1F0E\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INCIDENT\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:nj1qcibj:88dpson9h:735138704898:w\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/METRIC/A648DFED802BF97C93C33708CADCD1BA\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INVOLVED_RESOURCE\",\n        \"value\": {\n          \"arn\": \"arn:aws:b7l-89rb-u:752qa0pzi:065532348437:CCnN(J|j\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ATTACHMENT/C5F760DBBEE4462EFD1E68A84E0B07A5\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"PARENT\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:e4r26d6o2:blz4p9t5ai:396673097835:e\\\\12(?(C\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/METRIC/878A1B8F64FF9E20EF0DFC22C55FCD4C\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INCIDENT\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:a19:xxy2yl:640677682944:jVY1\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ATTACHMENT/3D3FC7BC4A596C1CA3B28ADFEA91C89D\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"TASK\",\n        \"value\": {\n          \"arn\": \"arn:aws-cn:3vv-v47w1t:e61tg::9[P\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INVOLVED_RESOURCE/8D5B3E6B26146F1FEC00FEDD01DC444F\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"TASK\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:x1z5:j7:058093896420:yTT&XpwL\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ANALYSIS/AD53F1F082CBB4FA8FDDFBD28C792BF6\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"TASK\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov::5f7::N^\\\\^\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INCIDENT/DCDDEA3052B02BDEB69D4347E0391DAB\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"AUTOMATION\",\n        \"value\": {\n          \"arn\": \"arn:aws:xg06qa80:uj1q::Nn\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INVOLVED_RESOURCE/BCD370D9C1F6BD4EE33CDBACC73F4FB1\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"ATTACHMENT\",\n        \"value\": {\n          \"arn\": \"arn:aws:s0ozmu9f:hm29bm:418330302703:@=K=<t\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/PARENT/7E1195AE45C4B07DCF4AD6F6F5DB3AC6\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INVOLVED_RESOURCE\",\n        \"value\": {\n          \"arn\": \"arn:aws-cn:agsl:ibuxrwx0n1::0%,t\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ANALYSIS/AA0CC56FEF06ECBE419CAAC62DE6AA1C\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INCIDENT\",\n        \"value\": {\n          \"arn\": \"arn:aws:lgv23-r:-uurvu:091270553142:ac^\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INCIDENT/ABC094CA97085A7AFA0BA08CD04BA58B\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"ANALYSIS\",\n        \"value\": {\n          \"arn\": \"arn:aws:phnmi:6::oMJ\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/TASK/934BC4A7BABF5F46F46FADC5EDAAC5AF\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INVOLVED_RESOURCE\",\n        \"value\": {\n          \"arn\": \"arn:aws:7ej2t:e415::eqru,=<\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INVOLVED_RESOURCE/DE05D6BA5E30C5B8BBFF1B67DF1FDA1D\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"METRIC\",\n        \"value\": {\n          \"arn\": \"arn:aws-cn:dwugoujipp:nmheb20j7t::/\\\"\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ATTACHMENT/E2B0ABECAAE8AB0B56C387D8CA7CBE31\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"PARENT\",\n        \"value\": {\n          \"arn\": \"arn:aws:9hri59b0:u::2\\\\K'lx[vJsx\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/OTHER/FBF5CC6E964D5CEADAD963C74724F3AD\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"OTHER\",\n        \"value\": {\n          \"arn\": \"arn:aws:3ehw6kfo:e::<ZBv\\\"\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INVOLVED_RESOURCE/71F6F4ABAB2A5B889E841FECDD5F2FBE\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"PARENT\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:b0ov0v9ucv:oljgy274pq:745977709882:.?7s&\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/TASK/50A54AB262EF26F2A12CB43211DF888B\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"OTHER\",\n        \"value\": {\n          \"arn\": \"arn:aws:ao:v8nuyuztg::)qA~9\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ANALYSIS/FEEA4EC2EA37C35B3A7FDFFA28DCFCC5\",\n      \"title\": \"<string>\"\n    }\n  ],\n  \"title\": \"<string>\",\n  \"triggerDetails\": {\n    \"rawData\": \"<string>\",\n    \"source\": \"<string>\",\n    \"timestamp\": \"<dateTime>\",\n    \"triggerArn\": \"arn:aws-cn:i3e08nl2qv:u557d3b:822115844947:2(PF\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/startIncident",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "startIncident"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"incidentRecordArn\": \"arn:aws:dl7:::~x?tuY@~wbK\"\n}",
+              "createdAt": "2026-07-28T10:27:21.000Z",
+              "updatedAt": "2026-07-28T10:27:21.000Z",
+              "uid": "35240-b071e907-005a-49ad-b71d-c2a50e679a20"
+            },
+            {
+              "id": "ce7efda9-15ee-4eb5-a47e-b14d9ee80e5c",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"responsePlanArn\": \"arn:aws:d8gs5o:cs6c8i::]o_{y<\",\n  \"clientToken\": \"<string>\",\n  \"impact\": \"<integer>\",\n  \"relatedItems\": [\n    {\n      \"identifier\": {\n        \"type\": \"PARENT\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:0f2:05o817::&0{,\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/PARENT/6CD0C27DAF3B841518E32616FBFD13FF\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"OTHER\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:0:vqw::GXn>UZ5\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/AUTOMATION/D20350B664AFE2BC5A1EFFAD6FFE1F0E\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INCIDENT\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:nj1qcibj:88dpson9h:735138704898:w\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/METRIC/A648DFED802BF97C93C33708CADCD1BA\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INVOLVED_RESOURCE\",\n        \"value\": {\n          \"arn\": \"arn:aws:b7l-89rb-u:752qa0pzi:065532348437:CCnN(J|j\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ATTACHMENT/C5F760DBBEE4462EFD1E68A84E0B07A5\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"PARENT\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:e4r26d6o2:blz4p9t5ai:396673097835:e\\\\12(?(C\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/METRIC/878A1B8F64FF9E20EF0DFC22C55FCD4C\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INCIDENT\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:a19:xxy2yl:640677682944:jVY1\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ATTACHMENT/3D3FC7BC4A596C1CA3B28ADFEA91C89D\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"TASK\",\n        \"value\": {\n          \"arn\": \"arn:aws-cn:3vv-v47w1t:e61tg::9[P\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INVOLVED_RESOURCE/8D5B3E6B26146F1FEC00FEDD01DC444F\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"TASK\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:x1z5:j7:058093896420:yTT&XpwL\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ANALYSIS/AD53F1F082CBB4FA8FDDFBD28C792BF6\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"TASK\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov::5f7::N^\\\\^\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INCIDENT/DCDDEA3052B02BDEB69D4347E0391DAB\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"AUTOMATION\",\n        \"value\": {\n          \"arn\": \"arn:aws:xg06qa80:uj1q::Nn\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INVOLVED_RESOURCE/BCD370D9C1F6BD4EE33CDBACC73F4FB1\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"ATTACHMENT\",\n        \"value\": {\n          \"arn\": \"arn:aws:s0ozmu9f:hm29bm:418330302703:@=K=<t\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/PARENT/7E1195AE45C4B07DCF4AD6F6F5DB3AC6\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INVOLVED_RESOURCE\",\n        \"value\": {\n          \"arn\": \"arn:aws-cn:agsl:ibuxrwx0n1::0%,t\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ANALYSIS/AA0CC56FEF06ECBE419CAAC62DE6AA1C\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INCIDENT\",\n        \"value\": {\n          \"arn\": \"arn:aws:lgv23-r:-uurvu:091270553142:ac^\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INCIDENT/ABC094CA97085A7AFA0BA08CD04BA58B\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"ANALYSIS\",\n        \"value\": {\n          \"arn\": \"arn:aws:phnmi:6::oMJ\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/TASK/934BC4A7BABF5F46F46FADC5EDAAC5AF\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INVOLVED_RESOURCE\",\n        \"value\": {\n          \"arn\": \"arn:aws:7ej2t:e415::eqru,=<\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INVOLVED_RESOURCE/DE05D6BA5E30C5B8BBFF1B67DF1FDA1D\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"METRIC\",\n        \"value\": {\n          \"arn\": \"arn:aws-cn:dwugoujipp:nmheb20j7t::/\\\"\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ATTACHMENT/E2B0ABECAAE8AB0B56C387D8CA7CBE31\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"PARENT\",\n        \"value\": {\n          \"arn\": \"arn:aws:9hri59b0:u::2\\\\K'lx[vJsx\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/OTHER/FBF5CC6E964D5CEADAD963C74724F3AD\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"OTHER\",\n        \"value\": {\n          \"arn\": \"arn:aws:3ehw6kfo:e::<ZBv\\\"\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INVOLVED_RESOURCE/71F6F4ABAB2A5B889E841FECDD5F2FBE\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"PARENT\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:b0ov0v9ucv:oljgy274pq:745977709882:.?7s&\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/TASK/50A54AB262EF26F2A12CB43211DF888B\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"OTHER\",\n        \"value\": {\n          \"arn\": \"arn:aws:ao:v8nuyuztg::)qA~9\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ANALYSIS/FEEA4EC2EA37C35B3A7FDFFA28DCFCC5\",\n      \"title\": \"<string>\"\n    }\n  ],\n  \"title\": \"<string>\",\n  \"triggerDetails\": {\n    \"rawData\": \"<string>\",\n    \"source\": \"<string>\",\n    \"timestamp\": \"<dateTime>\",\n    \"triggerArn\": \"arn:aws-cn:i3e08nl2qv:u557d3b:822115844947:2(PF\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/startIncident",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "startIncident"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:21.000Z",
+              "updatedAt": "2026-07-28T10:27:21.000Z",
+              "uid": "35240-ce7efda9-15ee-4eb5-a47e-b14d9ee80e5c"
+            },
+            {
+              "id": "5cc6b433-5712-4d09-82d4-9e03e0180fb1",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"responsePlanArn\": \"arn:aws:d8gs5o:cs6c8i::]o_{y<\",\n  \"clientToken\": \"<string>\",\n  \"impact\": \"<integer>\",\n  \"relatedItems\": [\n    {\n      \"identifier\": {\n        \"type\": \"PARENT\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:0f2:05o817::&0{,\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/PARENT/6CD0C27DAF3B841518E32616FBFD13FF\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"OTHER\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:0:vqw::GXn>UZ5\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/AUTOMATION/D20350B664AFE2BC5A1EFFAD6FFE1F0E\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INCIDENT\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:nj1qcibj:88dpson9h:735138704898:w\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/METRIC/A648DFED802BF97C93C33708CADCD1BA\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INVOLVED_RESOURCE\",\n        \"value\": {\n          \"arn\": \"arn:aws:b7l-89rb-u:752qa0pzi:065532348437:CCnN(J|j\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ATTACHMENT/C5F760DBBEE4462EFD1E68A84E0B07A5\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"PARENT\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:e4r26d6o2:blz4p9t5ai:396673097835:e\\\\12(?(C\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/METRIC/878A1B8F64FF9E20EF0DFC22C55FCD4C\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INCIDENT\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:a19:xxy2yl:640677682944:jVY1\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ATTACHMENT/3D3FC7BC4A596C1CA3B28ADFEA91C89D\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"TASK\",\n        \"value\": {\n          \"arn\": \"arn:aws-cn:3vv-v47w1t:e61tg::9[P\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INVOLVED_RESOURCE/8D5B3E6B26146F1FEC00FEDD01DC444F\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"TASK\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:x1z5:j7:058093896420:yTT&XpwL\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ANALYSIS/AD53F1F082CBB4FA8FDDFBD28C792BF6\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"TASK\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov::5f7::N^\\\\^\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INCIDENT/DCDDEA3052B02BDEB69D4347E0391DAB\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"AUTOMATION\",\n        \"value\": {\n          \"arn\": \"arn:aws:xg06qa80:uj1q::Nn\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INVOLVED_RESOURCE/BCD370D9C1F6BD4EE33CDBACC73F4FB1\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"ATTACHMENT\",\n        \"value\": {\n          \"arn\": \"arn:aws:s0ozmu9f:hm29bm:418330302703:@=K=<t\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/PARENT/7E1195AE45C4B07DCF4AD6F6F5DB3AC6\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INVOLVED_RESOURCE\",\n        \"value\": {\n          \"arn\": \"arn:aws-cn:agsl:ibuxrwx0n1::0%,t\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ANALYSIS/AA0CC56FEF06ECBE419CAAC62DE6AA1C\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INCIDENT\",\n        \"value\": {\n          \"arn\": \"arn:aws:lgv23-r:-uurvu:091270553142:ac^\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INCIDENT/ABC094CA97085A7AFA0BA08CD04BA58B\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"ANALYSIS\",\n        \"value\": {\n          \"arn\": \"arn:aws:phnmi:6::oMJ\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/TASK/934BC4A7BABF5F46F46FADC5EDAAC5AF\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INVOLVED_RESOURCE\",\n        \"value\": {\n          \"arn\": \"arn:aws:7ej2t:e415::eqru,=<\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INVOLVED_RESOURCE/DE05D6BA5E30C5B8BBFF1B67DF1FDA1D\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"METRIC\",\n        \"value\": {\n          \"arn\": \"arn:aws-cn:dwugoujipp:nmheb20j7t::/\\\"\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ATTACHMENT/E2B0ABECAAE8AB0B56C387D8CA7CBE31\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"PARENT\",\n        \"value\": {\n          \"arn\": \"arn:aws:9hri59b0:u::2\\\\K'lx[vJsx\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/OTHER/FBF5CC6E964D5CEADAD963C74724F3AD\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"OTHER\",\n        \"value\": {\n          \"arn\": \"arn:aws:3ehw6kfo:e::<ZBv\\\"\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INVOLVED_RESOURCE/71F6F4ABAB2A5B889E841FECDD5F2FBE\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"PARENT\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:b0ov0v9ucv:oljgy274pq:745977709882:.?7s&\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/TASK/50A54AB262EF26F2A12CB43211DF888B\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"OTHER\",\n        \"value\": {\n          \"arn\": \"arn:aws:ao:v8nuyuztg::)qA~9\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ANALYSIS/FEEA4EC2EA37C35B3A7FDFFA28DCFCC5\",\n      \"title\": \"<string>\"\n    }\n  ],\n  \"title\": \"<string>\",\n  \"triggerDetails\": {\n    \"rawData\": \"<string>\",\n    \"source\": \"<string>\",\n    \"timestamp\": \"<dateTime>\",\n    \"triggerArn\": \"arn:aws-cn:i3e08nl2qv:u557d3b:822115844947:2(PF\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/startIncident",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "startIncident"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:21.000Z",
+              "updatedAt": "2026-07-28T10:27:21.000Z",
+              "uid": "35240-5cc6b433-5712-4d09-82d4-9e03e0180fb1"
+            },
+            {
+              "id": "45a9f275-7b35-492b-a453-5a729d20561b",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"responsePlanArn\": \"arn:aws:d8gs5o:cs6c8i::]o_{y<\",\n  \"clientToken\": \"<string>\",\n  \"impact\": \"<integer>\",\n  \"relatedItems\": [\n    {\n      \"identifier\": {\n        \"type\": \"PARENT\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:0f2:05o817::&0{,\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/PARENT/6CD0C27DAF3B841518E32616FBFD13FF\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"OTHER\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:0:vqw::GXn>UZ5\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/AUTOMATION/D20350B664AFE2BC5A1EFFAD6FFE1F0E\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INCIDENT\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:nj1qcibj:88dpson9h:735138704898:w\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/METRIC/A648DFED802BF97C93C33708CADCD1BA\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INVOLVED_RESOURCE\",\n        \"value\": {\n          \"arn\": \"arn:aws:b7l-89rb-u:752qa0pzi:065532348437:CCnN(J|j\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ATTACHMENT/C5F760DBBEE4462EFD1E68A84E0B07A5\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"PARENT\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:e4r26d6o2:blz4p9t5ai:396673097835:e\\\\12(?(C\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/METRIC/878A1B8F64FF9E20EF0DFC22C55FCD4C\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INCIDENT\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:a19:xxy2yl:640677682944:jVY1\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ATTACHMENT/3D3FC7BC4A596C1CA3B28ADFEA91C89D\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"TASK\",\n        \"value\": {\n          \"arn\": \"arn:aws-cn:3vv-v47w1t:e61tg::9[P\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INVOLVED_RESOURCE/8D5B3E6B26146F1FEC00FEDD01DC444F\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"TASK\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:x1z5:j7:058093896420:yTT&XpwL\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ANALYSIS/AD53F1F082CBB4FA8FDDFBD28C792BF6\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"TASK\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov::5f7::N^\\\\^\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INCIDENT/DCDDEA3052B02BDEB69D4347E0391DAB\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"AUTOMATION\",\n        \"value\": {\n          \"arn\": \"arn:aws:xg06qa80:uj1q::Nn\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INVOLVED_RESOURCE/BCD370D9C1F6BD4EE33CDBACC73F4FB1\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"ATTACHMENT\",\n        \"value\": {\n          \"arn\": \"arn:aws:s0ozmu9f:hm29bm:418330302703:@=K=<t\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/PARENT/7E1195AE45C4B07DCF4AD6F6F5DB3AC6\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INVOLVED_RESOURCE\",\n        \"value\": {\n          \"arn\": \"arn:aws-cn:agsl:ibuxrwx0n1::0%,t\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ANALYSIS/AA0CC56FEF06ECBE419CAAC62DE6AA1C\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INCIDENT\",\n        \"value\": {\n          \"arn\": \"arn:aws:lgv23-r:-uurvu:091270553142:ac^\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INCIDENT/ABC094CA97085A7AFA0BA08CD04BA58B\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"ANALYSIS\",\n        \"value\": {\n          \"arn\": \"arn:aws:phnmi:6::oMJ\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/TASK/934BC4A7BABF5F46F46FADC5EDAAC5AF\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INVOLVED_RESOURCE\",\n        \"value\": {\n          \"arn\": \"arn:aws:7ej2t:e415::eqru,=<\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INVOLVED_RESOURCE/DE05D6BA5E30C5B8BBFF1B67DF1FDA1D\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"METRIC\",\n        \"value\": {\n          \"arn\": \"arn:aws-cn:dwugoujipp:nmheb20j7t::/\\\"\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ATTACHMENT/E2B0ABECAAE8AB0B56C387D8CA7CBE31\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"PARENT\",\n        \"value\": {\n          \"arn\": \"arn:aws:9hri59b0:u::2\\\\K'lx[vJsx\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/OTHER/FBF5CC6E964D5CEADAD963C74724F3AD\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"OTHER\",\n        \"value\": {\n          \"arn\": \"arn:aws:3ehw6kfo:e::<ZBv\\\"\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INVOLVED_RESOURCE/71F6F4ABAB2A5B889E841FECDD5F2FBE\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"PARENT\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:b0ov0v9ucv:oljgy274pq:745977709882:.?7s&\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/TASK/50A54AB262EF26F2A12CB43211DF888B\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"OTHER\",\n        \"value\": {\n          \"arn\": \"arn:aws:ao:v8nuyuztg::)qA~9\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ANALYSIS/FEEA4EC2EA37C35B3A7FDFFA28DCFCC5\",\n      \"title\": \"<string>\"\n    }\n  ],\n  \"title\": \"<string>\",\n  \"triggerDetails\": {\n    \"rawData\": \"<string>\",\n    \"source\": \"<string>\",\n    \"timestamp\": \"<dateTime>\",\n    \"triggerArn\": \"arn:aws-cn:i3e08nl2qv:u557d3b:822115844947:2(PF\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/startIncident",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "startIncident"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:21.000Z",
+              "updatedAt": "2026-07-28T10:27:21.000Z",
+              "uid": "35240-45a9f275-7b35-492b-a453-5a729d20561b"
+            },
+            {
+              "id": "2712f856-d926-4201-bbe6-09529c532a09",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"responsePlanArn\": \"arn:aws:d8gs5o:cs6c8i::]o_{y<\",\n  \"clientToken\": \"<string>\",\n  \"impact\": \"<integer>\",\n  \"relatedItems\": [\n    {\n      \"identifier\": {\n        \"type\": \"PARENT\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:0f2:05o817::&0{,\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/PARENT/6CD0C27DAF3B841518E32616FBFD13FF\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"OTHER\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:0:vqw::GXn>UZ5\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/AUTOMATION/D20350B664AFE2BC5A1EFFAD6FFE1F0E\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INCIDENT\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:nj1qcibj:88dpson9h:735138704898:w\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/METRIC/A648DFED802BF97C93C33708CADCD1BA\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INVOLVED_RESOURCE\",\n        \"value\": {\n          \"arn\": \"arn:aws:b7l-89rb-u:752qa0pzi:065532348437:CCnN(J|j\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ATTACHMENT/C5F760DBBEE4462EFD1E68A84E0B07A5\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"PARENT\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:e4r26d6o2:blz4p9t5ai:396673097835:e\\\\12(?(C\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/METRIC/878A1B8F64FF9E20EF0DFC22C55FCD4C\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INCIDENT\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:a19:xxy2yl:640677682944:jVY1\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ATTACHMENT/3D3FC7BC4A596C1CA3B28ADFEA91C89D\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"TASK\",\n        \"value\": {\n          \"arn\": \"arn:aws-cn:3vv-v47w1t:e61tg::9[P\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INVOLVED_RESOURCE/8D5B3E6B26146F1FEC00FEDD01DC444F\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"TASK\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:x1z5:j7:058093896420:yTT&XpwL\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ANALYSIS/AD53F1F082CBB4FA8FDDFBD28C792BF6\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"TASK\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov::5f7::N^\\\\^\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INCIDENT/DCDDEA3052B02BDEB69D4347E0391DAB\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"AUTOMATION\",\n        \"value\": {\n          \"arn\": \"arn:aws:xg06qa80:uj1q::Nn\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INVOLVED_RESOURCE/BCD370D9C1F6BD4EE33CDBACC73F4FB1\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"ATTACHMENT\",\n        \"value\": {\n          \"arn\": \"arn:aws:s0ozmu9f:hm29bm:418330302703:@=K=<t\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/PARENT/7E1195AE45C4B07DCF4AD6F6F5DB3AC6\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INVOLVED_RESOURCE\",\n        \"value\": {\n          \"arn\": \"arn:aws-cn:agsl:ibuxrwx0n1::0%,t\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ANALYSIS/AA0CC56FEF06ECBE419CAAC62DE6AA1C\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INCIDENT\",\n        \"value\": {\n          \"arn\": \"arn:aws:lgv23-r:-uurvu:091270553142:ac^\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INCIDENT/ABC094CA97085A7AFA0BA08CD04BA58B\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"ANALYSIS\",\n        \"value\": {\n          \"arn\": \"arn:aws:phnmi:6::oMJ\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/TASK/934BC4A7BABF5F46F46FADC5EDAAC5AF\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INVOLVED_RESOURCE\",\n        \"value\": {\n          \"arn\": \"arn:aws:7ej2t:e415::eqru,=<\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INVOLVED_RESOURCE/DE05D6BA5E30C5B8BBFF1B67DF1FDA1D\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"METRIC\",\n        \"value\": {\n          \"arn\": \"arn:aws-cn:dwugoujipp:nmheb20j7t::/\\\"\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ATTACHMENT/E2B0ABECAAE8AB0B56C387D8CA7CBE31\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"PARENT\",\n        \"value\": {\n          \"arn\": \"arn:aws:9hri59b0:u::2\\\\K'lx[vJsx\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/OTHER/FBF5CC6E964D5CEADAD963C74724F3AD\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"OTHER\",\n        \"value\": {\n          \"arn\": \"arn:aws:3ehw6kfo:e::<ZBv\\\"\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INVOLVED_RESOURCE/71F6F4ABAB2A5B889E841FECDD5F2FBE\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"PARENT\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:b0ov0v9ucv:oljgy274pq:745977709882:.?7s&\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/TASK/50A54AB262EF26F2A12CB43211DF888B\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"OTHER\",\n        \"value\": {\n          \"arn\": \"arn:aws:ao:v8nuyuztg::)qA~9\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ANALYSIS/FEEA4EC2EA37C35B3A7FDFFA28DCFCC5\",\n      \"title\": \"<string>\"\n    }\n  ],\n  \"title\": \"<string>\",\n  \"triggerDetails\": {\n    \"rawData\": \"<string>\",\n    \"source\": \"<string>\",\n    \"timestamp\": \"<dateTime>\",\n    \"triggerArn\": \"arn:aws-cn:i3e08nl2qv:u557d3b:822115844947:2(PF\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/startIncident",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "startIncident"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:21.000Z",
+              "updatedAt": "2026-07-28T10:27:21.000Z",
+              "uid": "35240-2712f856-d926-4201-bbe6-09529c532a09"
+            },
+            {
+              "id": "d1fab801-f8eb-4a86-91cb-e3ec6a42be37",
+              "name": "ConflictException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"responsePlanArn\": \"arn:aws:d8gs5o:cs6c8i::]o_{y<\",\n  \"clientToken\": \"<string>\",\n  \"impact\": \"<integer>\",\n  \"relatedItems\": [\n    {\n      \"identifier\": {\n        \"type\": \"PARENT\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:0f2:05o817::&0{,\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/PARENT/6CD0C27DAF3B841518E32616FBFD13FF\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"OTHER\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:0:vqw::GXn>UZ5\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/AUTOMATION/D20350B664AFE2BC5A1EFFAD6FFE1F0E\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INCIDENT\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:nj1qcibj:88dpson9h:735138704898:w\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/METRIC/A648DFED802BF97C93C33708CADCD1BA\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INVOLVED_RESOURCE\",\n        \"value\": {\n          \"arn\": \"arn:aws:b7l-89rb-u:752qa0pzi:065532348437:CCnN(J|j\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ATTACHMENT/C5F760DBBEE4462EFD1E68A84E0B07A5\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"PARENT\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:e4r26d6o2:blz4p9t5ai:396673097835:e\\\\12(?(C\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/METRIC/878A1B8F64FF9E20EF0DFC22C55FCD4C\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INCIDENT\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:a19:xxy2yl:640677682944:jVY1\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ATTACHMENT/3D3FC7BC4A596C1CA3B28ADFEA91C89D\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"TASK\",\n        \"value\": {\n          \"arn\": \"arn:aws-cn:3vv-v47w1t:e61tg::9[P\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INVOLVED_RESOURCE/8D5B3E6B26146F1FEC00FEDD01DC444F\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"TASK\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:x1z5:j7:058093896420:yTT&XpwL\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ANALYSIS/AD53F1F082CBB4FA8FDDFBD28C792BF6\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"TASK\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov::5f7::N^\\\\^\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INCIDENT/DCDDEA3052B02BDEB69D4347E0391DAB\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"AUTOMATION\",\n        \"value\": {\n          \"arn\": \"arn:aws:xg06qa80:uj1q::Nn\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INVOLVED_RESOURCE/BCD370D9C1F6BD4EE33CDBACC73F4FB1\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"ATTACHMENT\",\n        \"value\": {\n          \"arn\": \"arn:aws:s0ozmu9f:hm29bm:418330302703:@=K=<t\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/PARENT/7E1195AE45C4B07DCF4AD6F6F5DB3AC6\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INVOLVED_RESOURCE\",\n        \"value\": {\n          \"arn\": \"arn:aws-cn:agsl:ibuxrwx0n1::0%,t\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ANALYSIS/AA0CC56FEF06ECBE419CAAC62DE6AA1C\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INCIDENT\",\n        \"value\": {\n          \"arn\": \"arn:aws:lgv23-r:-uurvu:091270553142:ac^\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INCIDENT/ABC094CA97085A7AFA0BA08CD04BA58B\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"ANALYSIS\",\n        \"value\": {\n          \"arn\": \"arn:aws:phnmi:6::oMJ\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/TASK/934BC4A7BABF5F46F46FADC5EDAAC5AF\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INVOLVED_RESOURCE\",\n        \"value\": {\n          \"arn\": \"arn:aws:7ej2t:e415::eqru,=<\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INVOLVED_RESOURCE/DE05D6BA5E30C5B8BBFF1B67DF1FDA1D\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"METRIC\",\n        \"value\": {\n          \"arn\": \"arn:aws-cn:dwugoujipp:nmheb20j7t::/\\\"\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ATTACHMENT/E2B0ABECAAE8AB0B56C387D8CA7CBE31\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"PARENT\",\n        \"value\": {\n          \"arn\": \"arn:aws:9hri59b0:u::2\\\\K'lx[vJsx\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/OTHER/FBF5CC6E964D5CEADAD963C74724F3AD\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"OTHER\",\n        \"value\": {\n          \"arn\": \"arn:aws:3ehw6kfo:e::<ZBv\\\"\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INVOLVED_RESOURCE/71F6F4ABAB2A5B889E841FECDD5F2FBE\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"PARENT\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:b0ov0v9ucv:oljgy274pq:745977709882:.?7s&\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/TASK/50A54AB262EF26F2A12CB43211DF888B\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"OTHER\",\n        \"value\": {\n          \"arn\": \"arn:aws:ao:v8nuyuztg::)qA~9\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ANALYSIS/FEEA4EC2EA37C35B3A7FDFFA28DCFCC5\",\n      \"title\": \"<string>\"\n    }\n  ],\n  \"title\": \"<string>\",\n  \"triggerDetails\": {\n    \"rawData\": \"<string>\",\n    \"source\": \"<string>\",\n    \"timestamp\": \"<dateTime>\",\n    \"triggerArn\": \"arn:aws-cn:i3e08nl2qv:u557d3b:822115844947:2(PF\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/startIncident",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "startIncident"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:21.000Z",
+              "updatedAt": "2026-07-28T10:27:21.000Z",
+              "uid": "35240-d1fab801-f8eb-4a86-91cb-e3ec6a42be37"
+            },
+            {
+              "id": "9c9e8f7a-2792-431f-b585-7ede8c961e93",
+              "name": "InternalServerException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"responsePlanArn\": \"arn:aws:d8gs5o:cs6c8i::]o_{y<\",\n  \"clientToken\": \"<string>\",\n  \"impact\": \"<integer>\",\n  \"relatedItems\": [\n    {\n      \"identifier\": {\n        \"type\": \"PARENT\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:0f2:05o817::&0{,\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/PARENT/6CD0C27DAF3B841518E32616FBFD13FF\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"OTHER\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:0:vqw::GXn>UZ5\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/AUTOMATION/D20350B664AFE2BC5A1EFFAD6FFE1F0E\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INCIDENT\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:nj1qcibj:88dpson9h:735138704898:w\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/METRIC/A648DFED802BF97C93C33708CADCD1BA\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INVOLVED_RESOURCE\",\n        \"value\": {\n          \"arn\": \"arn:aws:b7l-89rb-u:752qa0pzi:065532348437:CCnN(J|j\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ATTACHMENT/C5F760DBBEE4462EFD1E68A84E0B07A5\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"PARENT\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:e4r26d6o2:blz4p9t5ai:396673097835:e\\\\12(?(C\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/METRIC/878A1B8F64FF9E20EF0DFC22C55FCD4C\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INCIDENT\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:a19:xxy2yl:640677682944:jVY1\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ATTACHMENT/3D3FC7BC4A596C1CA3B28ADFEA91C89D\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"TASK\",\n        \"value\": {\n          \"arn\": \"arn:aws-cn:3vv-v47w1t:e61tg::9[P\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INVOLVED_RESOURCE/8D5B3E6B26146F1FEC00FEDD01DC444F\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"TASK\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:x1z5:j7:058093896420:yTT&XpwL\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ANALYSIS/AD53F1F082CBB4FA8FDDFBD28C792BF6\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"TASK\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov::5f7::N^\\\\^\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INCIDENT/DCDDEA3052B02BDEB69D4347E0391DAB\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"AUTOMATION\",\n        \"value\": {\n          \"arn\": \"arn:aws:xg06qa80:uj1q::Nn\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INVOLVED_RESOURCE/BCD370D9C1F6BD4EE33CDBACC73F4FB1\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"ATTACHMENT\",\n        \"value\": {\n          \"arn\": \"arn:aws:s0ozmu9f:hm29bm:418330302703:@=K=<t\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/PARENT/7E1195AE45C4B07DCF4AD6F6F5DB3AC6\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INVOLVED_RESOURCE\",\n        \"value\": {\n          \"arn\": \"arn:aws-cn:agsl:ibuxrwx0n1::0%,t\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ANALYSIS/AA0CC56FEF06ECBE419CAAC62DE6AA1C\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INCIDENT\",\n        \"value\": {\n          \"arn\": \"arn:aws:lgv23-r:-uurvu:091270553142:ac^\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INCIDENT/ABC094CA97085A7AFA0BA08CD04BA58B\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"ANALYSIS\",\n        \"value\": {\n          \"arn\": \"arn:aws:phnmi:6::oMJ\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/TASK/934BC4A7BABF5F46F46FADC5EDAAC5AF\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INVOLVED_RESOURCE\",\n        \"value\": {\n          \"arn\": \"arn:aws:7ej2t:e415::eqru,=<\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INVOLVED_RESOURCE/DE05D6BA5E30C5B8BBFF1B67DF1FDA1D\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"METRIC\",\n        \"value\": {\n          \"arn\": \"arn:aws-cn:dwugoujipp:nmheb20j7t::/\\\"\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ATTACHMENT/E2B0ABECAAE8AB0B56C387D8CA7CBE31\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"PARENT\",\n        \"value\": {\n          \"arn\": \"arn:aws:9hri59b0:u::2\\\\K'lx[vJsx\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/OTHER/FBF5CC6E964D5CEADAD963C74724F3AD\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"OTHER\",\n        \"value\": {\n          \"arn\": \"arn:aws:3ehw6kfo:e::<ZBv\\\"\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INVOLVED_RESOURCE/71F6F4ABAB2A5B889E841FECDD5F2FBE\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"PARENT\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:b0ov0v9ucv:oljgy274pq:745977709882:.?7s&\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/TASK/50A54AB262EF26F2A12CB43211DF888B\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"OTHER\",\n        \"value\": {\n          \"arn\": \"arn:aws:ao:v8nuyuztg::)qA~9\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ANALYSIS/FEEA4EC2EA37C35B3A7FDFFA28DCFCC5\",\n      \"title\": \"<string>\"\n    }\n  ],\n  \"title\": \"<string>\",\n  \"triggerDetails\": {\n    \"rawData\": \"<string>\",\n    \"source\": \"<string>\",\n    \"timestamp\": \"<dateTime>\",\n    \"triggerArn\": \"arn:aws-cn:i3e08nl2qv:u557d3b:822115844947:2(PF\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/startIncident",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "startIncident"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:21.000Z",
+              "updatedAt": "2026-07-28T10:27:21.000Z",
+              "uid": "35240-9c9e8f7a-2792-431f-b585-7ede8c961e93"
+            }
+          ],
+          "createdAt": "2026-07-28T10:27:21.000Z",
+          "updatedAt": "2026-07-28T10:27:21.000Z",
+          "uid": "35240-2e03743b-fe92-464c-9a67-8877362fcfc3"
+        }
+      ],
+      "id": "a2653ee0-1812-4bd3-ad7d-cc6d8fa5918b",
+      "createdAt": "2026-07-28T10:27:21.000Z",
+      "updatedAt": "2026-07-28T10:27:21.000Z",
+      "uid": "35240-a2653ee0-1812-4bd3-ad7d-cc6d8fa5918b"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://ssm-incidents.{{region}}.amazonaws.com"
+    }
+  ]
+}

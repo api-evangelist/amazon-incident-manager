@@ -1,0 +1,610 @@
+{
+  "info": {
+    "_postman_id": "278e5ed1-fe81-414d-8b22-1ae9917e260d",
+    "name": "AWS Systems Manager Incident Manager CreateReplicationSet ListRelatedItems API",
+    "description": "<p>Systems Manager Incident Manager is an incident management console designed to help users mitigate and recover from incidents affecting their Amazon Web Services-hosted applications. An incident is any unplanned interruption or reduction in quality of services. </p> <p>Incident Manager increases incident resolution by notifying responders of impact, highlighting relevant troubleshooting data, and providing collaboration tools to get services back up and running. To achieve the primary goal of reducing the time-to-resolution of critical incidents, Incident Manager automates response plans and enables responder team escalation. </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:26:30.000Z",
+    "updatedAt": "2026-07-28T10:26:30.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-278e5ed1-fe81-414d-8b22-1ae9917e260d"
+  },
+  "item": [
+    {
+      "name": "listRelatedItems",
+      "item": [
+        {
+          "name": "Amazon Incident Manager List Related Items",
+          "id": "4a667deb-1b21-4d0c-81e8-96cca9595933",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"incidentRecordArn\": \"arn:aws:66nwdm:nbvvh-v::U<=\",\n  \"maxResults\": \"<integer>\",\n  \"nextToken\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/listRelatedItems?maxResults=<string>&nextToken=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "listRelatedItems"
+              ],
+              "query": [
+                {
+                  "description": "Pagination limit",
+                  "key": "maxResults",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination token",
+                  "key": "nextToken",
+                  "value": "<string>"
+                }
+              ]
+            },
+            "description": "List all related items for an incident record."
+          },
+          "response": [
+            {
+              "id": "d2eb7aa5-5f51-461f-b140-33a4420fcc77",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"incidentRecordArn\": \"arn:aws:66nwdm:nbvvh-v::U<=\",\n  \"maxResults\": \"<integer>\",\n  \"nextToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/listRelatedItems?maxResults=<string>&nextToken=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "listRelatedItems"
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "maxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"relatedItems\": [\n    {\n      \"identifier\": {\n        \"type\": \"AUTOMATION\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov::m::3CeT+~.H\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ANALYSIS/C4917C0A50BCEDE8DCAA26E5C42E3377\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"ATTACHMENT\",\n        \"value\": {\n          \"arn\": \"arn:aws:6j3dgc029-::756021891972:Z\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/AUTOMATION/AF3B4FBFC5EBAA0A4ED24D93397B1D4D\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"INCIDENT\",\n        \"value\": {\n          \"arn\": \"arn:aws:cy-aj7x:::Rt*id\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/TASK/5B8784D3D2EF16A48FA52F1F7D5069D9\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"ANALYSIS\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:8sxd1:t:236945281131:HA/,WvEf(.\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ANALYSIS/ECBC35CDE9BACF4B1F6606CBFCEAEB6A\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"AUTOMATION\",\n        \"value\": {\n          \"arn\": \"arn:aws:vm:f5wyiqm::ite4=m\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ATTACHMENT/77E2C2CFBE9CEC8BCACF5EFB3691E0CD\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"AUTOMATION\",\n        \"value\": {\n          \"arn\": \"arn:aws-cn:mp-v:k::E@?d-(3\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INCIDENT/0C0A595839BE9419F24A645AA8402222\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"TASK\",\n        \"value\": {\n          \"arn\": \"arn:aws:8sz97zqzd4:7:: #Vf>\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/TASK/193D4562DEBDED0DDCE237F80FF9BB33\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"TASK\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:rrettxq:wnm8::>>tw\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/METRIC/FDCC33C3A016B83B14FD5BA5B2364279\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"ANALYSIS\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:bro26-a6s6::878538209079:\\\"-PKHIXD\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/AUTOMATION/2DB82EC3BF0DF9028C3635A1CE3F7B36\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"METRIC\",\n        \"value\": {\n          \"arn\": \"arn:aws:xxdyft7:-eh::^*\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/METRIC/ED29E0A7312BAB90C85DBBA1DDA2FE74\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"ATTACHMENT\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:s843b-0:ge1jo::\\\\9vb.mQ<\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INVOLVED_RESOURCE/57FADCCCDFFC72EBD2B6C3C624DFDAA1\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"TASK\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:9e01xs:wnoh:949477478393:j5B5TtZ9\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ANALYSIS/DEC3AAD18FE4725E7FC1D6093EEB0F7D\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"PARENT\",\n        \"value\": {\n          \"arn\": \"arn:aws-cn:133:bg-mfz::|u\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INVOLVED_RESOURCE/70C225404F0B4FDC736AD1A7EDB8CBFE\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"AUTOMATION\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov::-308mo3-qe:839884843888: 7\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/PARENT/7BE09A0EE2CC61983C8C40D5BB14EEB4\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"OTHER\",\n        \"value\": {\n          \"arn\": \"arn:aws:ko6jol4z:5a:290226675587:1]h<#C-b8-\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/TASK/CD518B0C60DCFCFB1CD8037CB1B0E4F9\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"ATTACHMENT\",\n        \"value\": {\n          \"arn\": \"arn:aws:3t:huopgq:307487586805:H\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ANALYSIS/E11EB0E1ECBFBDD2203BEFE1DCB27818\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"TASK\",\n        \"value\": {\n          \"arn\": \"arn:aws:biu1:d0wj::hQ).Er7Z(<2\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INVOLVED_RESOURCE/AC2EED733C9FACAB3CFB14BB628560DC\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"ANALYSIS\",\n        \"value\": {\n          \"arn\": \"arn:aws-cn:y47w-6u:1:016960896118:\\\"5/(62hg\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INVOLVED_RESOURCE/2BB9CA439A15A76BBBC5E9CEF7B877AB\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"OTHER\",\n        \"value\": {\n          \"arn\": \"arn:aws-us-gov:7z:hxswk-k:083691335491:I%z>\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/INVOLVED_RESOURCE/C56DF8EE689F514D89347B5B6DFE8772\",\n      \"title\": \"<string>\"\n    },\n    {\n      \"identifier\": {\n        \"type\": \"METRIC\",\n        \"value\": {\n          \"arn\": \"arn:aws::9iwjt58d::_%\",\n          \"metricDefinition\": \"<string>\",\n          \"pagerDutyIncidentDetail\": {\n            \"id\": \"<string>\",\n            \"autoResolve\": \"<boolean>\",\n            \"secretId\": \"<string>\"\n          },\n          \"url\": \"<string>\"\n        }\n      },\n      \"generatedId\": \"related-item/ANALYSIS/B248E621F86F9AFC0D9779CE3F213FA4\",\n      \"title\": \"<string>\"\n    }\n  ],\n  \"nextToken\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T10:26:31.000Z",
+              "updatedAt": "2026-07-28T10:26:31.000Z",
+              "uid": "35240-d2eb7aa5-5f51-461f-b140-33a4420fcc77"
+            },
+            {
+              "id": "e16ec23a-a2c1-4e97-b252-dcf002c8d4bf",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"incidentRecordArn\": \"arn:aws:66nwdm:nbvvh-v::U<=\",\n  \"maxResults\": \"<integer>\",\n  \"nextToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/listRelatedItems?maxResults=<string>&nextToken=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "listRelatedItems"
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "maxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:26:31.000Z",
+              "updatedAt": "2026-07-28T10:26:31.000Z",
+              "uid": "35240-e16ec23a-a2c1-4e97-b252-dcf002c8d4bf"
+            },
+            {
+              "id": "10d89730-a193-41e9-8d6d-4025dd93fada",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"incidentRecordArn\": \"arn:aws:66nwdm:nbvvh-v::U<=\",\n  \"maxResults\": \"<integer>\",\n  \"nextToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/listRelatedItems?maxResults=<string>&nextToken=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "listRelatedItems"
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "maxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:26:31.000Z",
+              "updatedAt": "2026-07-28T10:26:31.000Z",
+              "uid": "35240-10d89730-a193-41e9-8d6d-4025dd93fada"
+            },
+            {
+              "id": "731b606e-ec91-4328-9a3e-913b8750aaa7",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"incidentRecordArn\": \"arn:aws:66nwdm:nbvvh-v::U<=\",\n  \"maxResults\": \"<integer>\",\n  \"nextToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/listRelatedItems?maxResults=<string>&nextToken=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "listRelatedItems"
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "maxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:26:31.000Z",
+              "updatedAt": "2026-07-28T10:26:31.000Z",
+              "uid": "35240-731b606e-ec91-4328-9a3e-913b8750aaa7"
+            },
+            {
+              "id": "35b600cc-751a-45b3-9595-2b265bf6d995",
+              "name": "InternalServerException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"incidentRecordArn\": \"arn:aws:66nwdm:nbvvh-v::U<=\",\n  \"maxResults\": \"<integer>\",\n  \"nextToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/listRelatedItems?maxResults=<string>&nextToken=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "listRelatedItems"
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "maxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:26:31.000Z",
+              "updatedAt": "2026-07-28T10:26:31.000Z",
+              "uid": "35240-35b600cc-751a-45b3-9595-2b265bf6d995"
+            }
+          ],
+          "createdAt": "2026-07-28T10:26:31.000Z",
+          "updatedAt": "2026-07-28T10:26:31.000Z",
+          "uid": "35240-4a667deb-1b21-4d0c-81e8-96cca9595933"
+        }
+      ],
+      "id": "10498b05-f078-4958-b02c-1292f33b8119",
+      "createdAt": "2026-07-28T10:26:31.000Z",
+      "updatedAt": "2026-07-28T10:26:31.000Z",
+      "uid": "35240-10498b05-f078-4958-b02c-1292f33b8119"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://ssm-incidents.{{region}}.amazonaws.com"
+    }
+  ]
+}

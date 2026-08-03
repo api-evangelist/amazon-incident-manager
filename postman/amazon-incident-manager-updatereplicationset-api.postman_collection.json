@@ -1,0 +1,702 @@
+{
+  "info": {
+    "_postman_id": "3dd19616-a7e5-4cb1-9f08-4a6e44a0a6e5",
+    "name": "AWS Systems Manager Incident Manager CreateReplicationSet UpdateReplicationSet API",
+    "description": "<p>Systems Manager Incident Manager is an incident management console designed to help users mitigate and recover from incidents affecting their Amazon Web Services-hosted applications. An incident is any unplanned interruption or reduction in quality of services. </p> <p>Incident Manager increases incident resolution by notifying responders of impact, highlighting relevant troubleshooting data, and providing collaboration tools to get services back up and running. To achieve the primary goal of reducing the time-to-resolution of critical incidents, Incident Manager automates response plans and enables responder team escalation. </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:27:28.000Z",
+    "updatedAt": "2026-07-28T10:27:29.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-3dd19616-a7e5-4cb1-9f08-4a6e44a0a6e5"
+  },
+  "item": [
+    {
+      "name": "updateReplicationSet",
+      "item": [
+        {
+          "name": "Amazon Incident Manager Update Replication Set",
+          "id": "fd5a24c3-2404-47c5-bebf-e6034b3b13ea",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"actions\": [\n    {\n      \"addRegionAction\": {\n        \"regionName\": \"<string>\",\n        \"sseKmsKeyId\": \"<string>\"\n      },\n      \"deleteRegionAction\": {\n        \"regionName\": \"<string>\"\n      }\n    }\n  ],\n  \"arn\": \"arn:aws:iabb:jvriehmdy::W8t\",\n  \"clientToken\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/updateReplicationSet",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "updateReplicationSet"
+              ]
+            },
+            "description": "Add or delete Regions from your replication set."
+          },
+          "response": [
+            {
+              "id": "8e6f65ca-2620-4c19-a36a-e84a3422ebc4",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"actions\": [\n    {\n      \"addRegionAction\": {\n        \"regionName\": \"<string>\",\n        \"sseKmsKeyId\": \"<string>\"\n      },\n      \"deleteRegionAction\": {\n        \"regionName\": \"<string>\"\n      }\n    }\n  ],\n  \"arn\": \"arn:aws:iabb:jvriehmdy::W8t\",\n  \"clientToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/updateReplicationSet",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "updateReplicationSet"
+                  ]
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:29.000Z",
+              "updatedAt": "2026-07-28T10:27:29.000Z",
+              "uid": "35240-8e6f65ca-2620-4c19-a36a-e84a3422ebc4"
+            },
+            {
+              "id": "e3e5cd64-bc10-4720-9488-0d173fef5a20",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"actions\": [\n    {\n      \"addRegionAction\": {\n        \"regionName\": \"<string>\",\n        \"sseKmsKeyId\": \"<string>\"\n      },\n      \"deleteRegionAction\": {\n        \"regionName\": \"<string>\"\n      }\n    }\n  ],\n  \"arn\": \"arn:aws:iabb:jvriehmdy::W8t\",\n  \"clientToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/updateReplicationSet",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "updateReplicationSet"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:29.000Z",
+              "updatedAt": "2026-07-28T10:27:29.000Z",
+              "uid": "35240-e3e5cd64-bc10-4720-9488-0d173fef5a20"
+            },
+            {
+              "id": "33263ace-6252-4624-bac1-33d869c90cb9",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"actions\": [\n    {\n      \"addRegionAction\": {\n        \"regionName\": \"<string>\",\n        \"sseKmsKeyId\": \"<string>\"\n      },\n      \"deleteRegionAction\": {\n        \"regionName\": \"<string>\"\n      }\n    }\n  ],\n  \"arn\": \"arn:aws:iabb:jvriehmdy::W8t\",\n  \"clientToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/updateReplicationSet",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "updateReplicationSet"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:29.000Z",
+              "updatedAt": "2026-07-28T10:27:29.000Z",
+              "uid": "35240-33263ace-6252-4624-bac1-33d869c90cb9"
+            },
+            {
+              "id": "a964d10e-fedc-4a17-8dd8-5569c1124483",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"actions\": [\n    {\n      \"addRegionAction\": {\n        \"regionName\": \"<string>\",\n        \"sseKmsKeyId\": \"<string>\"\n      },\n      \"deleteRegionAction\": {\n        \"regionName\": \"<string>\"\n      }\n    }\n  ],\n  \"arn\": \"arn:aws:iabb:jvriehmdy::W8t\",\n  \"clientToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/updateReplicationSet",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "updateReplicationSet"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:29.000Z",
+              "updatedAt": "2026-07-28T10:27:29.000Z",
+              "uid": "35240-a964d10e-fedc-4a17-8dd8-5569c1124483"
+            },
+            {
+              "id": "5a0cafbd-7ea3-40ea-88ce-ab217a29352a",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"actions\": [\n    {\n      \"addRegionAction\": {\n        \"regionName\": \"<string>\",\n        \"sseKmsKeyId\": \"<string>\"\n      },\n      \"deleteRegionAction\": {\n        \"regionName\": \"<string>\"\n      }\n    }\n  ],\n  \"arn\": \"arn:aws:iabb:jvriehmdy::W8t\",\n  \"clientToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/updateReplicationSet",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "updateReplicationSet"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:29.000Z",
+              "updatedAt": "2026-07-28T10:27:29.000Z",
+              "uid": "35240-5a0cafbd-7ea3-40ea-88ce-ab217a29352a"
+            },
+            {
+              "id": "97286d5c-6b20-4ab8-a5e4-cedb70127325",
+              "name": "ConflictException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"actions\": [\n    {\n      \"addRegionAction\": {\n        \"regionName\": \"<string>\",\n        \"sseKmsKeyId\": \"<string>\"\n      },\n      \"deleteRegionAction\": {\n        \"regionName\": \"<string>\"\n      }\n    }\n  ],\n  \"arn\": \"arn:aws:iabb:jvriehmdy::W8t\",\n  \"clientToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/updateReplicationSet",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "updateReplicationSet"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:29.000Z",
+              "updatedAt": "2026-07-28T10:27:29.000Z",
+              "uid": "35240-97286d5c-6b20-4ab8-a5e4-cedb70127325"
+            },
+            {
+              "id": "febf2c15-af1a-4820-a3a5-54f453887fbf",
+              "name": "InternalServerException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"actions\": [\n    {\n      \"addRegionAction\": {\n        \"regionName\": \"<string>\",\n        \"sseKmsKeyId\": \"<string>\"\n      },\n      \"deleteRegionAction\": {\n        \"regionName\": \"<string>\"\n      }\n    }\n  ],\n  \"arn\": \"arn:aws:iabb:jvriehmdy::W8t\",\n  \"clientToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/updateReplicationSet",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "updateReplicationSet"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:29.000Z",
+              "updatedAt": "2026-07-28T10:27:29.000Z",
+              "uid": "35240-febf2c15-af1a-4820-a3a5-54f453887fbf"
+            }
+          ],
+          "createdAt": "2026-07-28T10:27:29.000Z",
+          "updatedAt": "2026-07-28T10:27:29.000Z",
+          "uid": "35240-fd5a24c3-2404-47c5-bebf-e6034b3b13ea"
+        }
+      ],
+      "id": "e94a3c2c-1f47-495e-ac2c-d7e1cc74b5d1",
+      "createdAt": "2026-07-28T10:27:29.000Z",
+      "updatedAt": "2026-07-28T10:27:29.000Z",
+      "uid": "35240-e94a3c2c-1f47-495e-ac2c-d7e1cc74b5d1"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://ssm-incidents.{{region}}.amazonaws.com"
+    }
+  ]
+}

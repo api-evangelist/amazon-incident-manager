@@ -1,0 +1,578 @@
+{
+  "info": {
+    "_postman_id": "cde41460-e302-4c1d-9ae8-8987434bbd9a",
+    "name": "AWS Systems Manager Incident Manager CreateReplicationSet GetReplicationSet#arn API",
+    "description": "<p>Systems Manager Incident Manager is an incident management console designed to help users mitigate and recover from incidents affecting their Amazon Web Services-hosted applications. An incident is any unplanned interruption or reduction in quality of services. </p> <p>Incident Manager increases incident resolution by notifying responders of impact, highlighting relevant troubleshooting data, and providing collaboration tools to get services back up and running. To achieve the primary goal of reducing the time-to-resolution of critical incidents, Incident Manager automates response plans and enables responder team escalation. </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:26:25.000Z",
+    "updatedAt": "2026-07-28T10:26:26.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-cde41460-e302-4c1d-9ae8-8987434bbd9a"
+  },
+  "item": [
+    {
+      "name": "getReplicationSet#arn",
+      "item": [
+        {
+          "name": "Amazon Incident Manager Get Replication Set",
+          "id": "daab5e90-a923-4ec6-b3ca-53390c34c18b",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/getReplicationSet?arn=arn:aws-cn:m3wpsgu::615077430758:JmvTrf3#arn",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "getReplicationSet"
+              ],
+              "query": [
+                {
+                  "description": "(Required) The Amazon Resource Name (ARN) of the replication set you want to retrieve.",
+                  "key": "arn",
+                  "value": "arn:aws-cn:m3wpsgu::615077430758:JmvTrf3"
+                }
+              ],
+              "hash": "arn"
+            },
+            "description": "Retrieve your Incident Manager replication set."
+          },
+          "response": [
+            {
+              "id": "cb581fee-059d-465b-ad82-258b75e1f1fa",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/getReplicationSet?arn=arn:aws-cn:m3wpsgu::615077430758:JmvTrf3#arn",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "getReplicationSet"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The Amazon Resource Name (ARN) of the replication set you want to retrieve.",
+                      "key": "arn",
+                      "value": "arn:aws-cn:m3wpsgu::615077430758:JmvTrf3"
+                    }
+                  ],
+                  "hash": "arn"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"replicationSet\": {\n    \"createdBy\": \"arn:aws-us-gov:i:xl4e0f-::y&T(bT(_\",\n    \"createdTime\": \"<dateTime>\",\n    \"deletionProtected\": \"<boolean>\",\n    \"lastModifiedBy\": \"arn:aws-cn:f39-eotqh:::I(~Y<tkVS\",\n    \"lastModifiedTime\": \"<dateTime>\",\n    \"regionMap\": {\n      \"Ut_af\": {\n        \"status\": \"CREATING\",\n        \"statusUpdateDateTime\": \"<dateTime>\",\n        \"sseKmsKeyId\": \"<string>\",\n        \"statusMessage\": \"<string>\"\n      }\n    },\n    \"status\": \"FAILED\",\n    \"arn\": \"arn:aws-cn:qbmn:vtgx:261279882001:}@gxx\"\n  }\n}",
+              "createdAt": "2026-07-28T10:26:26.000Z",
+              "updatedAt": "2026-07-28T10:26:26.000Z",
+              "uid": "35240-cb581fee-059d-465b-ad82-258b75e1f1fa"
+            },
+            {
+              "id": "3cede119-450f-4ce5-b762-8f5ae8fe04d4",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/getReplicationSet?arn=arn:aws-cn:m3wpsgu::615077430758:JmvTrf3#arn",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "getReplicationSet"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The Amazon Resource Name (ARN) of the replication set you want to retrieve.",
+                      "key": "arn",
+                      "value": "arn:aws-cn:m3wpsgu::615077430758:JmvTrf3"
+                    }
+                  ],
+                  "hash": "arn"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:26:26.000Z",
+              "updatedAt": "2026-07-28T10:26:26.000Z",
+              "uid": "35240-3cede119-450f-4ce5-b762-8f5ae8fe04d4"
+            },
+            {
+              "id": "a7d3dbc2-94bb-421b-b498-5cdaf203ac7c",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/getReplicationSet?arn=arn:aws-cn:m3wpsgu::615077430758:JmvTrf3#arn",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "getReplicationSet"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The Amazon Resource Name (ARN) of the replication set you want to retrieve.",
+                      "key": "arn",
+                      "value": "arn:aws-cn:m3wpsgu::615077430758:JmvTrf3"
+                    }
+                  ],
+                  "hash": "arn"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:26:26.000Z",
+              "updatedAt": "2026-07-28T10:26:26.000Z",
+              "uid": "35240-a7d3dbc2-94bb-421b-b498-5cdaf203ac7c"
+            },
+            {
+              "id": "45b1d3ea-19a6-40fc-9320-85e9e9f519e9",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/getReplicationSet?arn=arn:aws-cn:m3wpsgu::615077430758:JmvTrf3#arn",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "getReplicationSet"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The Amazon Resource Name (ARN) of the replication set you want to retrieve.",
+                      "key": "arn",
+                      "value": "arn:aws-cn:m3wpsgu::615077430758:JmvTrf3"
+                    }
+                  ],
+                  "hash": "arn"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:26:26.000Z",
+              "updatedAt": "2026-07-28T10:26:26.000Z",
+              "uid": "35240-45b1d3ea-19a6-40fc-9320-85e9e9f519e9"
+            },
+            {
+              "id": "396a9780-05e4-4ac7-848e-2072e010dd28",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/getReplicationSet?arn=arn:aws-cn:m3wpsgu::615077430758:JmvTrf3#arn",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "getReplicationSet"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The Amazon Resource Name (ARN) of the replication set you want to retrieve.",
+                      "key": "arn",
+                      "value": "arn:aws-cn:m3wpsgu::615077430758:JmvTrf3"
+                    }
+                  ],
+                  "hash": "arn"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:26:26.000Z",
+              "updatedAt": "2026-07-28T10:26:26.000Z",
+              "uid": "35240-396a9780-05e4-4ac7-848e-2072e010dd28"
+            },
+            {
+              "id": "c4395ec4-eb8e-406a-83bd-a5c6447edbfb",
+              "name": "InternalServerException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/getReplicationSet?arn=arn:aws-cn:m3wpsgu::615077430758:JmvTrf3#arn",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "getReplicationSet"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The Amazon Resource Name (ARN) of the replication set you want to retrieve.",
+                      "key": "arn",
+                      "value": "arn:aws-cn:m3wpsgu::615077430758:JmvTrf3"
+                    }
+                  ],
+                  "hash": "arn"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:26:26.000Z",
+              "updatedAt": "2026-07-28T10:26:26.000Z",
+              "uid": "35240-c4395ec4-eb8e-406a-83bd-a5c6447edbfb"
+            }
+          ],
+          "createdAt": "2026-07-28T10:26:26.000Z",
+          "updatedAt": "2026-07-28T10:26:26.000Z",
+          "uid": "35240-daab5e90-a923-4ec6-b3ca-53390c34c18b"
+        }
+      ],
+      "id": "e47f3fa8-5ffe-4ba5-a963-5ada029cd3af",
+      "createdAt": "2026-07-28T10:26:26.000Z",
+      "updatedAt": "2026-07-28T10:26:26.000Z",
+      "uid": "35240-e47f3fa8-5ffe-4ba5-a963-5ada029cd3af"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://ssm-incidents.{{region}}.amazonaws.com"
+    }
+  ]
+}
