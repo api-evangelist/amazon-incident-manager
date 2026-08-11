@@ -48,8 +48,6 @@ apis:
     url: https://aws.amazon.com/systems-manager/pricing/
   - type: FAQ
     url: https://aws.amazon.com/systems-manager/faq/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-incident-manager.yaml
 - aid: amazon-incident-manager:amazon-incident-manager-createresponseplan-api
   name: Amazon Incident Manager CreateResponsePlan API
   description: >-
@@ -69,8 +67,6 @@ apis:
     url: https://aws.amazon.com/systems-manager/pricing/
   - type: FAQ
     url: https://aws.amazon.com/systems-manager/faq/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-incident-manager.yaml
 - aid: amazon-incident-manager:amazon-incident-manager-createtimelineevent-api
   name: Amazon Incident Manager CreateTimelineEvent API
   description: >-
@@ -90,8 +86,6 @@ apis:
     url: https://aws.amazon.com/systems-manager/pricing/
   - type: FAQ
     url: https://aws.amazon.com/systems-manager/faq/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-incident-manager.yaml
 - aid: amazon-incident-manager:amazon-incident-manager-deleteincidentrecord-api
   name: Amazon Incident Manager DeleteIncidentRecord API
   description: >-
@@ -111,8 +105,6 @@ apis:
     url: https://aws.amazon.com/systems-manager/pricing/
   - type: FAQ
     url: https://aws.amazon.com/systems-manager/faq/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-incident-manager.yaml
 - aid: amazon-incident-manager:amazon-incident-manager-deletereplicationset-arn-api
   name: Amazon Incident Manager DeleteReplicationSet#arn API
   description: >-
@@ -132,8 +124,6 @@ apis:
     url: https://aws.amazon.com/systems-manager/pricing/
   - type: FAQ
     url: https://aws.amazon.com/systems-manager/faq/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-incident-manager.yaml
 - aid: amazon-incident-manager:amazon-incident-manager-deleteresourcepolicy-api
   name: Amazon Incident Manager DeleteResourcePolicy API
   description: >-
@@ -153,8 +143,6 @@ apis:
     url: https://aws.amazon.com/systems-manager/pricing/
   - type: FAQ
     url: https://aws.amazon.com/systems-manager/faq/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-incident-manager.yaml
 - aid: amazon-incident-manager:amazon-incident-manager-deleteresponseplan-api
   name: Amazon Incident Manager DeleteResponsePlan API
   description: >-
@@ -174,8 +162,6 @@ apis:
     url: https://aws.amazon.com/systems-manager/pricing/
   - type: FAQ
     url: https://aws.amazon.com/systems-manager/faq/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-incident-manager.yaml
 - aid: amazon-incident-manager:amazon-incident-manager-deletetimelineevent-api
   name: Amazon Incident Manager DeleteTimelineEvent API
   description: >-
@@ -195,8 +181,6 @@ apis:
     url: https://aws.amazon.com/systems-manager/pricing/
   - type: FAQ
     url: https://aws.amazon.com/systems-manager/faq/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-incident-manager.yaml
 - aid: amazon-incident-manager:amazon-incident-manager-getincidentrecord-arn-api
   name: Amazon Incident Manager GetIncidentRecord#arn API
   description: >-
@@ -216,8 +200,6 @@ apis:
     url: https://aws.amazon.com/systems-manager/pricing/
   - type: FAQ
     url: https://aws.amazon.com/systems-manager/faq/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-incident-manager.yaml
 - aid: amazon-incident-manager:amazon-incident-manager-getreplicationset-arn-api
   name: Amazon Incident Manager GetReplicationSet#arn API
   description: >-
@@ -237,8 +219,6 @@ apis:
     url: https://aws.amazon.com/systems-manager/pricing/
   - type: FAQ
     url: https://aws.amazon.com/systems-manager/faq/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-incident-manager.yaml
 - aid: amazon-incident-manager:amazon-incident-manager-getresourcepolicies-resourcearn-api
   name: Amazon Incident Manager GetResourcePolicies#resourceArn API
   description: >-
@@ -258,8 +238,6 @@ apis:
     url: https://aws.amazon.com/systems-manager/pricing/
   - type: FAQ
     url: https://aws.amazon.com/systems-manager/faq/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-incident-manager.yaml
 - aid: amazon-incident-manager:amazon-incident-manager-getresponseplan-arn-api
   name: Amazon Incident Manager GetResponsePlan#arn API
   description: >-
@@ -279,8 +257,6 @@ apis:
     url: https://aws.amazon.com/systems-manager/pricing/
   - type: FAQ
     url: https://aws.amazon.com/systems-manager/faq/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-incident-manager.yaml
 - aid: >-
     amazon-incident-manager:amazon-incident-manager-gettimelineevent-eventid-incidentrecordarn-api
   name: Amazon Incident Manager GetTimelineEvent#eventId&incidentRecordArn API
@@ -303,8 +279,6 @@ apis:
     url: https://aws.amazon.com/systems-manager/pricing/
   - type: FAQ
     url: https://aws.amazon.com/systems-manager/faq/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-incident-manager.yaml
 - aid: amazon-incident-manager:amazon-incident-manager-listincidentrecords-api
   name: Amazon Incident Manager ListIncidentRecords API
   description: >-
@@ -324,8 +298,6 @@ apis:
     url: https://aws.amazon.com/systems-manager/pricing/
   - type: FAQ
     url: https://aws.amazon.com/systems-manager/faq/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-incident-manager.yaml
 - aid: amazon-incident-manager:amazon-incident-manager-listrelateditems-api
   name: Amazon Incident Manager ListRelatedItems API
   description: >-
@@ -345,8 +317,6 @@ apis:
     url: https://aws.amazon.com/systems-manager/pricing/
   - type: FAQ
     url: https://aws.amazon.com/systems-manager/faq/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-incident-manager.yaml
 - aid: amazon-incident-manager:amazon-incident-manager-listreplicationsets-api
   name: Amazon Incident Manager ListReplicationSets API
   description: >-
@@ -366,8 +336,6 @@ apis:
     url: https://aws.amazon.com/systems-manager/pricing/
   - type: FAQ
     url: https://aws.amazon.com/systems-manager/faq/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-incident-manager.yaml
 - aid: amazon-incident-manager:amazon-incident-manager-listresponseplans-api
   name: Amazon Incident Manager ListResponsePlans API
   description: >-
@@ -387,8 +355,6 @@ apis:
     url: https://aws.amazon.com/systems-manager/pricing/
   - type: FAQ
     url: https://aws.amazon.com/systems-manager/faq/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-incident-manager.yaml
 - aid: amazon-incident-manager:amazon-incident-manager-listtimelineevents-api
   name: Amazon Incident Manager ListTimelineEvents API
   description: >-
@@ -408,8 +374,6 @@ apis:
     url: https://aws.amazon.com/systems-manager/pricing/
   - type: FAQ
     url: https://aws.amazon.com/systems-manager/faq/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-incident-manager.yaml
 - aid: amazon-incident-manager:amazon-incident-manager-putresourcepolicy-api
   name: Amazon Incident Manager PutResourcePolicy API
   description: >-
@@ -429,8 +393,6 @@ apis:
     url: https://aws.amazon.com/systems-manager/pricing/
   - type: FAQ
     url: https://aws.amazon.com/systems-manager/faq/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-incident-manager.yaml
 - aid: amazon-incident-manager:amazon-incident-manager-startincident-api
   name: Amazon Incident Manager StartIncident API
   description: The StartIncident API from Amazon Incident Manager — 1 operation(s) for startincident.
@@ -449,8 +411,6 @@ apis:
     url: https://aws.amazon.com/systems-manager/pricing/
   - type: FAQ
     url: https://aws.amazon.com/systems-manager/faq/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-incident-manager.yaml
 - aid: amazon-incident-manager:amazon-incident-manager-tags-api
   name: Amazon Incident Manager Tags API
   description: The Tags API from Amazon Incident Manager — 2 operation(s) for tags.
@@ -469,8 +429,6 @@ apis:
     url: https://aws.amazon.com/systems-manager/pricing/
   - type: FAQ
     url: https://aws.amazon.com/systems-manager/faq/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-incident-manager.yaml
 - aid: amazon-incident-manager:amazon-incident-manager-updatedeletionprotection-api
   name: Amazon Incident Manager UpdateDeletionProtection API
   description: >-
@@ -490,8 +448,6 @@ apis:
     url: https://aws.amazon.com/systems-manager/pricing/
   - type: FAQ
     url: https://aws.amazon.com/systems-manager/faq/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-incident-manager.yaml
 - aid: amazon-incident-manager:amazon-incident-manager-updateincidentrecord-api
   name: Amazon Incident Manager UpdateIncidentRecord API
   description: >-
@@ -511,8 +467,6 @@ apis:
     url: https://aws.amazon.com/systems-manager/pricing/
   - type: FAQ
     url: https://aws.amazon.com/systems-manager/faq/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-incident-manager.yaml
 - aid: amazon-incident-manager:amazon-incident-manager-updaterelateditems-api
   name: Amazon Incident Manager UpdateRelatedItems API
   description: >-
@@ -532,8 +486,6 @@ apis:
     url: https://aws.amazon.com/systems-manager/pricing/
   - type: FAQ
     url: https://aws.amazon.com/systems-manager/faq/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-incident-manager.yaml
 - aid: amazon-incident-manager:amazon-incident-manager-updatereplicationset-api
   name: Amazon Incident Manager UpdateReplicationSet API
   description: >-
@@ -553,8 +505,6 @@ apis:
     url: https://aws.amazon.com/systems-manager/pricing/
   - type: FAQ
     url: https://aws.amazon.com/systems-manager/faq/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-incident-manager.yaml
 - aid: amazon-incident-manager:amazon-incident-manager-updateresponseplan-api
   name: Amazon Incident Manager UpdateResponsePlan API
   description: >-
@@ -574,8 +524,6 @@ apis:
     url: https://aws.amazon.com/systems-manager/pricing/
   - type: FAQ
     url: https://aws.amazon.com/systems-manager/faq/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-incident-manager.yaml
 - aid: amazon-incident-manager:amazon-incident-manager-updatetimelineevent-api
   name: Amazon Incident Manager UpdateTimelineEvent API
   description: >-
@@ -595,8 +543,6 @@ apis:
     url: https://aws.amazon.com/systems-manager/pricing/
   - type: FAQ
     url: https://aws.amazon.com/systems-manager/faq/
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-incident-manager.yaml
 common:
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/amazon-incident-manager/overview
