@@ -1,0 +1,75 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AWS Systems Manager Incident Manager CreateReplicationSet GetResponsePlan#arn API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "GetResponsePlan#arn",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon Incident Manager Get Response Plan",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://ssm-incidents.{region}.amazonaws.com/getResponsePlan#arn",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "arn",
+                "value": "",
+                "type": "query",
+                "description": "The Amazon Resource Name (ARN) of the response plan."
+              }
+            ]
+          },
+          "docs": "Retrieves the details of the specified response plan."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

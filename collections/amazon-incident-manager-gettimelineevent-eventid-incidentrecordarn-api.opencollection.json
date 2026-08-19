@@ -1,0 +1,81 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AWS Systems Manager Incident Manager CreateReplicationSet GetTimelineEvent#eventId&incidentRecordArn API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "GetTimelineEvent#eventId&incidentRecordArn",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon Incident Manager Get Timeline Event",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://ssm-incidents.{region}.amazonaws.com/getTimelineEvent#eventId&incidentRecordArn",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "eventId",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the event. You can get an event's ID when you create it, or by using <code>ListTimelineEvents</code>."
+              },
+              {
+                "name": "incidentRecordArn",
+                "value": "",
+                "type": "query",
+                "description": "The Amazon Resource Name (ARN) of the incident that includes the timeline event."
+              }
+            ]
+          },
+          "docs": "Retrieves a timeline event based on its ID and incident record."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

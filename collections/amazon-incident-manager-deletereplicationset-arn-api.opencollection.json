@@ -1,0 +1,75 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AWS Systems Manager Incident Manager CreateReplicationSet DeleteReplicationSet#arn API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "DeleteReplicationSet#arn",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon Incident Manager Delete Replication Set",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://ssm-incidents.{region}.amazonaws.com/deleteReplicationSet#arn",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "arn",
+                "value": "",
+                "type": "query",
+                "description": "The Amazon Resource Name (ARN) of the replication set you're deleting."
+              }
+            ]
+          },
+          "docs": "Deletes all Regions in your replication set. Deleting the replication set deletes all Incident Manager data."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
