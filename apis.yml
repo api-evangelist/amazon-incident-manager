@@ -23,6 +23,11 @@ tags:
 - AWS
 - DevOps
 - Incident Management
+tags_raw:
+- Automation
+- AWS
+- DevOps
+- Incident Management
 - Operations
 url: https://raw.githubusercontent.com/api-evangelist/amazon-incident-manager/refs/heads/main/apis.yml
 created: '2026-03-16'
