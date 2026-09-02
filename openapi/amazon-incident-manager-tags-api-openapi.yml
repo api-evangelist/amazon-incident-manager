@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
   title: AWS Systems Manager Incident Manager CreateReplicationSet Tags API
   description: <p>Systems Manager Incident Manager is an incident management console designed to help users mitigate and recover from incidents affecting their Amazon Web Services-hosted applications. An incident is any unplanned interruption or reduction in quality of services. </p> <p>Incident Manager increases incident resolution by notifying responders of impact, highlighting relevant troubleshooting data, and providing collaboration tools to get services back up and running. To achieve the primary goal of reducing the time-to-resolution of critical incidents, Incident Manager automates response plans and enables responder team escalation. </p>
@@ -337,20 +337,14 @@ paths:
       - Tags
 components:
   parameters:
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Signature:
       name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
@@ -361,8 +355,20 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
@@ -373,14 +379,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    AccessDeniedException: {}
+    ConflictException: {}
     ListTagsForResourceResponse:
       type: object
       required:
@@ -391,33 +391,33 @@ components:
           - $ref: '#/components/schemas/TagMap'
           - description: A list of tags for the response plan.
     ThrottlingException: {}
-    ConflictException: {}
-    TagKey:
-      type: string
-      pattern: ^(?!aws:)[A-Za-z0-9 _=@:.+-/]+$
-      minLength: 1
-      maxLength: 128
     TagMap:
       type: object
       minProperties: 1
       maxProperties: 50
       additionalProperties:
         $ref: '#/components/schemas/TagValue'
+    TagKey:
+      type: string
+      pattern: ^(?!aws:)[A-Za-z0-9 _=@:.+-/]+$
+      minLength: 1
+      maxLength: 128
     ServiceQuotaExceededException: {}
-    InternalServerException: {}
     ResourceNotFoundException: {}
-    TagResourceResponse:
-      type: object
-      properties: {}
     UntagResourceResponse:
       type: object
       properties: {}
+    AccessDeniedException: {}
     ValidationException: {}
+    TagResourceResponse:
+      type: object
+      properties: {}
     TagValue:
       type: string
       pattern: ^[A-Za-z0-9 _=@:.+-/]*$
       minLength: 0
       maxLength: 256
+    InternalServerException: {}
   securitySchemes:
     hmac:
       type: apiKey
