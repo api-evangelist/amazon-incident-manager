@@ -23,11 +23,12 @@ accessModel:
   try_now: true
   public: false
   label: Freemium · Self-serve signup
-  confidence: high
+  confidence: medium
   source:
   - plans
   - authentication
-  generated: '2026-07-22'
+  - security
+  generated: '2026-09-03'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/amazon-incident-manager.png
 tags:
@@ -561,6 +562,9 @@ apis:
   - type: FAQ
     url: https://aws.amazon.com/systems-manager/faq/
 common:
+- type: CapabilityMap
+  url: capabilities/amazon-incident-manager-capability-edges.yml
+  name: Amazon Incident Manager Business Capability Map
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/amazon-incident-manager/overview
 - type: AgenticAccess
