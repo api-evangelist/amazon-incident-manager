@@ -47,82 +47,6 @@ created: '2026-03-16'
 modified: '2026-05-19'
 specificationVersion: '0.23'
 apis:
-- aid: amazon-incident-manager:amazon-incident-manager-createreplicationset-api
-  name: Amazon Incident Manager CreateReplicationSet API
-  description: >-
-    The CreateReplicationSet API from Amazon Incident Manager — 1 operation(s) for createreplicationset.
-  humanURL: https://aws.amazon.com/systems-manager/features/#Incident_Manager
-  baseURL: https://ssm-incidents.amazonaws.com
-  tags:
-  - CreateReplicationSet
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-incident-manager-createreplicationset-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/incident-manager/latest/APIReference/Welcome.html
-  - type: GettingStarted
-    url: https://docs.aws.amazon.com/incident-manager/latest/userguide/getting-started.html
-  - type: Pricing
-    url: https://aws.amazon.com/systems-manager/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/systems-manager/faq/
-- aid: amazon-incident-manager:amazon-incident-manager-createresponseplan-api
-  name: Amazon Incident Manager CreateResponsePlan API
-  description: >-
-    The CreateResponsePlan API from Amazon Incident Manager — 1 operation(s) for createresponseplan.
-  humanURL: https://aws.amazon.com/systems-manager/features/#Incident_Manager
-  baseURL: https://ssm-incidents.amazonaws.com
-  tags:
-  - CreateResponsePlan
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-incident-manager-createresponseplan-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/incident-manager/latest/APIReference/Welcome.html
-  - type: GettingStarted
-    url: https://docs.aws.amazon.com/incident-manager/latest/userguide/getting-started.html
-  - type: Pricing
-    url: https://aws.amazon.com/systems-manager/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/systems-manager/faq/
-- aid: amazon-incident-manager:amazon-incident-manager-createtimelineevent-api
-  name: Amazon Incident Manager CreateTimelineEvent API
-  description: >-
-    The CreateTimelineEvent API from Amazon Incident Manager — 1 operation(s) for createtimelineevent.
-  humanURL: https://aws.amazon.com/systems-manager/features/#Incident_Manager
-  baseURL: https://ssm-incidents.amazonaws.com
-  tags:
-  - CreateTimelineEvent
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-incident-manager-createtimelineevent-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/incident-manager/latest/APIReference/Welcome.html
-  - type: GettingStarted
-    url: https://docs.aws.amazon.com/incident-manager/latest/userguide/getting-started.html
-  - type: Pricing
-    url: https://aws.amazon.com/systems-manager/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/systems-manager/faq/
-- aid: amazon-incident-manager:amazon-incident-manager-deleteincidentrecord-api
-  name: Amazon Incident Manager DeleteIncidentRecord API
-  description: >-
-    The DeleteIncidentRecord API from Amazon Incident Manager — 1 operation(s) for deleteincidentrecord.
-  humanURL: https://aws.amazon.com/systems-manager/features/#Incident_Manager
-  baseURL: https://ssm-incidents.amazonaws.com
-  tags:
-  - DeleteIncidentRecord
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-incident-manager-deleteincidentrecord-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/incident-manager/latest/APIReference/Welcome.html
-  - type: GettingStarted
-    url: https://docs.aws.amazon.com/incident-manager/latest/userguide/getting-started.html
-  - type: Pricing
-    url: https://aws.amazon.com/systems-manager/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/systems-manager/faq/
 - aid: amazon-incident-manager:amazon-incident-manager-deletereplicationset-arn-api
   name: Amazon Incident Manager DeleteReplicationSet#arn API
   description: >-
@@ -153,44 +77,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/amazon-incident-manager-deleteresourcepolicy-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/incident-manager/latest/APIReference/Welcome.html
-  - type: GettingStarted
-    url: https://docs.aws.amazon.com/incident-manager/latest/userguide/getting-started.html
-  - type: Pricing
-    url: https://aws.amazon.com/systems-manager/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/systems-manager/faq/
-- aid: amazon-incident-manager:amazon-incident-manager-deleteresponseplan-api
-  name: Amazon Incident Manager DeleteResponsePlan API
-  description: >-
-    The DeleteResponsePlan API from Amazon Incident Manager — 1 operation(s) for deleteresponseplan.
-  humanURL: https://aws.amazon.com/systems-manager/features/#Incident_Manager
-  baseURL: https://ssm-incidents.amazonaws.com
-  tags:
-  - DeleteResponsePlan
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-incident-manager-deleteresponseplan-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/incident-manager/latest/APIReference/Welcome.html
-  - type: GettingStarted
-    url: https://docs.aws.amazon.com/incident-manager/latest/userguide/getting-started.html
-  - type: Pricing
-    url: https://aws.amazon.com/systems-manager/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/systems-manager/faq/
-- aid: amazon-incident-manager:amazon-incident-manager-deletetimelineevent-api
-  name: Amazon Incident Manager DeleteTimelineEvent API
-  description: >-
-    The DeleteTimelineEvent API from Amazon Incident Manager — 1 operation(s) for deletetimelineevent.
-  humanURL: https://aws.amazon.com/systems-manager/features/#Incident_Manager
-  baseURL: https://ssm-incidents.amazonaws.com
-  tags:
-  - DeleteTimelineEvent
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-incident-manager-deletetimelineevent-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/incident-manager/latest/APIReference/Welcome.html
   - type: GettingStarted
@@ -297,101 +183,6 @@ apis:
     url: https://aws.amazon.com/systems-manager/pricing/
   - type: FAQ
     url: https://aws.amazon.com/systems-manager/faq/
-- aid: amazon-incident-manager:amazon-incident-manager-listincidentrecords-api
-  name: Amazon Incident Manager ListIncidentRecords API
-  description: >-
-    The ListIncidentRecords API from Amazon Incident Manager — 1 operation(s) for listincidentrecords.
-  humanURL: https://aws.amazon.com/systems-manager/features/#Incident_Manager
-  baseURL: https://ssm-incidents.amazonaws.com
-  tags:
-  - ListIncidentRecords
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-incident-manager-listincidentrecords-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/incident-manager/latest/APIReference/Welcome.html
-  - type: GettingStarted
-    url: https://docs.aws.amazon.com/incident-manager/latest/userguide/getting-started.html
-  - type: Pricing
-    url: https://aws.amazon.com/systems-manager/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/systems-manager/faq/
-- aid: amazon-incident-manager:amazon-incident-manager-listrelateditems-api
-  name: Amazon Incident Manager ListRelatedItems API
-  description: >-
-    The ListRelatedItems API from Amazon Incident Manager — 1 operation(s) for listrelateditems.
-  humanURL: https://aws.amazon.com/systems-manager/features/#Incident_Manager
-  baseURL: https://ssm-incidents.amazonaws.com
-  tags:
-  - ListRelatedItems
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-incident-manager-listrelateditems-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/incident-manager/latest/APIReference/Welcome.html
-  - type: GettingStarted
-    url: https://docs.aws.amazon.com/incident-manager/latest/userguide/getting-started.html
-  - type: Pricing
-    url: https://aws.amazon.com/systems-manager/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/systems-manager/faq/
-- aid: amazon-incident-manager:amazon-incident-manager-listreplicationsets-api
-  name: Amazon Incident Manager ListReplicationSets API
-  description: >-
-    The ListReplicationSets API from Amazon Incident Manager — 1 operation(s) for listreplicationsets.
-  humanURL: https://aws.amazon.com/systems-manager/features/#Incident_Manager
-  baseURL: https://ssm-incidents.amazonaws.com
-  tags:
-  - ListReplicationSets
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-incident-manager-listreplicationsets-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/incident-manager/latest/APIReference/Welcome.html
-  - type: GettingStarted
-    url: https://docs.aws.amazon.com/incident-manager/latest/userguide/getting-started.html
-  - type: Pricing
-    url: https://aws.amazon.com/systems-manager/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/systems-manager/faq/
-- aid: amazon-incident-manager:amazon-incident-manager-listresponseplans-api
-  name: Amazon Incident Manager ListResponsePlans API
-  description: >-
-    The ListResponsePlans API from Amazon Incident Manager — 1 operation(s) for listresponseplans.
-  humanURL: https://aws.amazon.com/systems-manager/features/#Incident_Manager
-  baseURL: https://ssm-incidents.amazonaws.com
-  tags:
-  - ListResponsePlans
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-incident-manager-listresponseplans-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/incident-manager/latest/APIReference/Welcome.html
-  - type: GettingStarted
-    url: https://docs.aws.amazon.com/incident-manager/latest/userguide/getting-started.html
-  - type: Pricing
-    url: https://aws.amazon.com/systems-manager/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/systems-manager/faq/
-- aid: amazon-incident-manager:amazon-incident-manager-listtimelineevents-api
-  name: Amazon Incident Manager ListTimelineEvents API
-  description: >-
-    The ListTimelineEvents API from Amazon Incident Manager — 1 operation(s) for listtimelineevents.
-  humanURL: https://aws.amazon.com/systems-manager/features/#Incident_Manager
-  baseURL: https://ssm-incidents.amazonaws.com
-  tags:
-  - ListTimelineEvents
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-incident-manager-listtimelineevents-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/incident-manager/latest/APIReference/Welcome.html
-  - type: GettingStarted
-    url: https://docs.aws.amazon.com/incident-manager/latest/userguide/getting-started.html
-  - type: Pricing
-    url: https://aws.amazon.com/systems-manager/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/systems-manager/faq/
 - aid: amazon-incident-manager:amazon-incident-manager-putresourcepolicy-api
   name: Amazon Incident Manager PutResourcePolicy API
   description: >-
@@ -403,24 +194,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/amazon-incident-manager-putresourcepolicy-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/incident-manager/latest/APIReference/Welcome.html
-  - type: GettingStarted
-    url: https://docs.aws.amazon.com/incident-manager/latest/userguide/getting-started.html
-  - type: Pricing
-    url: https://aws.amazon.com/systems-manager/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/systems-manager/faq/
-- aid: amazon-incident-manager:amazon-incident-manager-startincident-api
-  name: Amazon Incident Manager StartIncident API
-  description: The StartIncident API from Amazon Incident Manager — 1 operation(s) for startincident.
-  humanURL: https://aws.amazon.com/systems-manager/features/#Incident_Manager
-  baseURL: https://ssm-incidents.amazonaws.com
-  tags:
-  - StartIncident
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-incident-manager-startincident-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/incident-manager/latest/APIReference/Welcome.html
   - type: GettingStarted
@@ -447,17 +220,18 @@ apis:
     url: https://aws.amazon.com/systems-manager/pricing/
   - type: FAQ
     url: https://aws.amazon.com/systems-manager/faq/
-- aid: amazon-incident-manager:amazon-incident-manager-updatedeletionprotection-api
-  name: Amazon Incident Manager UpdateDeletionProtection API
+- aid: amazon-incident-manager:amazon-incident-manager-create-replication-set-api
+  name: Amazon Incident Manager Create Replication Set API
   description: >-
-    The UpdateDeletionProtection API from Amazon Incident Manager — 1 operation(s) for updatedeletionprotection.
+    The Create Replication Set API from Amazon Incident Manager — 1 operation(s) for create replication
+    set.
   humanURL: https://aws.amazon.com/systems-manager/features/#Incident_Manager
   baseURL: https://ssm-incidents.amazonaws.com
   tags:
-  - UpdateDeletionProtection
+  - Create Replication Set
   properties:
   - type: OpenAPI
-    url: openapi/amazon-incident-manager-updatedeletionprotection-api-openapi.yml
+    url: openapi/amazon-incident-manager-create-replication-set-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/incident-manager/latest/APIReference/Welcome.html
   - type: GettingStarted
@@ -466,17 +240,17 @@ apis:
     url: https://aws.amazon.com/systems-manager/pricing/
   - type: FAQ
     url: https://aws.amazon.com/systems-manager/faq/
-- aid: amazon-incident-manager:amazon-incident-manager-updateincidentrecord-api
-  name: Amazon Incident Manager UpdateIncidentRecord API
+- aid: amazon-incident-manager:amazon-incident-manager-create-response-plan-api
+  name: Amazon Incident Manager Create Response Plan API
   description: >-
-    The UpdateIncidentRecord API from Amazon Incident Manager — 1 operation(s) for updateincidentrecord.
+    The Create Response Plan API from Amazon Incident Manager — 1 operation(s) for create response plan.
   humanURL: https://aws.amazon.com/systems-manager/features/#Incident_Manager
   baseURL: https://ssm-incidents.amazonaws.com
   tags:
-  - UpdateIncidentRecord
+  - Create Response Plan
   properties:
   - type: OpenAPI
-    url: openapi/amazon-incident-manager-updateincidentrecord-api-openapi.yml
+    url: openapi/amazon-incident-manager-create-response-plan-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/incident-manager/latest/APIReference/Welcome.html
   - type: GettingStarted
@@ -485,17 +259,17 @@ apis:
     url: https://aws.amazon.com/systems-manager/pricing/
   - type: FAQ
     url: https://aws.amazon.com/systems-manager/faq/
-- aid: amazon-incident-manager:amazon-incident-manager-updaterelateditems-api
-  name: Amazon Incident Manager UpdateRelatedItems API
+- aid: amazon-incident-manager:amazon-incident-manager-create-timeline-event-api
+  name: Amazon Incident Manager Create Timeline Event API
   description: >-
-    The UpdateRelatedItems API from Amazon Incident Manager — 1 operation(s) for updaterelateditems.
+    The Create Timeline Event API from Amazon Incident Manager — 1 operation(s) for create timeline event.
   humanURL: https://aws.amazon.com/systems-manager/features/#Incident_Manager
   baseURL: https://ssm-incidents.amazonaws.com
   tags:
-  - UpdateRelatedItems
+  - Create Timeline Event
   properties:
   - type: OpenAPI
-    url: openapi/amazon-incident-manager-updaterelateditems-api-openapi.yml
+    url: openapi/amazon-incident-manager-create-timeline-event-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/incident-manager/latest/APIReference/Welcome.html
   - type: GettingStarted
@@ -504,17 +278,17 @@ apis:
     url: https://aws.amazon.com/systems-manager/pricing/
   - type: FAQ
     url: https://aws.amazon.com/systems-manager/faq/
-- aid: amazon-incident-manager:amazon-incident-manager-updatereplicationset-api
-  name: Amazon Incident Manager UpdateReplicationSet API
+- aid: amazon-incident-manager:amazon-incident-manager-delete-incident-record-api
+  name: Amazon Incident Manager Delete Incident Record API
   description: >-
-    The UpdateReplicationSet API from Amazon Incident Manager — 1 operation(s) for updatereplicationset.
+    The Delete Incident Record API from Amazon Incident Manager — 1 operation(s) for delete incident record.
   humanURL: https://aws.amazon.com/systems-manager/features/#Incident_Manager
   baseURL: https://ssm-incidents.amazonaws.com
   tags:
-  - UpdateReplicationSet
+  - Delete Incident Record
   properties:
   - type: OpenAPI
-    url: openapi/amazon-incident-manager-updatereplicationset-api-openapi.yml
+    url: openapi/amazon-incident-manager-delete-incident-record-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/incident-manager/latest/APIReference/Welcome.html
   - type: GettingStarted
@@ -523,17 +297,17 @@ apis:
     url: https://aws.amazon.com/systems-manager/pricing/
   - type: FAQ
     url: https://aws.amazon.com/systems-manager/faq/
-- aid: amazon-incident-manager:amazon-incident-manager-updateresponseplan-api
-  name: Amazon Incident Manager UpdateResponsePlan API
+- aid: amazon-incident-manager:amazon-incident-manager-delete-response-plan-api
+  name: Amazon Incident Manager Delete Response Plan API
   description: >-
-    The UpdateResponsePlan API from Amazon Incident Manager — 1 operation(s) for updateresponseplan.
+    The Delete Response Plan API from Amazon Incident Manager — 1 operation(s) for delete response plan.
   humanURL: https://aws.amazon.com/systems-manager/features/#Incident_Manager
   baseURL: https://ssm-incidents.amazonaws.com
   tags:
-  - UpdateResponsePlan
+  - Delete Response Plan
   properties:
   - type: OpenAPI
-    url: openapi/amazon-incident-manager-updateresponseplan-api-openapi.yml
+    url: openapi/amazon-incident-manager-delete-response-plan-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/incident-manager/latest/APIReference/Welcome.html
   - type: GettingStarted
@@ -542,17 +316,246 @@ apis:
     url: https://aws.amazon.com/systems-manager/pricing/
   - type: FAQ
     url: https://aws.amazon.com/systems-manager/faq/
-- aid: amazon-incident-manager:amazon-incident-manager-updatetimelineevent-api
-  name: Amazon Incident Manager UpdateTimelineEvent API
+- aid: amazon-incident-manager:amazon-incident-manager-delete-timeline-event-api
+  name: Amazon Incident Manager Delete Timeline Event API
   description: >-
-    The UpdateTimelineEvent API from Amazon Incident Manager — 1 operation(s) for updatetimelineevent.
+    The Delete Timeline Event API from Amazon Incident Manager — 1 operation(s) for delete timeline event.
   humanURL: https://aws.amazon.com/systems-manager/features/#Incident_Manager
   baseURL: https://ssm-incidents.amazonaws.com
   tags:
-  - UpdateTimelineEvent
+  - Delete Timeline Event
   properties:
   - type: OpenAPI
-    url: openapi/amazon-incident-manager-updatetimelineevent-api-openapi.yml
+    url: openapi/amazon-incident-manager-delete-timeline-event-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/incident-manager/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/incident-manager/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/systems-manager/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/systems-manager/faq/
+- aid: amazon-incident-manager:amazon-incident-manager-list-incident-records-api
+  name: Amazon Incident Manager List Incident Records API
+  description: >-
+    The List Incident Records API from Amazon Incident Manager — 1 operation(s) for list incident records.
+  humanURL: https://aws.amazon.com/systems-manager/features/#Incident_Manager
+  baseURL: https://ssm-incidents.amazonaws.com
+  tags:
+  - List Incident Records
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-incident-manager-list-incident-records-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/incident-manager/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/incident-manager/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/systems-manager/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/systems-manager/faq/
+- aid: amazon-incident-manager:amazon-incident-manager-list-related-items-api
+  name: Amazon Incident Manager List Related Items API
+  description: >-
+    The List Related Items API from Amazon Incident Manager — 1 operation(s) for list related items.
+  humanURL: https://aws.amazon.com/systems-manager/features/#Incident_Manager
+  baseURL: https://ssm-incidents.amazonaws.com
+  tags:
+  - List Related Items
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-incident-manager-list-related-items-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/incident-manager/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/incident-manager/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/systems-manager/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/systems-manager/faq/
+- aid: amazon-incident-manager:amazon-incident-manager-list-replication-sets-api
+  name: Amazon Incident Manager List Replication Sets API
+  description: >-
+    The List Replication Sets API from Amazon Incident Manager — 1 operation(s) for list replication sets.
+  humanURL: https://aws.amazon.com/systems-manager/features/#Incident_Manager
+  baseURL: https://ssm-incidents.amazonaws.com
+  tags:
+  - List Replication Sets
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-incident-manager-list-replication-sets-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/incident-manager/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/incident-manager/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/systems-manager/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/systems-manager/faq/
+- aid: amazon-incident-manager:amazon-incident-manager-list-response-plans-api
+  name: Amazon Incident Manager List Response Plans API
+  description: >-
+    The List Response Plans API from Amazon Incident Manager — 1 operation(s) for list response plans.
+  humanURL: https://aws.amazon.com/systems-manager/features/#Incident_Manager
+  baseURL: https://ssm-incidents.amazonaws.com
+  tags:
+  - List Response Plans
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-incident-manager-list-response-plans-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/incident-manager/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/incident-manager/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/systems-manager/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/systems-manager/faq/
+- aid: amazon-incident-manager:amazon-incident-manager-list-timeline-events-api
+  name: Amazon Incident Manager List Timeline Events API
+  description: >-
+    The List Timeline Events API from Amazon Incident Manager — 1 operation(s) for list timeline events.
+  humanURL: https://aws.amazon.com/systems-manager/features/#Incident_Manager
+  baseURL: https://ssm-incidents.amazonaws.com
+  tags:
+  - List Timeline Events
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-incident-manager-list-timeline-events-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/incident-manager/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/incident-manager/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/systems-manager/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/systems-manager/faq/
+- aid: amazon-incident-manager:amazon-incident-manager-start-incident-api
+  name: Amazon Incident Manager Start Incident API
+  description: The Start Incident API from Amazon Incident Manager — 1 operation(s) for start incident.
+  humanURL: https://aws.amazon.com/systems-manager/features/#Incident_Manager
+  baseURL: https://ssm-incidents.amazonaws.com
+  tags:
+  - Start Incident
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-incident-manager-start-incident-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/incident-manager/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/incident-manager/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/systems-manager/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/systems-manager/faq/
+- aid: amazon-incident-manager:amazon-incident-manager-update-deletion-protection-api
+  name: Amazon Incident Manager Update Deletion Protection API
+  description: >-
+    The Update Deletion Protection API from Amazon Incident Manager — 1 operation(s) for update deletion
+    protection.
+  humanURL: https://aws.amazon.com/systems-manager/features/#Incident_Manager
+  baseURL: https://ssm-incidents.amazonaws.com
+  tags:
+  - Update Deletion Protection
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-incident-manager-update-deletion-protection-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/incident-manager/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/incident-manager/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/systems-manager/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/systems-manager/faq/
+- aid: amazon-incident-manager:amazon-incident-manager-update-incident-record-api
+  name: Amazon Incident Manager Update Incident Record API
+  description: >-
+    The Update Incident Record API from Amazon Incident Manager — 1 operation(s) for update incident record.
+  humanURL: https://aws.amazon.com/systems-manager/features/#Incident_Manager
+  baseURL: https://ssm-incidents.amazonaws.com
+  tags:
+  - Update Incident Record
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-incident-manager-update-incident-record-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/incident-manager/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/incident-manager/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/systems-manager/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/systems-manager/faq/
+- aid: amazon-incident-manager:amazon-incident-manager-update-related-items-api
+  name: Amazon Incident Manager Update Related Items API
+  description: >-
+    The Update Related Items API from Amazon Incident Manager — 1 operation(s) for update related items.
+  humanURL: https://aws.amazon.com/systems-manager/features/#Incident_Manager
+  baseURL: https://ssm-incidents.amazonaws.com
+  tags:
+  - Update Related Items
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-incident-manager-update-related-items-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/incident-manager/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/incident-manager/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/systems-manager/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/systems-manager/faq/
+- aid: amazon-incident-manager:amazon-incident-manager-update-replication-set-api
+  name: Amazon Incident Manager Update Replication Set API
+  description: >-
+    The Update Replication Set API from Amazon Incident Manager — 1 operation(s) for update replication
+    set.
+  humanURL: https://aws.amazon.com/systems-manager/features/#Incident_Manager
+  baseURL: https://ssm-incidents.amazonaws.com
+  tags:
+  - Update Replication Set
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-incident-manager-update-replication-set-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/incident-manager/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/incident-manager/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/systems-manager/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/systems-manager/faq/
+- aid: amazon-incident-manager:amazon-incident-manager-update-response-plan-api
+  name: Amazon Incident Manager Update Response Plan API
+  description: >-
+    The Update Response Plan API from Amazon Incident Manager — 1 operation(s) for update response plan.
+  humanURL: https://aws.amazon.com/systems-manager/features/#Incident_Manager
+  baseURL: https://ssm-incidents.amazonaws.com
+  tags:
+  - Update Response Plan
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-incident-manager-update-response-plan-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/incident-manager/latest/APIReference/Welcome.html
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/incident-manager/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/systems-manager/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/systems-manager/faq/
+- aid: amazon-incident-manager:amazon-incident-manager-update-timeline-event-api
+  name: Amazon Incident Manager Update Timeline Event API
+  description: >-
+    The Update Timeline Event API from Amazon Incident Manager — 1 operation(s) for update timeline event.
+  humanURL: https://aws.amazon.com/systems-manager/features/#Incident_Manager
+  baseURL: https://ssm-incidents.amazonaws.com
+  tags:
+  - Update Timeline Event
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-incident-manager-update-timeline-event-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/incident-manager/latest/APIReference/Welcome.html
   - type: GettingStarted
