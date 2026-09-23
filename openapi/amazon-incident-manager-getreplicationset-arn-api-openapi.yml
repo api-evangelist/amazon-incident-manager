@@ -1,9 +1,9 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: 2018-05-10
   x-release: v4
-  title: AWS Systems Manager Incident Manager CreateReplicationSet Get Replication Set#arn API
-  description: <p>Systems Manager Incident Manager is an incident management console designed to help users mitigate and recover from incidents affecting their Amazon Web Services-hosted applications. An incident is any unplanned interruption or reduction in quality of services. </p> <p>Incident Manager increases incident resolution by notifying responders of impact, highlighting relevant troubleshooting data, and providing collaboration tools to get services back up and running. To achieve the primary goal of reducing the time-to-resolution of critical incidents, Incident Manager automates response plans and enables responder team escalation. </p>
+  title: AWS Systems Manager Incident Manager Get Replication…
+  description: Systems Manager Incident Manager is an incident management console designed to help users mitigate and recover from incidents affecting their Amazon Web Services-hosted applications.
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -24,6 +24,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/ssm-incidents-2018-05-10.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -187,6 +188,12 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Signature:
       name: X-Amz-Signature
       in: header
@@ -199,14 +206,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -217,55 +218,28 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
       required: false
   schemas:
+    ThrottlingException: {}
+    SseKmsKey:
+      type: string
+      minLength: 0
+      maxLength: 2048
     Arn:
       type: string
       pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
       minLength: 0
       maxLength: 1000
-    RegionInfoMap:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/RegionInfo'
-    RegionInfo:
-      type: object
-      required:
-      - status
-      - statusUpdateDateTime
-      properties:
-        sseKmsKeyId:
-          allOf:
-          - $ref: '#/components/schemas/SseKmsKey'
-          - description: The ID of the KMS key used to encrypt the data in this Amazon Web Services Region.
-        status:
-          allOf:
-          - $ref: '#/components/schemas/RegionStatus'
-          - description: The status of the Amazon Web Services Region in the replication set.
-        statusMessage:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: Information displayed about the status of the Amazon Web Services Region.
-        statusUpdateDateTime:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: The most recent date and time that Incident Manager updated the Amazon Web Services Region's status.
-      description: Information about a Amazon Web Services Region in your replication set.
-    ThrottlingException: {}
-    GetReplicationSetOutput:
-      type: object
-      required:
-      - replicationSet
-      properties:
-        replicationSet:
-          allOf:
-          - $ref: '#/components/schemas/ReplicationSet'
-          - description: Details of the replication set.
+    ValidationException: {}
+    Boolean:
+      type: boolean
+    String:
+      type: string
     ReplicationSet:
       type: object
       required:
@@ -310,6 +284,16 @@ components:
           - $ref: '#/components/schemas/ReplicationSetStatus'
           - description: The status of the replication set. If the replication set is still pending, you can't use Incident Manager functionality.
       description: 'The set of Amazon Web Services Region that your Incident Manager data will be replicated to and the KMS key used to encrypt the data. '
+    ResourceNotFoundException: {}
+    GetReplicationSetOutput:
+      type: object
+      required:
+      - replicationSet
+      properties:
+        replicationSet:
+          allOf:
+          - $ref: '#/components/schemas/ReplicationSet'
+          - description: Details of the replication set.
     RegionStatus:
       type: string
       enum:
@@ -317,20 +301,7 @@ components:
       - CREATING
       - DELETING
       - FAILED
-    ResourceNotFoundException: {}
-    SseKmsKey:
-      type: string
-      minLength: 0
-      maxLength: 2048
-    String:
-      type: string
-    Boolean:
-      type: boolean
-    Timestamp:
-      type: string
-      format: date-time
-    AccessDeniedException: {}
-    ValidationException: {}
+    InternalServerException: {}
     ReplicationSetStatus:
       type: string
       enum:
@@ -339,7 +310,37 @@ components:
       - UPDATING
       - DELETING
       - FAILED
-    InternalServerException: {}
+    RegionInfoMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/RegionInfo'
+    AccessDeniedException: {}
+    RegionInfo:
+      type: object
+      required:
+      - status
+      - statusUpdateDateTime
+      properties:
+        sseKmsKeyId:
+          allOf:
+          - $ref: '#/components/schemas/SseKmsKey'
+          - description: The ID of the KMS key used to encrypt the data in this Amazon Web Services Region.
+        status:
+          allOf:
+          - $ref: '#/components/schemas/RegionStatus'
+          - description: The status of the Amazon Web Services Region in the replication set.
+        statusMessage:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Information displayed about the status of the Amazon Web Services Region.
+        statusUpdateDateTime:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The most recent date and time that Incident Manager updated the Amazon Web Services Region's status.
+      description: Information about a Amazon Web Services Region in your replication set.
+    Timestamp:
+      type: string
+      format: date-time
   securitySchemes:
     hmac:
       type: apiKey
