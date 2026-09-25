@@ -9,33 +9,30 @@ artifacts:
   authentication/amazon-incident-manager-authentication.yml:
     method: derived
     evidence: declared in the artifact
-  capabilities/amazon-incident-manager-capability-edges.yml:
+  collections/amazon-incident-manager-createreplicationset-api.opencollection.json:
     method: unknown
     evidence: no authorship recorded
-  collections/amazon-incident-manager-createreplicationset-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-createreplicationset-api
   collections/amazon-incident-manager-createreplicationset-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-createreplicationset-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-incident-manager-createresponseplan-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-createresponseplan-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-incident-manager-createresponseplan-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-createresponseplan-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-incident-manager-createtimelineevent-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-createtimelineevent-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-incident-manager-createtimelineevent-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-createtimelineevent-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-incident-manager-deleteincidentrecord-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-deleteincidentrecord-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-incident-manager-deleteincidentrecord-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-deleteincidentrecord-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-incident-manager-deletereplicationset-arn-api.opencollection.json:
     method: derived
     evidence: openapi/amazon-incident-manager-deletereplicationset-arn-api
@@ -49,17 +46,17 @@ artifacts:
     method: derived
     evidence: openapi/amazon-incident-manager-deleteresourcepolicy-api
   collections/amazon-incident-manager-deleteresponseplan-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-deleteresponseplan-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-incident-manager-deleteresponseplan-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-deleteresponseplan-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-incident-manager-deletetimelineevent-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-deletetimelineevent-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-incident-manager-deletetimelineevent-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-deletetimelineevent-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-incident-manager-getincidentrecord-arn-api.opencollection.json:
     method: derived
     evidence: openapi/amazon-incident-manager-getincidentrecord-arn-api
@@ -91,35 +88,35 @@ artifacts:
     method: derived
     evidence: openapi/amazon-incident-manager-gettimelineevent-eventid-incidentrecordarn-api
   collections/amazon-incident-manager-listincidentrecords-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-listincidentrecords-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-incident-manager-listincidentrecords-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-listincidentrecords-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-incident-manager-listrelateditems-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-listrelateditems-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-incident-manager-listrelateditems-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-listrelateditems-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-incident-manager-listreplicationsets-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-listreplicationsets-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-incident-manager-listreplicationsets-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-listreplicationsets-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-incident-manager-listresponseplans-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-listresponseplans-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-incident-manager-listresponseplans-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-listresponseplans-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-incident-manager-listtimelineevents-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-listtimelineevents-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-incident-manager-listtimelineevents-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-listtimelineevents-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-incident-manager-putresourcepolicy-api.opencollection.json:
     method: derived
     evidence: openapi/amazon-incident-manager-putresourcepolicy-api
@@ -127,11 +124,11 @@ artifacts:
     method: derived
     evidence: openapi/amazon-incident-manager-putresourcepolicy-api
   collections/amazon-incident-manager-startincident-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-startincident-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-incident-manager-startincident-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-startincident-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-incident-manager-tags-api.opencollection.json:
     method: derived
     evidence: openapi/amazon-incident-manager-tags-api
@@ -139,41 +136,41 @@ artifacts:
     method: derived
     evidence: openapi/amazon-incident-manager-tags-api
   collections/amazon-incident-manager-updatedeletionprotection-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-updatedeletionprotection-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-incident-manager-updatedeletionprotection-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-updatedeletionprotection-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-incident-manager-updateincidentrecord-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-updateincidentrecord-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-incident-manager-updateincidentrecord-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-updateincidentrecord-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-incident-manager-updaterelateditems-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-updaterelateditems-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-incident-manager-updaterelateditems-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-updaterelateditems-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-incident-manager-updatereplicationset-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-updatereplicationset-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-incident-manager-updatereplicationset-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-updatereplicationset-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-incident-manager-updateresponseplan-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-updateresponseplan-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-incident-manager-updateresponseplan-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-updateresponseplan-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-incident-manager-updatetimelineevent-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-updatetimelineevent-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-incident-manager-updatetimelineevent-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-updatetimelineevent-api
+    method: unknown
+    evidence: no authorship recorded
   examples/incident-manager-action-example.json:
     method: unknown
     evidence: no authorship recorded
@@ -552,6 +549,9 @@ artifacts:
   finops/amazon-incident-manager-finops.yml:
     method: generated
     evidence: declared in the artifact
+  front-door-ai/2026-09-17.yml:
+    method: unknown
+    evidence: no authorship recorded
   json-ld/amazon-incident-manager-context.jsonld:
     method: unknown
     evidence: no authorship recorded
@@ -1305,55 +1305,7 @@ artifacts:
   json-structure/incident-manager-variable-type-structure.json:
     method: unknown
     evidence: no authorship recorded
-  kin/checks-2026-09-05T072335.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-06T210741.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-07T135032.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-10T093022.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-10T111628.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-11T211707.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-12T193225.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-17T064519.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-19T080027.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-19T082702.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-19T114122.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-20T165047.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-20T191845.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-20T205517.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-21T110057.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-24T064859.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-24T171257.yml:
+  kin/checks-2026-09-24T161608.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-08-25T125852.yml:
@@ -1440,31 +1392,149 @@ artifacts:
   kin/score-2026-09-05T072335.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-05T144739.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-05T195450.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-05T211839.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-06T011047.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-06T211804.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-06T224210.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-07T200636.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-07T213054.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-08T214843.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-08T232836.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-10T204815.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-10T222408.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-12T062655.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-12T080032.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-12T204651.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-12T221936.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-13T214537.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-14T064754.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-14T210656.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-14T225847.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-15T211329.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-15T230249.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-16T210549.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-16T225339.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-17T211151.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-17T233623.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-18T205255.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-18T231945.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-19T165737.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-19T193153.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-20T205903.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-20T232958.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-21T211425.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-21T233935.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-22T213221.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-23T000603.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-24T064009.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-24T090406.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-24T161608.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
   openapi/_original/amazon-incident-manager-openapi-original.yml:
     method: harvested
-    evidence: fetched from the provider as-is; byte-identical to the source
-  openapi/amazon-incident-manager-createreplicationset-api-openapi.yml:
+    evidence: found in openapi/_original/; the fetch URL and bytes were not recorded, so byte-identity
+      to the provider's source is unverified
+  openapi/amazon-incident-manager-create-replication-set-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-incident-manager-createresponseplan-api-openapi.yml:
+  openapi/amazon-incident-manager-create-response-plan-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-incident-manager-createtimelineevent-api-openapi.yml:
+  openapi/amazon-incident-manager-create-timeline-event-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-incident-manager-deleteincidentrecord-api-openapi.yml:
+  openapi/amazon-incident-manager-delete-incident-record-api-openapi.yml:
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+  openapi/amazon-incident-manager-delete-response-plan-api-openapi.yml:
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+  openapi/amazon-incident-manager-delete-timeline-event-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/amazon-incident-manager-deletereplicationset-arn-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/amazon-incident-manager-deleteresourcepolicy-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-incident-manager-deleteresponseplan-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-incident-manager-deletetimelineevent-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/amazon-incident-manager-getincidentrecord-arn-api-openapi.yml:
@@ -1482,63 +1552,63 @@ artifacts:
   openapi/amazon-incident-manager-gettimelineevent-eventid-incidentrecordarn-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-incident-manager-listincidentrecords-api-openapi.yml:
+  openapi/amazon-incident-manager-list-incident-records-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-incident-manager-listrelateditems-api-openapi.yml:
+  openapi/amazon-incident-manager-list-related-items-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-incident-manager-listreplicationsets-api-openapi.yml:
+  openapi/amazon-incident-manager-list-replication-sets-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-incident-manager-listresponseplans-api-openapi.yml:
+  openapi/amazon-incident-manager-list-response-plans-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-incident-manager-listtimelineevents-api-openapi.yml:
+  openapi/amazon-incident-manager-list-timeline-events-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/amazon-incident-manager-putresourcepolicy-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-incident-manager-startincident-api-openapi.yml:
+  openapi/amazon-incident-manager-start-incident-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/amazon-incident-manager-tags-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-incident-manager-updatedeletionprotection-api-openapi.yml:
+  openapi/amazon-incident-manager-update-deletion-protection-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-incident-manager-updateincidentrecord-api-openapi.yml:
+  openapi/amazon-incident-manager-update-incident-record-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-incident-manager-updaterelateditems-api-openapi.yml:
+  openapi/amazon-incident-manager-update-related-items-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-incident-manager-updatereplicationset-api-openapi.yml:
+  openapi/amazon-incident-manager-update-replication-set-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-incident-manager-updateresponseplan-api-openapi.yml:
+  openapi/amazon-incident-manager-update-response-plan-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-incident-manager-updatetimelineevent-api-openapi.yml:
+  openapi/amazon-incident-manager-update-timeline-event-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   plans/amazon-incident-manager-plans-pricing.yml:
     method: generated
     evidence: declared in the artifact
   postman/amazon-incident-manager-createreplicationset-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-createreplicationset-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-incident-manager-createresponseplan-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-createresponseplan-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-incident-manager-createtimelineevent-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-createtimelineevent-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-incident-manager-deleteincidentrecord-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-deleteincidentrecord-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-incident-manager-deletereplicationset-arn-api.postman_collection.json:
     method: derived
     evidence: openapi/amazon-incident-manager-deletereplicationset-arn-api
@@ -1546,11 +1616,11 @@ artifacts:
     method: derived
     evidence: openapi/amazon-incident-manager-deleteresourcepolicy-api
   postman/amazon-incident-manager-deleteresponseplan-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-deleteresponseplan-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-incident-manager-deletetimelineevent-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-deletetimelineevent-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-incident-manager-getincidentrecord-arn-api.postman_collection.json:
     method: derived
     evidence: openapi/amazon-incident-manager-getincidentrecord-arn-api
@@ -1567,47 +1637,47 @@ artifacts:
     method: derived
     evidence: openapi/amazon-incident-manager-gettimelineevent-eventid-incidentrecordarn-api
   postman/amazon-incident-manager-listincidentrecords-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-listincidentrecords-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-incident-manager-listrelateditems-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-listrelateditems-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-incident-manager-listreplicationsets-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-listreplicationsets-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-incident-manager-listresponseplans-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-listresponseplans-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-incident-manager-listtimelineevents-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-listtimelineevents-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-incident-manager-putresourcepolicy-api.postman_collection.json:
     method: derived
     evidence: openapi/amazon-incident-manager-putresourcepolicy-api
   postman/amazon-incident-manager-startincident-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-startincident-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-incident-manager-tags-api.postman_collection.json:
     method: derived
     evidence: openapi/amazon-incident-manager-tags-api
   postman/amazon-incident-manager-updatedeletionprotection-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-updatedeletionprotection-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-incident-manager-updateincidentrecord-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-updateincidentrecord-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-incident-manager-updaterelateditems-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-updaterelateditems-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-incident-manager-updatereplicationset-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-updatereplicationset-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-incident-manager-updateresponseplan-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-updateresponseplan-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-incident-manager-updatetimelineevent-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-incident-manager-updatetimelineevent-api
+    method: unknown
+    evidence: no authorship recorded
   rate-limits/amazon-incident-manager-rate-limits.yml:
     method: generated
     evidence: declared in the artifact
