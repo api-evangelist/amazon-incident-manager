@@ -196,6 +196,22 @@ paths:
       - List Replication Sets
 components:
   schemas:
+    AccessDeniedException: {}
+    Arn:
+      type: string
+      pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
+      minLength: 0
+      maxLength: 1000
+    ReplicationSetArnList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Arn'
+    InternalServerException: {}
+    ThrottlingException: {}
+    NextToken:
+      type: string
+      minLength: 0
+      maxLength: 2000
     ListReplicationSetsOutput:
       type: object
       required:
@@ -209,44 +225,10 @@ components:
           allOf:
           - $ref: '#/components/schemas/ReplicationSetArnList'
           - description: The Amazon Resource Name (ARN) of the list replication set.
-    AccessDeniedException: {}
-    InternalServerException: {}
-    ThrottlingException: {}
     ValidationException: {}
-    ReplicationSetArnList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Arn'
-    NextToken:
-      type: string
-      minLength: 0
-      maxLength: 2000
-    Arn:
-      type: string
-      pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
-      minLength: 0
-      maxLength: 1000
   parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -257,14 +239,32 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Security-Token:
       name: X-Amz-Security-Token
       in: header
       schema:
         type: string
       required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Credential:
       name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string

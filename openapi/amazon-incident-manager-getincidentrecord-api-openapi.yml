@@ -2,7 +2,7 @@ openapi: 3.2.0
 info:
   version: 2018-05-10
   x-release: v4
-  title: AWS Systems Manager Incident Manager Get Incident…
+  title: AWS Systems Manager Incident Manager Get Incident Record API
   description: Systems Manager Incident Manager is an incident management console designed to help users mitigate and recover from incidents affecting their Amazon Web Services-hosted applications.
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -113,7 +113,7 @@ servers:
 security:
 - hmac: []
 tags:
-- name: GetIncidentRecord#arn
+- name: GetIncidentRecord
 paths:
   /getIncidentRecord#arn:
     parameters:
@@ -179,48 +179,52 @@ paths:
         delay: 0
         dispatcher: FALLBACK
       tags:
-      - GetIncidentRecord#arn
+      - GetIncidentRecord
 components:
   schemas:
+    ResourceNotFoundException: {}
+    Impact:
+      type: integer
+      minimum: 1
+      maximum: 5
+    IncidentSource:
+      type: string
+      minLength: 0
+      maxLength: 50
+    SnsArn:
+      type: string
+      minLength: 0
+      maxLength: 1000
+    DedupeString:
+      type: string
+      minLength: 0
+      maxLength: 1000
     IncidentTitle:
       type: string
       minLength: 0
       maxLength: 200
-    ThrottlingException: {}
-    IncidentRecordSource:
+    AutomationExecution:
       type: object
-      required:
-      - createdBy
-      - source
       properties:
-        createdBy:
+        ssmExecutionArn:
           allOf:
           - $ref: '#/components/schemas/Arn'
-          - description: The principal that started the incident.
-        invokedBy:
-          allOf:
-          - $ref: '#/components/schemas/ServicePrincipal'
-          - description: The service principal that assumed the role specified in <code>createdBy</code>. If no service principal assumed the role this will be left blank.
-        resourceArn:
-          allOf:
-          - $ref: '#/components/schemas/Arn'
-          - description: The resource that caused the incident to be created.
-        source:
-          allOf:
-          - $ref: '#/components/schemas/IncidentSource'
-          - description: The service that started the incident. This can be manually created from Incident Manager, automatically created using an Amazon CloudWatch alarm, or Amazon EventBridge event.
-      description: Details about what created the incident record and when it was created.
-    Arn:
+          - description: The Amazon Resource Name (ARN) of the automation process.
+      description: The Systems Manager automation document process to start as the runbook at the beginning of the incident.
+    Timestamp:
       type: string
-      pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
+      format: date-time
+    IncidentSummary:
+      type: string
       minLength: 0
-      maxLength: 1000
-    AutomationExecutionSet:
+      maxLength: 8000
+    NotificationTargetSet:
       type: array
       items:
-        $ref: '#/components/schemas/AutomationExecution'
+        $ref: '#/components/schemas/NotificationTargetItem'
       minItems: 0
-      maxItems: 100
+      maxItems: 10
+    ThrottlingException: {}
     IncidentRecord:
       type: object
       required:
@@ -291,44 +295,47 @@ components:
           - $ref: '#/components/schemas/IncidentTitle'
           - description: The title of the incident.
       description: The record of the incident that's created when an incident occurs.
-    ValidationException: {}
-    SnsArn:
+    IncidentRecordSource:
+      type: object
+      required:
+      - createdBy
+      - source
+      properties:
+        createdBy:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The principal that started the incident.
+        invokedBy:
+          allOf:
+          - $ref: '#/components/schemas/ServicePrincipal'
+          - description: The service principal that assumed the role specified in <code>createdBy</code>. If no service principal assumed the role this will be left blank.
+        resourceArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The resource that caused the incident to be created.
+        source:
+          allOf:
+          - $ref: '#/components/schemas/IncidentSource'
+          - description: The service that started the incident. This can be manually created from Incident Manager, automatically created using an Amazon CloudWatch alarm, or Amazon EventBridge event.
+      description: Details about what created the incident record and when it was created.
+    NotificationTargetItem:
+      type: object
+      properties:
+        snsTopicArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The Amazon Resource Name (ARN) of the SNS topic.
+      description: The SNS targets that are notified when updates are made to an incident.
+    ServicePrincipal:
       type: string
       minLength: 0
       maxLength: 1000
-    IncidentSource:
+    AccessDeniedException: {}
+    Arn:
       type: string
+      pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
       minLength: 0
-      maxLength: 50
-    ChatbotSnsConfigurationSet:
-      type: array
-      items:
-        $ref: '#/components/schemas/SnsArn'
-      minItems: 1
-      maxItems: 5
-    ResourceNotFoundException: {}
-    AutomationExecution:
-      type: object
-      properties:
-        ssmExecutionArn:
-          allOf:
-          - $ref: '#/components/schemas/Arn'
-          - description: The Amazon Resource Name (ARN) of the automation process.
-      description: The Systems Manager automation document process to start as the runbook at the beginning of the incident.
-    InternalServerException: {}
-    EmptyChatChannel:
-      type: object
-      properties: {}
-      description: Used to remove the chat channel from an incident record or response plan.
-    IncidentRecordStatus:
-      type: string
-      enum:
-      - OPEN
-      - RESOLVED
-    IncidentSummary:
-      type: string
-      minLength: 0
-      maxLength: 8000
+      maxLength: 1000
     ChatChannel:
       type: object
       properties:
@@ -341,25 +348,25 @@ components:
           - $ref: '#/components/schemas/EmptyChatChannel'
           - description: Used to remove the chat channel from an incident record or response plan.
       description: The Chatbot chat channel used for collaboration during an incident.
-    NotificationTargetItem:
-      type: object
-      properties:
-        snsTopicArn:
-          allOf:
-          - $ref: '#/components/schemas/Arn'
-          - description: The Amazon Resource Name (ARN) of the SNS topic.
-      description: The SNS targets that are notified when updates are made to an incident.
-    DedupeString:
-      type: string
-      minLength: 0
-      maxLength: 1000
-    AccessDeniedException: {}
-    NotificationTargetSet:
+    AutomationExecutionSet:
       type: array
       items:
-        $ref: '#/components/schemas/NotificationTargetItem'
+        $ref: '#/components/schemas/AutomationExecution'
       minItems: 0
-      maxItems: 10
+      maxItems: 100
+    ValidationException: {}
+    InternalServerException: {}
+    ChatbotSnsConfigurationSet:
+      type: array
+      items:
+        $ref: '#/components/schemas/SnsArn'
+      minItems: 1
+      maxItems: 5
+    IncidentRecordStatus:
+      type: string
+      enum:
+      - OPEN
+      - RESOLVED
     GetIncidentRecordOutput:
       type: object
       required:
@@ -369,26 +376,19 @@ components:
           allOf:
           - $ref: '#/components/schemas/IncidentRecord'
           - description: Details the structure of the incident record.
-    ServicePrincipal:
-      type: string
-      minLength: 0
-      maxLength: 1000
-    Timestamp:
-      type: string
-      format: date-time
-    Impact:
-      type: integer
-      minimum: 1
-      maximum: 5
+    EmptyChatChannel:
+      type: object
+      properties: {}
+      description: Used to remove the chat channel from an incident record or response plan.
   parameters:
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
@@ -411,8 +411,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string

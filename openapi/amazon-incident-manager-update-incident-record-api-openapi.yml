@@ -238,33 +238,46 @@ paths:
       tags:
       - Update Incident Record
 components:
+  schemas:
+    ResourceNotFoundException: {}
+    SnsArn:
+      type: string
+      minLength: 0
+      maxLength: 1000
+    ConflictException: {}
+    ThrottlingException: {}
+    NotificationTargetItem:
+      type: object
+      properties:
+        snsTopicArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The Amazon Resource Name (ARN) of the SNS topic.
+      description: The SNS targets that are notified when updates are made to an incident.
+    AccessDeniedException: {}
+    Arn:
+      type: string
+      pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
+      minLength: 0
+      maxLength: 1000
+    UpdateIncidentRecordOutput:
+      type: object
+      properties: {}
+    ValidationException: {}
+    InternalServerException: {}
+    ChatbotSnsConfigurationSet:
+      type: array
+      items:
+        $ref: '#/components/schemas/SnsArn'
+      minItems: 1
+      maxItems: 5
+    EmptyChatChannel:
+      type: object
+      properties: {}
+      description: Used to remove the chat channel from an incident record or response plan.
   parameters:
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -275,49 +288,36 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
       required: false
-  schemas:
-    ThrottlingException: {}
-    ConflictException: {}
-    Arn:
-      type: string
-      pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
-      minLength: 0
-      maxLength: 1000
-    ValidationException: {}
-    SnsArn:
-      type: string
-      minLength: 0
-      maxLength: 1000
-    ChatbotSnsConfigurationSet:
-      type: array
-      items:
-        $ref: '#/components/schemas/SnsArn'
-      minItems: 1
-      maxItems: 5
-    ResourceNotFoundException: {}
-    UpdateIncidentRecordOutput:
-      type: object
-      properties: {}
-    InternalServerException: {}
-    EmptyChatChannel:
-      type: object
-      properties: {}
-      description: Used to remove the chat channel from an incident record or response plan.
-    NotificationTargetItem:
-      type: object
-      properties:
-        snsTopicArn:
-          allOf:
-          - $ref: '#/components/schemas/Arn'
-          - description: The Amazon Resource Name (ARN) of the SNS topic.
-      description: The SNS targets that are notified when updates are made to an incident.
-    AccessDeniedException: {}
   securitySchemes:
     hmac:
       type: apiKey

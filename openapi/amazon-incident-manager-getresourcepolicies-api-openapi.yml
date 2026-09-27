@@ -2,7 +2,7 @@ openapi: 3.2.0
 info:
   version: 2018-05-10
   x-release: v4
-  title: AWS Systems Manager Incident Manager Get Resource…
+  title: AWS Systems Manager Incident Manager Get Resource Policies…
   description: Systems Manager Incident Manager is an incident management console designed to help users mitigate and recover from incidents affecting their Amazon Web Services-hosted applications.
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -113,7 +113,7 @@ servers:
 security:
 - hmac: []
 tags:
-- name: GetResourcePolicies#resourceArn
+- name: GetResourcePolicies
 paths:
   /getResourcePolicies#resourceArn:
     parameters:
@@ -208,13 +208,13 @@ paths:
         delay: 0
         dispatcher: FALLBACK
       tags:
-      - GetResourcePolicies#resourceArn
+      - GetResourcePolicies
 components:
   schemas:
-    PolicyId:
+    ResourceNotFoundException: {}
+    String:
       type: string
-      minLength: 0
-      maxLength: 256
+    ThrottlingException: {}
     GetResourcePoliciesOutput:
       type: object
       required:
@@ -228,18 +228,27 @@ components:
           allOf:
           - $ref: '#/components/schemas/ResourcePolicyList'
           - description: Details about the resource policy attached to the response plan.
-    ThrottlingException: {}
+    AccessDeniedException: {}
+    PolicyId:
+      type: string
+      minLength: 0
+      maxLength: 256
+    Policy:
+      type: string
+      minLength: 0
+      maxLength: 4000
+    NextToken:
+      type: string
+      minLength: 0
+      maxLength: 2000
     ResourcePolicyList:
       type: array
       items:
         $ref: '#/components/schemas/ResourcePolicy'
       minItems: 0
       maxItems: 100
-    Policy:
-      type: string
-      minLength: 0
-      maxLength: 4000
     ValidationException: {}
+    InternalServerException: {}
     ResourcePolicy:
       type: object
       required:
@@ -260,30 +269,15 @@ components:
           - $ref: '#/components/schemas/String'
           - description: The Amazon Web Services Region that policy allows resources to be used in.
       description: The resource policy that allows Incident Manager to perform actions on resources on your behalf.
-    String:
-      type: string
-    ResourceNotFoundException: {}
-    InternalServerException: {}
-    AccessDeniedException: {}
-    NextToken:
-      type: string
-      minLength: 0
-      maxLength: 2000
   parameters:
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
@@ -294,14 +288,20 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Credential:
       name: X-Amz-Credential
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string

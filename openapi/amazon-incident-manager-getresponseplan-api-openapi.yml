@@ -2,7 +2,7 @@ openapi: 3.2.0
 info:
   version: 2018-05-10
   x-release: v4
-  title: AWS Systems Manager Incident Manager Get Response Plan#arn…
+  title: AWS Systems Manager Incident Manager Get Response Plan API
   description: Systems Manager Incident Manager is an incident management console designed to help users mitigate and recover from incidents affecting their Amazon Web Services-hosted applications.
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -113,7 +113,7 @@ servers:
 security:
 - hmac: []
 tags:
-- name: GetResponsePlan#arn
+- name: GetResponsePlan
 paths:
   /getResponsePlan#arn:
     parameters:
@@ -179,18 +179,120 @@ paths:
         delay: 0
         dispatcher: FALLBACK
       tags:
-      - GetResponsePlan#arn
+      - GetResponsePlan
 components:
   schemas:
+    ResourceNotFoundException: {}
+    SsmParameterValues:
+      type: array
+      items:
+        $ref: '#/components/schemas/SsmParameterValuesMemberString'
+      minItems: 0
+      maxItems: 100
+    Impact:
+      type: integer
+      minimum: 1
+      maximum: 5
+    SnsArn:
+      type: string
+      minLength: 0
+      maxLength: 1000
+    SsmAutomationDocumentVersionString:
+      type: string
+      minLength: 0
+      maxLength: 128
+    DedupeString:
+      type: string
+      minLength: 0
+      maxLength: 1000
     IncidentTitle:
       type: string
       minLength: 0
       maxLength: 200
-    TagValue:
+    PagerDutyIncidentConfiguration:
+      type: object
+      required:
+      - serviceId
+      properties:
+        serviceId:
+          allOf:
+          - $ref: '#/components/schemas/PagerDutyIncidentConfigurationServiceIdString'
+          - description: The ID of the PagerDuty service that the response plan associates with an incident when it launches.
+      description: Details about the PagerDuty service where the response plan creates an incident.
+    SsmParameters:
+      type: object
+      minProperties: 1
+      maxProperties: 200
+      additionalProperties:
+        $ref: '#/components/schemas/SsmParameterValues'
+    SsmParameterValuesMemberString:
       type: string
-      pattern: ^[A-Za-z0-9 _=@:.+-/]*$
       minLength: 0
-      maxLength: 256
+      maxLength: 512
+    DynamicSsmParameterValue:
+      type: object
+      properties:
+        variable:
+          allOf:
+          - $ref: '#/components/schemas/VariableType'
+          - description: Variable dynamic parameters. A parameter value is determined when an incident is created.
+      description: The dynamic SSM parameter value.
+    IncidentSummary:
+      type: string
+      minLength: 0
+      maxLength: 8000
+    NotificationTargetSet:
+      type: array
+      items:
+        $ref: '#/components/schemas/NotificationTargetItem'
+      minItems: 0
+      maxItems: 10
+    ThrottlingException: {}
+    ActionsList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Action'
+      minItems: 0
+      maxItems: 1
+    IncidentTemplate:
+      type: object
+      required:
+      - impact
+      - title
+      properties:
+        dedupeString:
+          allOf:
+          - $ref: '#/components/schemas/DedupeString'
+          - description: 'Used to stop Incident Manager from creating multiple incident records for the same incident. '
+        impact:
+          allOf:
+          - $ref: '#/components/schemas/Impact'
+          - description: 'The impact of the incident on your customers and applications. '
+        incidentTags:
+          allOf:
+          - $ref: '#/components/schemas/TagMap'
+          - description: Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager assigns the tags specified in the template to the incident.
+        notificationTargets:
+          allOf:
+          - $ref: '#/components/schemas/NotificationTargetSet'
+          - description: The Amazon SNS targets that are notified when updates are made to an incident.
+        summary:
+          allOf:
+          - $ref: '#/components/schemas/IncidentSummary'
+          - description: The summary of the incident. The summary is a brief synopsis of what occurred, what's currently happening, and context.
+        title:
+          allOf:
+          - $ref: '#/components/schemas/IncidentTitle'
+          - description: 'The title of the incident. '
+      description: Basic details used in creating a response plan. The response plan is then used to create an incident record.
+    NotificationTargetItem:
+      type: object
+      properties:
+        snsTopicArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The Amazon Resource Name (ARN) of the SNS topic.
+      description: The SNS targets that are notified when updates are made to an incident.
     GetResponsePlanOutput:
       type: object
       required:
@@ -230,117 +332,85 @@ components:
           allOf:
           - $ref: '#/components/schemas/ResponsePlanName'
           - description: The short format name of the response plan. The name can't contain spaces.
-    ThrottlingException: {}
-    PagerDutyConfigurationSecretIdString:
-      type: string
-      minLength: 1
-      maxLength: 512
-    SsmParameterValues:
-      type: array
-      items:
-        $ref: '#/components/schemas/SsmParameterValuesMemberString'
-      minItems: 0
-      maxItems: 100
-    SsmParameterValuesMemberString:
-      type: string
-      minLength: 0
-      maxLength: 512
-    SsmAutomationDocumentNameString:
-      type: string
-      pattern: ^[a-zA-Z0-9_\-.:/]{3,128}$
-    Arn:
-      type: string
-      pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
-      minLength: 0
-      maxLength: 1000
-    EngagementSet:
-      type: array
-      items:
-        $ref: '#/components/schemas/SsmContactsArn'
-      minItems: 0
-      maxItems: 5
-    PagerDutyIncidentConfiguration:
-      type: object
-      required:
-      - serviceId
-      properties:
-        serviceId:
-          allOf:
-          - $ref: '#/components/schemas/PagerDutyIncidentConfigurationServiceIdString'
-          - description: The ID of the PagerDuty service that the response plan associates with an incident when it launches.
-      description: Details about the PagerDuty service where the response plan creates an incident.
     TagMap:
       type: object
       minProperties: 1
       maxProperties: 50
       additionalProperties:
         $ref: '#/components/schemas/TagValue'
-    ValidationException: {}
-    SnsArn:
+    DynamicSsmParameters:
+      type: object
+      minProperties: 1
+      maxProperties: 200
+      additionalProperties:
+        $ref: '#/components/schemas/DynamicSsmParameterValue'
+    RoleArn:
       type: string
+      pattern: ^arn:aws(-cn|-us-gov)?:iam::([0-9]{12})?:role/.+$
       minLength: 0
       maxLength: 1000
-    ActionsList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Action'
-      minItems: 0
-      maxItems: 1
+    PagerDutyConfigurationSecretIdString:
+      type: string
+      minLength: 1
+      maxLength: 512
+    AccessDeniedException: {}
+    Arn:
+      type: string
+      pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
+      minLength: 0
+      maxLength: 1000
+    VariableType:
+      type: string
+      enum:
+      - INCIDENT_RECORD_ARN
+      - INVOLVED_RESOURCES
+    ResponsePlanDisplayName:
+      type: string
+      minLength: 0
+      maxLength: 200
+    SsmAutomationDocumentNameString:
+      type: string
+      pattern: ^[a-zA-Z0-9_\-.:/]{3,128}$
+    Integration:
+      type: object
+      properties:
+        pagerDutyConfiguration:
+          allOf:
+          - $ref: '#/components/schemas/PagerDutyConfiguration'
+          - description: Information about the PagerDuty service where the response plan creates an incident.
+      description: Information about third-party services integrated into a response plan.
     PagerDutyIncidentConfigurationServiceIdString:
       type: string
       minLength: 1
       maxLength: 200
-    ChatbotSnsConfigurationSet:
+    EngagementSet:
       type: array
       items:
-        $ref: '#/components/schemas/SnsArn'
-      minItems: 1
-      maxItems: 5
-    Integrations:
-      type: array
-      items:
-        $ref: '#/components/schemas/Integration'
+        $ref: '#/components/schemas/SsmContactsArn'
       minItems: 0
-      maxItems: 1
-    ResourceNotFoundException: {}
-    InternalServerException: {}
-    EmptyChatChannel:
-      type: object
-      properties: {}
-      description: Used to remove the chat channel from an incident record or response plan.
-    Action:
+      maxItems: 5
+    ChatChannel:
       type: object
       properties:
-        ssmAutomation:
+        chatbotSns:
           allOf:
-          - $ref: '#/components/schemas/SsmAutomation'
-          - description: The Systems Manager automation document to start as the runbook at the beginning of the incident.
-      description: The action that starts at the beginning of an incident. The response plan defines the action.
+          - $ref: '#/components/schemas/ChatbotSnsConfigurationSet'
+          - description: 'The Amazon SNS targets that Chatbot uses to notify the chat channel of updates to an incident. You can also make updates to the incident through the chat channel by using the Amazon SNS topics. '
+        empty:
+          allOf:
+          - $ref: '#/components/schemas/EmptyChatChannel'
+          - description: Used to remove the chat channel from an incident record or response plan.
+      description: The Chatbot chat channel used for collaboration during an incident.
     SsmContactsArn:
       type: string
       pattern: ^arn:aws(-cn|-us-gov)?:ssm-contacts:[a-z0-9-]*:([0-9]{12}):contact/[a-z0-9_-]+$
       minLength: 0
       maxLength: 2048
-    PagerDutyConfiguration:
-      type: object
-      required:
-      - name
-      - pagerDutyIncidentConfiguration
-      - secretId
-      properties:
-        name:
-          allOf:
-          - $ref: '#/components/schemas/PagerDutyConfigurationNameString'
-          - description: The name of the PagerDuty configuration.
-        pagerDutyIncidentConfiguration:
-          allOf:
-          - $ref: '#/components/schemas/PagerDutyIncidentConfiguration'
-          - description: Details about the PagerDuty service associated with the configuration.
-        secretId:
-          allOf:
-          - $ref: '#/components/schemas/PagerDutyConfigurationSecretIdString'
-          - description: The ID of the Amazon Web Services Secrets Manager secret that stores your PagerDuty key, either a General Access REST API Key or User Token REST API Key, and other user credentials.
-      description: Details about the PagerDuty configuration for a response plan.
+    ValidationException: {}
+    PagerDutyConfigurationNameString:
+      type: string
+      minLength: 1
+      maxLength: 200
     SsmAutomation:
       type: object
       required:
@@ -372,151 +442,75 @@ components:
           - $ref: '#/components/schemas/SsmTargetAccount'
           - description: The account that the automation document will be run in. This can be in either the management account or an application account.
       description: Details about the Systems Manager automation document that will be used as a runbook during an incident.
-    IncidentSummary:
-      type: string
-      minLength: 0
-      maxLength: 8000
+    PagerDutyConfiguration:
+      type: object
+      required:
+      - name
+      - pagerDutyIncidentConfiguration
+      - secretId
+      properties:
+        name:
+          allOf:
+          - $ref: '#/components/schemas/PagerDutyConfigurationNameString'
+          - description: The name of the PagerDuty configuration.
+        pagerDutyIncidentConfiguration:
+          allOf:
+          - $ref: '#/components/schemas/PagerDutyIncidentConfiguration'
+          - description: Details about the PagerDuty service associated with the configuration.
+        secretId:
+          allOf:
+          - $ref: '#/components/schemas/PagerDutyConfigurationSecretIdString'
+          - description: The ID of the Amazon Web Services Secrets Manager secret that stores your PagerDuty key, either a General Access REST API Key or User Token REST API Key, and other user credentials.
+      description: Details about the PagerDuty configuration for a response plan.
+    InternalServerException: {}
+    ChatbotSnsConfigurationSet:
+      type: array
+      items:
+        $ref: '#/components/schemas/SnsArn'
+      minItems: 1
+      maxItems: 5
     SsmTargetAccount:
       type: string
       enum:
       - RESPONSE_PLAN_OWNER_ACCOUNT
       - IMPACTED_ACCOUNT
-    DynamicSsmParameterValue:
-      type: object
-      properties:
-        variable:
-          allOf:
-          - $ref: '#/components/schemas/VariableType'
-          - description: Variable dynamic parameters. A parameter value is determined when an incident is created.
-      description: The dynamic SSM parameter value.
-    ChatChannel:
-      type: object
-      properties:
-        chatbotSns:
-          allOf:
-          - $ref: '#/components/schemas/ChatbotSnsConfigurationSet'
-          - description: 'The Amazon SNS targets that Chatbot uses to notify the chat channel of updates to an incident. You can also make updates to the incident through the chat channel by using the Amazon SNS topics. '
-        empty:
-          allOf:
-          - $ref: '#/components/schemas/EmptyChatChannel'
-          - description: Used to remove the chat channel from an incident record or response plan.
-      description: The Chatbot chat channel used for collaboration during an incident.
-    RoleArn:
-      type: string
-      pattern: ^arn:aws(-cn|-us-gov)?:iam::([0-9]{12})?:role/.+$
-      minLength: 0
-      maxLength: 1000
-    NotificationTargetItem:
-      type: object
-      properties:
-        snsTopicArn:
-          allOf:
-          - $ref: '#/components/schemas/Arn'
-          - description: The Amazon Resource Name (ARN) of the SNS topic.
-      description: The SNS targets that are notified when updates are made to an incident.
-    DedupeString:
-      type: string
-      minLength: 0
-      maxLength: 1000
-    AccessDeniedException: {}
-    SsmParameters:
-      type: object
-      minProperties: 1
-      maxProperties: 200
-      additionalProperties:
-        $ref: '#/components/schemas/SsmParameterValues'
-    DynamicSsmParameters:
-      type: object
-      minProperties: 1
-      maxProperties: 200
-      additionalProperties:
-        $ref: '#/components/schemas/DynamicSsmParameterValue'
-    ResponsePlanDisplayName:
-      type: string
-      minLength: 0
-      maxLength: 200
-    PagerDutyConfigurationNameString:
-      type: string
-      minLength: 1
-      maxLength: 200
-    SsmAutomationDocumentVersionString:
-      type: string
-      minLength: 0
-      maxLength: 128
-    IncidentTemplate:
-      type: object
-      required:
-      - impact
-      - title
-      properties:
-        dedupeString:
-          allOf:
-          - $ref: '#/components/schemas/DedupeString'
-          - description: 'Used to stop Incident Manager from creating multiple incident records for the same incident. '
-        impact:
-          allOf:
-          - $ref: '#/components/schemas/Impact'
-          - description: 'The impact of the incident on your customers and applications. '
-        incidentTags:
-          allOf:
-          - $ref: '#/components/schemas/TagMap'
-          - description: Tags to assign to the template. When the <code>StartIncident</code> API action is called, Incident Manager assigns the tags specified in the template to the incident.
-        notificationTargets:
-          allOf:
-          - $ref: '#/components/schemas/NotificationTargetSet'
-          - description: The Amazon SNS targets that are notified when updates are made to an incident.
-        summary:
-          allOf:
-          - $ref: '#/components/schemas/IncidentSummary'
-          - description: The summary of the incident. The summary is a brief synopsis of what occurred, what's currently happening, and context.
-        title:
-          allOf:
-          - $ref: '#/components/schemas/IncidentTitle'
-          - description: 'The title of the incident. '
-      description: Basic details used in creating a response plan. The response plan is then used to create an incident record.
-    NotificationTargetSet:
+    Integrations:
       type: array
       items:
-        $ref: '#/components/schemas/NotificationTargetItem'
+        $ref: '#/components/schemas/Integration'
       minItems: 0
-      maxItems: 10
-    VariableType:
+      maxItems: 1
+    TagValue:
       type: string
-      enum:
-      - INCIDENT_RECORD_ARN
-      - INVOLVED_RESOURCES
-    Impact:
-      type: integer
-      minimum: 1
-      maximum: 5
-    Integration:
-      type: object
-      properties:
-        pagerDutyConfiguration:
-          allOf:
-          - $ref: '#/components/schemas/PagerDutyConfiguration'
-          - description: Information about the PagerDuty service where the response plan creates an incident.
-      description: Information about third-party services integrated into a response plan.
+      pattern: ^[A-Za-z0-9 _=@:.+-/]*$
+      minLength: 0
+      maxLength: 256
     ResponsePlanName:
       type: string
       pattern: ^[a-zA-Z0-9-_]*$
       minLength: 1
       maxLength: 200
+    Action:
+      type: object
+      properties:
+        ssmAutomation:
+          allOf:
+          - $ref: '#/components/schemas/SsmAutomation'
+          - description: The Systems Manager automation document to start as the runbook at the beginning of the incident.
+      description: The action that starts at the beginning of an incident. The response plan defines the action.
+    EmptyChatChannel:
+      type: object
+      properties: {}
+      description: Used to remove the chat channel from an incident record or response plan.
   parameters:
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
@@ -527,14 +521,20 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Credential:
       name: X-Amz-Credential
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string

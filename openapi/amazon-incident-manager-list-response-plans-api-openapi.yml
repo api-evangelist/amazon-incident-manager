@@ -196,6 +196,33 @@ paths:
       - List Response Plans
 components:
   schemas:
+    ResponsePlanSummaryList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ResponsePlanSummary'
+      minItems: 0
+      maxItems: 100
+    Arn:
+      type: string
+      pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
+      minLength: 0
+      maxLength: 1000
+    AccessDeniedException: {}
+    ResponsePlanName:
+      type: string
+      pattern: ^[a-zA-Z0-9-_]*$
+      minLength: 1
+      maxLength: 200
+    ResponsePlanDisplayName:
+      type: string
+      minLength: 0
+      maxLength: 200
+    InternalServerException: {}
+    ThrottlingException: {}
+    NextToken:
+      type: string
+      minLength: 0
+      maxLength: 2000
     ResponsePlanSummary:
       type: object
       required:
@@ -215,34 +242,6 @@ components:
           - $ref: '#/components/schemas/ResponsePlanName'
           - description: The name of the response plan. This can't include spaces.
       description: Details of the response plan that are used when creating an incident.
-    AccessDeniedException: {}
-    ResponsePlanDisplayName:
-      type: string
-      minLength: 0
-      maxLength: 200
-    ResponsePlanName:
-      type: string
-      pattern: ^[a-zA-Z0-9-_]*$
-      minLength: 1
-      maxLength: 200
-    InternalServerException: {}
-    ValidationException: {}
-    NextToken:
-      type: string
-      minLength: 0
-      maxLength: 2000
-    ThrottlingException: {}
-    Arn:
-      type: string
-      pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
-      minLength: 0
-      maxLength: 1000
-    ResponsePlanSummaryList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ResponsePlanSummary'
-      minItems: 0
-      maxItems: 100
     ListResponsePlansOutput:
       type: object
       required:
@@ -256,25 +255,8 @@ components:
           allOf:
           - $ref: '#/components/schemas/ResponsePlanSummaryList'
           - description: Details of each response plan.
+    ValidationException: {}
   parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
       in: header
@@ -287,14 +269,32 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Security-Token:
       name: X-Amz-Security-Token
       in: header
       schema:
         type: string
       required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Credential:
       name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string

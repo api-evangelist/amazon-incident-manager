@@ -206,56 +206,20 @@ paths:
       tags:
       - Update Replication Set
 components:
-  parameters:
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    ThrottlingException: {}
-    SseKmsKey:
-      type: string
-      minLength: 0
-      maxLength: 2048
-    ConflictException: {}
+    ResourceNotFoundException: {}
+    UpdateReplicationSetAction:
+      type: object
+      properties:
+        addRegionAction:
+          allOf:
+          - $ref: '#/components/schemas/AddRegionAction'
+          - description: Details about the Amazon Web Services Region that you're adding to the replication set.
+        deleteRegionAction:
+          allOf:
+          - $ref: '#/components/schemas/DeleteRegionAction'
+          - description: Details about the Amazon Web Services Region that you're deleting to the replication set.
+      description: Details used when updating the replication set.
     AddRegionAction:
       type: object
       required:
@@ -270,6 +234,15 @@ components:
           - $ref: '#/components/schemas/SseKmsKey'
           - description: The KMS key ID to use to encrypt your replication set.
       description: 'Defines the Amazon Web Services Region and KMS key to add to the replication set. '
+    RegionName:
+      type: string
+      minLength: 0
+      maxLength: 20
+    UpdateReplicationSetOutput:
+      type: object
+      properties: {}
+    ConflictException: {}
+    ThrottlingException: {}
     DeleteRegionAction:
       type: object
       required:
@@ -280,29 +253,56 @@ components:
           - $ref: '#/components/schemas/RegionName'
           - description: The name of the Amazon Web Services Region you're deleting from the replication set.
       description: Defines the information about the Amazon Web Services Region you're deleting from your replication set.
-    UpdateReplicationSetAction:
-      type: object
-      properties:
-        addRegionAction:
-          allOf:
-          - $ref: '#/components/schemas/AddRegionAction'
-          - description: Details about the Amazon Web Services Region that you're adding to the replication set.
-        deleteRegionAction:
-          allOf:
-          - $ref: '#/components/schemas/DeleteRegionAction'
-          - description: Details about the Amazon Web Services Region that you're deleting to the replication set.
-      description: Details used when updating the replication set.
-    ValidationException: {}
-    UpdateReplicationSetOutput:
-      type: object
-      properties: {}
-    ResourceNotFoundException: {}
-    InternalServerException: {}
     AccessDeniedException: {}
-    RegionName:
+    ValidationException: {}
+    InternalServerException: {}
+    SseKmsKey:
       type: string
       minLength: 0
-      maxLength: 20
+      maxLength: 2048
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

@@ -206,27 +206,47 @@ paths:
       tags:
       - Create Replication Set
 components:
+  schemas:
+    AccessDeniedException: {}
+    Arn:
+      type: string
+      pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
+      minLength: 0
+      maxLength: 1000
+    InternalServerException: {}
+    ConflictException: {}
+    ThrottlingException: {}
+    SseKmsKey:
+      type: string
+      minLength: 0
+      maxLength: 2048
+    TagValue:
+      type: string
+      pattern: ^[A-Za-z0-9 _=@:.+-/]*$
+      minLength: 0
+      maxLength: 256
+    CreateReplicationSetOutput:
+      type: object
+      required:
+      - arn
+      properties:
+        arn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: 'The Amazon Resource Name (ARN) of the replication set. '
+    RegionMapInputValue:
+      type: object
+      properties:
+        sseKmsKeyId:
+          allOf:
+          - $ref: '#/components/schemas/SseKmsKey'
+          - description: The KMS key used to encrypt the data in your replication set.
+      description: The mapping between a Amazon Web Services Region and the key that's used to encrypt the data.
+    ServiceQuotaExceededException: {}
+    ValidationException: {}
   parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -237,8 +257,20 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Security-Token:
       name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
@@ -249,44 +281,12 @@ components:
       schema:
         type: string
       required: false
-  schemas:
-    TagValue:
-      type: string
-      pattern: ^[A-Za-z0-9 _=@:.+-/]*$
-      minLength: 0
-      maxLength: 256
-    AccessDeniedException: {}
-    InternalServerException: {}
-    ValidationException: {}
-    ThrottlingException: {}
-    ServiceQuotaExceededException: {}
-    SseKmsKey:
-      type: string
-      minLength: 0
-      maxLength: 2048
-    ConflictException: {}
-    CreateReplicationSetOutput:
-      type: object
-      required:
-      - arn
-      properties:
-        arn:
-          allOf:
-          - $ref: '#/components/schemas/Arn'
-          - description: 'The Amazon Resource Name (ARN) of the replication set. '
-    Arn:
-      type: string
-      pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
-      minLength: 0
-      maxLength: 1000
-    RegionMapInputValue:
-      type: object
-      properties:
-        sseKmsKeyId:
-          allOf:
-          - $ref: '#/components/schemas/SseKmsKey'
-          - description: The KMS key used to encrypt the data in your replication set.
-      description: The mapping between a Amazon Web Services Region and the key that's used to encrypt the data.
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

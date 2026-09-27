@@ -2,7 +2,7 @@ openapi: 3.2.0
 info:
   version: 2018-05-10
   x-release: v4
-  title: AWS Systems Manager Incident Manager Delete Replication…
+  title: AWS Systems Manager Incident Manager Delete Replication Set…
   description: Systems Manager Incident Manager is an incident management console designed to help users mitigate and recover from incidents affecting their Amazon Web Services-hosted applications.
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -113,7 +113,7 @@ servers:
 security:
 - hmac: []
 tags:
-- name: DeleteReplicationSet#arn
+- name: DeleteReplicationSet
 paths:
   /deleteReplicationSet#arn:
     parameters:
@@ -179,29 +179,20 @@ paths:
         delay: 0
         dispatcher: FALLBACK
       tags:
-      - DeleteReplicationSet#arn
+      - DeleteReplicationSet
 components:
+  schemas:
+    AccessDeniedException: {}
+    ResourceNotFoundException: {}
+    InternalServerException: {}
+    ThrottlingException: {}
+    DeleteReplicationSetOutput:
+      type: object
+      properties: {}
+    ValidationException: {}
   parameters:
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -212,8 +203,20 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Security-Token:
       name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
@@ -224,15 +227,12 @@ components:
       schema:
         type: string
       required: false
-  schemas:
-    DeleteReplicationSetOutput:
-      type: object
-      properties: {}
-    AccessDeniedException: {}
-    InternalServerException: {}
-    ValidationException: {}
-    ThrottlingException: {}
-    ResourceNotFoundException: {}
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey
