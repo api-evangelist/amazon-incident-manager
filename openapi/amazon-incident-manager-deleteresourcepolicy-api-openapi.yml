@@ -193,16 +193,13 @@ paths:
       tags:
       - DeleteResourcePolicy
 components:
-  schemas:
-    AccessDeniedException: {}
-    ResourceNotFoundException: {}
-    InternalServerException: {}
-    ThrottlingException: {}
-    DeleteResourcePolicyOutput:
-      type: object
-      properties: {}
-    ValidationException: {}
   parameters:
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
       in: header
@@ -215,20 +212,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Security-Token:
       name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
       in: header
       schema:
         type: string
@@ -245,6 +230,21 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    ResourceNotFoundException: {}
+    AccessDeniedException: {}
+    DeleteResourcePolicyOutput:
+      type: object
+      properties: {}
+    InternalServerException: {}
+    ThrottlingException: {}
+    ValidationException: {}
   securitySchemes:
     hmac:
       type: apiKey

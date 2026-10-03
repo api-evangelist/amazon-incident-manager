@@ -211,44 +211,16 @@ paths:
       - GetResourcePolicies
 components:
   schemas:
-    ResourceNotFoundException: {}
-    String:
-      type: string
-    ThrottlingException: {}
-    GetResourcePoliciesOutput:
-      type: object
-      required:
-      - resourcePolicies
-      properties:
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The pagination token to continue to the next page of results.
-        resourcePolicies:
-          allOf:
-          - $ref: '#/components/schemas/ResourcePolicyList'
-          - description: Details about the resource policy attached to the response plan.
     AccessDeniedException: {}
-    PolicyId:
-      type: string
-      minLength: 0
-      maxLength: 256
-    Policy:
-      type: string
-      minLength: 0
-      maxLength: 4000
-    NextToken:
-      type: string
-      minLength: 0
-      maxLength: 2000
+    InternalServerException: {}
+    ResourceNotFoundException: {}
+    ValidationException: {}
     ResourcePolicyList:
       type: array
       items:
         $ref: '#/components/schemas/ResourcePolicy'
       minItems: 0
       maxItems: 100
-    ValidationException: {}
-    InternalServerException: {}
     ResourcePolicy:
       type: object
       required:
@@ -269,15 +241,37 @@ components:
           - $ref: '#/components/schemas/String'
           - description: The Amazon Web Services Region that policy allows resources to be used in.
       description: The resource policy that allows Incident Manager to perform actions on resources on your behalf.
+    String:
+      type: string
+    GetResourcePoliciesOutput:
+      type: object
+      required:
+      - resourcePolicies
+      properties:
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The pagination token to continue to the next page of results.
+        resourcePolicies:
+          allOf:
+          - $ref: '#/components/schemas/ResourcePolicyList'
+          - description: Details about the resource policy attached to the response plan.
+    Policy:
+      type: string
+      minLength: 0
+      maxLength: 4000
+    PolicyId:
+      type: string
+      minLength: 0
+      maxLength: 256
+    ThrottlingException: {}
+    NextToken:
+      type: string
+      minLength: 0
+      maxLength: 2000
   parameters:
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
@@ -288,26 +282,32 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Credential:
       name: X-Amz-Credential
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
       required: false
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string

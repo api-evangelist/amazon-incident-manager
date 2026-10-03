@@ -236,12 +236,11 @@ paths:
       - Start Incident
 components:
   schemas:
-    GeneratedId:
+    AccessDeniedException: {}
+    PagerDutyIncidentDetailSecretIdString:
       type: string
-      pattern: ^related-item/(ANALYSIS|INCIDENT|METRIC|PARENT|ATTACHMENT|OTHER|AUTOMATION|INVOLVED_RESOURCE|TASK)/([0-9]|[A-F]){32}$
-      minLength: 0
-      maxLength: 200
-    ResourceNotFoundException: {}
+      minLength: 1
+      maxLength: 512
     PagerDutyIncidentDetail:
       type: object
       required:
@@ -260,57 +259,20 @@ components:
           - $ref: '#/components/schemas/PagerDutyIncidentDetailSecretIdString'
           - description: The ID of the Amazon Web Services Secrets Manager secret that stores your PagerDuty key, either a General Access REST API Key or User Token REST API Key, and other user credentials.
       description: Details about the PagerDuty incident associated with an incident created by an Incident Manager response plan.
-    StartIncidentOutput:
-      type: object
-      required:
-      - incidentRecordArn
-      properties:
-        incidentRecordArn:
-          allOf:
-          - $ref: '#/components/schemas/Arn'
-          - description: The ARN of the newly created incident record.
-    PagerDutyIncidentDetailSecretIdString:
-      type: string
-      minLength: 1
-      maxLength: 512
-    IncidentSource:
-      type: string
-      minLength: 0
-      maxLength: 50
-    ItemType:
-      type: string
-      enum:
-      - ANALYSIS
-      - INCIDENT
-      - METRIC
-      - PARENT
-      - ATTACHMENT
-      - OTHER
-      - AUTOMATION
-      - INVOLVED_RESOURCE
-      - TASK
-    Boolean:
-      type: boolean
+    ConflictException: {}
     RelatedItemTitleString:
       type: string
       minLength: 0
       maxLength: 200
+    Url:
+      type: string
+      minLength: 0
+      maxLength: 1000
+    InternalServerException: {}
     RawData:
       type: string
       minLength: 0
       maxLength: 10000
-    ConflictException: {}
-    ThrottlingException: {}
-    AccessDeniedException: {}
-    Arn:
-      type: string
-      pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
-      minLength: 0
-      maxLength: 1000
-    MetricDefinition:
-      type: string
-      minLength: 0
-      maxLength: 4000
     ItemValue:
       type: object
       properties:
@@ -349,11 +311,51 @@ components:
           - $ref: '#/components/schemas/RelatedItemTitleString'
           - description: The title of the related item.
       description: Resources that responders use to triage and mitigate the incident.
-    Url:
+    ResourceNotFoundException: {}
+    PagerDutyIncidentDetailIdString:
+      type: string
+      minLength: 1
+      maxLength: 200
+    ItemType:
+      type: string
+      enum:
+      - ANALYSIS
+      - INCIDENT
+      - METRIC
+      - PARENT
+      - ATTACHMENT
+      - OTHER
+      - AUTOMATION
+      - INVOLVED_RESOURCE
+      - TASK
+    IncidentSource:
       type: string
       minLength: 0
-      maxLength: 1000
+      maxLength: 50
+    MetricDefinition:
+      type: string
+      minLength: 0
+      maxLength: 4000
     ValidationException: {}
+    GeneratedId:
+      type: string
+      pattern: ^related-item/(ANALYSIS|INCIDENT|METRIC|PARENT|ATTACHMENT|OTHER|AUTOMATION|INVOLVED_RESOURCE|TASK)/([0-9]|[A-F]){32}$
+      minLength: 0
+      maxLength: 200
+    Timestamp:
+      type: string
+      format: date-time
+    StartIncidentOutput:
+      type: object
+      required:
+      - incidentRecordArn
+      properties:
+        incidentRecordArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The ARN of the newly created incident record.
+    Boolean:
+      type: boolean
     ItemIdentifier:
       type: object
       required:
@@ -369,23 +371,15 @@ components:
           - $ref: '#/components/schemas/ItemValue'
           - description: Details about the related item.
       description: Details and type of a related item.
-    InternalServerException: {}
-    PagerDutyIncidentDetailIdString:
+    Arn:
       type: string
-      minLength: 1
-      maxLength: 200
-    Timestamp:
-      type: string
-      format: date-time
+      pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
+      minLength: 0
+      maxLength: 1000
+    ThrottlingException: {}
   parameters:
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
@@ -396,26 +390,32 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Credential:
       name: X-Amz-Credential
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
       required: false
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string

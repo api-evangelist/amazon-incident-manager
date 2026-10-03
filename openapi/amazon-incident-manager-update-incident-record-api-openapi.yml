@@ -239,13 +239,15 @@ paths:
       - Update Incident Record
 components:
   schemas:
-    ResourceNotFoundException: {}
-    SnsArn:
-      type: string
-      minLength: 0
-      maxLength: 1000
+    AccessDeniedException: {}
+    EmptyChatChannel:
+      type: object
+      properties: {}
+      description: Used to remove the chat channel from an incident record or response plan.
     ConflictException: {}
-    ThrottlingException: {}
+    UpdateIncidentRecordOutput:
+      type: object
+      properties: {}
     NotificationTargetItem:
       type: object
       properties:
@@ -254,36 +256,28 @@ components:
           - $ref: '#/components/schemas/Arn'
           - description: The Amazon Resource Name (ARN) of the SNS topic.
       description: The SNS targets that are notified when updates are made to an incident.
-    AccessDeniedException: {}
-    Arn:
+    SnsArn:
       type: string
-      pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
       minLength: 0
       maxLength: 1000
-    UpdateIncidentRecordOutput:
-      type: object
-      properties: {}
-    ValidationException: {}
     InternalServerException: {}
+    ResourceNotFoundException: {}
+    ValidationException: {}
     ChatbotSnsConfigurationSet:
       type: array
       items:
         $ref: '#/components/schemas/SnsArn'
       minItems: 1
       maxItems: 5
-    EmptyChatChannel:
-      type: object
-      properties: {}
-      description: Used to remove the chat channel from an incident record or response plan.
+    Arn:
+      type: string
+      pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
+      minLength: 0
+      maxLength: 1000
+    ThrottlingException: {}
   parameters:
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
@@ -294,26 +288,32 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Credential:
       name: X-Amz-Credential
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
       required: false
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string

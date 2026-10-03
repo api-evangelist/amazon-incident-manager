@@ -33,7 +33,7 @@
     "amazon-incident-manager-updatetimelineevent-api-openapi.yml"
   ],
   "archived": [
-    "deleted 24 superseded output(s) from the previous generation"
+    "deleted 18 superseded output(s) from the previous generation"
   ],
   "errors": [],
   "warnings": [],
@@ -97,7 +97,7 @@
     "amazon-incident-manager-openapi-original.yml: declared missing tag: UpdateResponsePlan",
     "amazon-incident-manager-openapi-original.yml: declared missing tag: UpdateTimelineEvent",
     "superseded outputs removed: amazon-incident-manager-create-replication-set-api-openapi.yml, amazon-incident-manager-create-response-plan-api-openapi.yml, amazon-incident-manager-create-timeline-event-api-openapi.yml, amazon-incident-manager-delete-incident-record-api-openapi.yml, amazon-incident-manager-delete-response-plan-api-openapi.yml \u2026",
-    "apis.yml register: written (+24 apis, 27 total)"
+    "apis.yml register: written (+18 apis, 27 total)"
   ],
   "skipped": [
     "amazon-incident-manager-create-replication-set-api-openapi.yml: previously refined output, superseded by openapi/_original/",
@@ -106,13 +106,13 @@
     "amazon-incident-manager-delete-incident-record-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "amazon-incident-manager-delete-response-plan-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "amazon-incident-manager-delete-timeline-event-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-incident-manager-deletereplicationset-arn-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-incident-manager-deletereplicationset-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "amazon-incident-manager-deleteresourcepolicy-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-incident-manager-getincidentrecord-arn-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-incident-manager-getreplicationset-arn-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-incident-manager-getresourcepolicies-resourcearn-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-incident-manager-getresponseplan-arn-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-incident-manager-gettimelineevent-eventid-incidentrecordarn-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-incident-manager-getincidentrecord-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-incident-manager-getreplicationset-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-incident-manager-getresourcepolicies-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-incident-manager-getresponseplan-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-incident-manager-gettimelineevent-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "amazon-incident-manager-list-incident-records-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "amazon-incident-manager-list-related-items-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "amazon-incident-manager-list-replication-sets-api-openapi.yml: previously refined output, superseded by openapi/_original/",

@@ -207,24 +207,13 @@ paths:
       - Create Replication Set
 components:
   schemas:
-    AccessDeniedException: {}
-    Arn:
-      type: string
-      pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
-      minLength: 0
-      maxLength: 1000
-    InternalServerException: {}
-    ConflictException: {}
-    ThrottlingException: {}
-    SseKmsKey:
-      type: string
-      minLength: 0
-      maxLength: 2048
     TagValue:
       type: string
       pattern: ^[A-Za-z0-9 _=@:.+-/]*$
       minLength: 0
       maxLength: 256
+    ServiceQuotaExceededException: {}
+    ConflictException: {}
     CreateReplicationSetOutput:
       type: object
       required:
@@ -234,6 +223,12 @@ components:
           allOf:
           - $ref: '#/components/schemas/Arn'
           - description: 'The Amazon Resource Name (ARN) of the replication set. '
+    AccessDeniedException: {}
+    Arn:
+      type: string
+      pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
+      minLength: 0
+      maxLength: 1000
     RegionMapInputValue:
       type: object
       properties:
@@ -242,11 +237,16 @@ components:
           - $ref: '#/components/schemas/SseKmsKey'
           - description: The KMS key used to encrypt the data in your replication set.
       description: The mapping between a Amazon Web Services Region and the key that's used to encrypt the data.
-    ServiceQuotaExceededException: {}
+    SseKmsKey:
+      type: string
+      minLength: 0
+      maxLength: 2048
+    InternalServerException: {}
+    ThrottlingException: {}
     ValidationException: {}
   parameters:
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
@@ -257,20 +257,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Security-Token:
       name: X-Amz-Security-Token
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
@@ -283,6 +277,12 @@ components:
       required: false
     X-Amz-Date:
       name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
