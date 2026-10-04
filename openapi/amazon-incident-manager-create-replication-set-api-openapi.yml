@@ -212,8 +212,29 @@ components:
       pattern: ^[A-Za-z0-9 _=@:.+-/]*$
       minLength: 0
       maxLength: 256
-    ServiceQuotaExceededException: {}
+    ValidationException: {}
+    RegionMapInputValue:
+      type: object
+      properties:
+        sseKmsKeyId:
+          allOf:
+          - $ref: '#/components/schemas/SseKmsKey'
+          - description: The KMS key used to encrypt the data in your replication set.
+      description: The mapping between a Amazon Web Services Region and the key that's used to encrypt the data.
     ConflictException: {}
+    Arn:
+      type: string
+      pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
+      minLength: 0
+      maxLength: 1000
+    SseKmsKey:
+      type: string
+      minLength: 0
+      maxLength: 2048
+    InternalServerException: {}
+    ThrottlingException: {}
+    ServiceQuotaExceededException: {}
+    AccessDeniedException: {}
     CreateReplicationSetOutput:
       type: object
       required:
@@ -223,28 +244,13 @@ components:
           allOf:
           - $ref: '#/components/schemas/Arn'
           - description: 'The Amazon Resource Name (ARN) of the replication set. '
-    AccessDeniedException: {}
-    Arn:
-      type: string
-      pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
-      minLength: 0
-      maxLength: 1000
-    RegionMapInputValue:
-      type: object
-      properties:
-        sseKmsKeyId:
-          allOf:
-          - $ref: '#/components/schemas/SseKmsKey'
-          - description: The KMS key used to encrypt the data in your replication set.
-      description: The mapping between a Amazon Web Services Region and the key that's used to encrypt the data.
-    SseKmsKey:
-      type: string
-      minLength: 0
-      maxLength: 2048
-    InternalServerException: {}
-    ThrottlingException: {}
-    ValidationException: {}
   parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
       in: header
@@ -269,20 +275,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Date:
       name: X-Amz-Date
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string

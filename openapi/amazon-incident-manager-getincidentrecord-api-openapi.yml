@@ -182,21 +182,31 @@ paths:
       - GetIncidentRecord
 components:
   schemas:
+    ChatbotSnsConfigurationSet:
+      type: array
+      items:
+        $ref: '#/components/schemas/SnsArn'
+      minItems: 1
+      maxItems: 5
     IncidentSummary:
       type: string
       minLength: 0
       maxLength: 8000
-    AccessDeniedException: {}
-    AutomationExecutionSet:
-      type: array
-      items:
-        $ref: '#/components/schemas/AutomationExecution'
-      minItems: 0
-      maxItems: 100
-    IncidentTitle:
+    Impact:
+      type: integer
+      minimum: 1
+      maximum: 5
+    IncidentRecordStatus:
       type: string
-      minLength: 0
-      maxLength: 200
+      enum:
+      - OPEN
+      - RESOLVED
+    InternalServerException: {}
+    ValidationException: {}
+    EmptyChatChannel:
+      type: object
+      properties: {}
+      description: Used to remove the chat channel from an incident record or response plan.
     AutomationExecution:
       type: object
       properties:
@@ -205,10 +215,24 @@ components:
           - $ref: '#/components/schemas/Arn'
           - description: The Amazon Resource Name (ARN) of the automation process.
       description: The Systems Manager automation document process to start as the runbook at the beginning of the incident.
-    EmptyChatChannel:
-      type: object
-      properties: {}
-      description: Used to remove the chat channel from an incident record or response plan.
+    ThrottlingException: {}
+    ResourceNotFoundException: {}
+    IncidentTitle:
+      type: string
+      minLength: 0
+      maxLength: 200
+    DedupeString:
+      type: string
+      minLength: 0
+      maxLength: 1000
+    ServicePrincipal:
+      type: string
+      minLength: 0
+      maxLength: 1000
+    IncidentSource:
+      type: string
+      minLength: 0
+      maxLength: 50
     IncidentRecord:
       type: object
       required:
@@ -279,52 +303,6 @@ components:
           - $ref: '#/components/schemas/IncidentTitle'
           - description: The title of the incident.
       description: The record of the incident that's created when an incident occurs.
-    DedupeString:
-      type: string
-      minLength: 0
-      maxLength: 1000
-    IncidentRecordStatus:
-      type: string
-      enum:
-      - OPEN
-      - RESOLVED
-    NotificationTargetItem:
-      type: object
-      properties:
-        snsTopicArn:
-          allOf:
-          - $ref: '#/components/schemas/Arn'
-          - description: The Amazon Resource Name (ARN) of the SNS topic.
-      description: The SNS targets that are notified when updates are made to an incident.
-    GetIncidentRecordOutput:
-      type: object
-      required:
-      - incidentRecord
-      properties:
-        incidentRecord:
-          allOf:
-          - $ref: '#/components/schemas/IncidentRecord'
-          - description: Details the structure of the incident record.
-    SnsArn:
-      type: string
-      minLength: 0
-      maxLength: 1000
-    InternalServerException: {}
-    ServicePrincipal:
-      type: string
-      minLength: 0
-      maxLength: 1000
-    NotificationTargetSet:
-      type: array
-      items:
-        $ref: '#/components/schemas/NotificationTargetItem'
-      minItems: 0
-      maxItems: 10
-    ResourceNotFoundException: {}
-    IncidentSource:
-      type: string
-      minLength: 0
-      maxLength: 50
     ChatChannel:
       type: object
       properties:
@@ -337,10 +315,6 @@ components:
           - $ref: '#/components/schemas/EmptyChatChannel'
           - description: Used to remove the chat channel from an incident record or response plan.
       description: The Chatbot chat channel used for collaboration during an incident.
-    ValidationException: {}
-    Timestamp:
-      type: string
-      format: date-time
     IncidentRecordSource:
       type: object
       required:
@@ -364,41 +338,49 @@ components:
           - $ref: '#/components/schemas/IncidentSource'
           - description: The service that started the incident. This can be manually created from Incident Manager, automatically created using an Amazon CloudWatch alarm, or Amazon EventBridge event.
       description: Details about what created the incident record and when it was created.
-    Impact:
-      type: integer
-      minimum: 1
-      maximum: 5
-    ChatbotSnsConfigurationSet:
+    NotificationTargetSet:
       type: array
       items:
-        $ref: '#/components/schemas/SnsArn'
-      minItems: 1
-      maxItems: 5
+        $ref: '#/components/schemas/NotificationTargetItem'
+      minItems: 0
+      maxItems: 10
+    AccessDeniedException: {}
+    GetIncidentRecordOutput:
+      type: object
+      required:
+      - incidentRecord
+      properties:
+        incidentRecord:
+          allOf:
+          - $ref: '#/components/schemas/IncidentRecord'
+          - description: Details the structure of the incident record.
+    SnsArn:
+      type: string
+      minLength: 0
+      maxLength: 1000
+    AutomationExecutionSet:
+      type: array
+      items:
+        $ref: '#/components/schemas/AutomationExecution'
+      minItems: 0
+      maxItems: 100
+    Timestamp:
+      type: string
+      format: date-time
     Arn:
       type: string
       pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
       minLength: 0
       maxLength: 1000
-    ThrottlingException: {}
+    NotificationTargetItem:
+      type: object
+      properties:
+        snsTopicArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The Amazon Resource Name (ARN) of the SNS topic.
+      description: The SNS targets that are notified when updates are made to an incident.
   parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Signature:
       name: X-Amz-Signature
       in: header
@@ -419,6 +401,24 @@ components:
       required: false
     X-Amz-Date:
       name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string

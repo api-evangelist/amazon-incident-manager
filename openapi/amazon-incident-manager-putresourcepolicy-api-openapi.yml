@@ -193,28 +193,15 @@ paths:
       tags:
       - PutResourcePolicy
 components:
-  schemas:
-    PolicyId:
-      type: string
-      minLength: 0
-      maxLength: 256
-    ResourceNotFoundException: {}
-    AccessDeniedException: {}
-    PutResourcePolicyOutput:
-      type: object
-      required:
-      - policyId
-      properties:
-        policyId:
-          allOf:
-          - $ref: '#/components/schemas/PolicyId'
-          - description: The ID of the resource policy.
-    InternalServerException: {}
-    ThrottlingException: {}
-    ValidationException: {}
   parameters:
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
@@ -237,24 +224,37 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Date:
       name: X-Amz-Date
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
       required: false
+  schemas:
+    ValidationException: {}
+    PolicyId:
+      type: string
+      minLength: 0
+      maxLength: 256
+    ThrottlingException: {}
+    ResourceNotFoundException: {}
+    PutResourcePolicyOutput:
+      type: object
+      required:
+      - policyId
+      properties:
+        policyId:
+          allOf:
+          - $ref: '#/components/schemas/PolicyId'
+          - description: The ID of the resource policy.
+    AccessDeniedException: {}
+    InternalServerException: {}
   securitySchemes:
     hmac:
       type: apiKey

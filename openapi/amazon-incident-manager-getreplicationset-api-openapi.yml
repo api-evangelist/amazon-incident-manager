@@ -181,8 +181,68 @@ paths:
       tags:
       - GetReplicationSet
 components:
+  parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    AccessDeniedException: {}
+    ReplicationSetStatus:
+      type: string
+      enum:
+      - ACTIVE
+      - CREATING
+      - UPDATING
+      - DELETING
+      - FAILED
+    InternalServerException: {}
+    ValidationException: {}
+    ThrottlingException: {}
+    ResourceNotFoundException: {}
+    RegionInfoMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/RegionInfo'
+    Boolean:
+      type: boolean
     RegionInfo:
       type: object
       required:
@@ -206,14 +266,37 @@ components:
           - $ref: '#/components/schemas/Timestamp'
           - description: The most recent date and time that Incident Manager updated the Amazon Web Services Region's status.
       description: Information about a Amazon Web Services Region in your replication set.
-    ReplicationSetStatus:
+    RegionStatus:
       type: string
       enum:
       - ACTIVE
       - CREATING
-      - UPDATING
       - DELETING
       - FAILED
+    AccessDeniedException: {}
+    Timestamp:
+      type: string
+      format: date-time
+    String:
+      type: string
+    SseKmsKey:
+      type: string
+      minLength: 0
+      maxLength: 2048
+    Arn:
+      type: string
+      pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
+      minLength: 0
+      maxLength: 1000
+    GetReplicationSetOutput:
+      type: object
+      required:
+      - replicationSet
+      properties:
+        replicationSet:
+          allOf:
+          - $ref: '#/components/schemas/ReplicationSet'
+          - description: Details of the replication set.
     ReplicationSet:
       type: object
       required:
@@ -258,89 +341,6 @@ components:
           - $ref: '#/components/schemas/ReplicationSetStatus'
           - description: The status of the replication set. If the replication set is still pending, you can't use Incident Manager functionality.
       description: 'The set of Amazon Web Services Region that your Incident Manager data will be replicated to and the KMS key used to encrypt the data. '
-    InternalServerException: {}
-    ResourceNotFoundException: {}
-    ValidationException: {}
-    Timestamp:
-      type: string
-      format: date-time
-    GetReplicationSetOutput:
-      type: object
-      required:
-      - replicationSet
-      properties:
-        replicationSet:
-          allOf:
-          - $ref: '#/components/schemas/ReplicationSet'
-          - description: Details of the replication set.
-    String:
-      type: string
-    RegionStatus:
-      type: string
-      enum:
-      - ACTIVE
-      - CREATING
-      - DELETING
-      - FAILED
-    Boolean:
-      type: boolean
-    SseKmsKey:
-      type: string
-      minLength: 0
-      maxLength: 2048
-    Arn:
-      type: string
-      pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
-      minLength: 0
-      maxLength: 1000
-    ThrottlingException: {}
-    RegionInfoMap:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/RegionInfo'
-  parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
   securitySchemes:
     hmac:
       type: apiKey

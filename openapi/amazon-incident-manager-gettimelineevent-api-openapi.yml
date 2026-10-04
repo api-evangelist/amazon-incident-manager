@@ -189,21 +189,50 @@ paths:
       tags:
       - GetTimelineEvent
 components:
+  parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    TimelineEventType:
-      type: string
-      minLength: 0
-      maxLength: 100
-    GetTimelineEventOutput:
-      type: object
-      required:
-      - event
-      properties:
-        event:
-          allOf:
-          - $ref: '#/components/schemas/TimelineEvent'
-          - description: Details about the timeline event.
-    AccessDeniedException: {}
     EventReference:
       type: object
       properties:
@@ -216,12 +245,26 @@ components:
           - $ref: '#/components/schemas/Arn'
           - description: The Amazon Resource Name (ARN) of an Amazon Web Services resource referenced in a <code>TimelineEvent</code>.
       description: An item referenced in a <code>TimelineEvent</code> that is involved in or somehow associated with an incident. You can specify an Amazon Resource Name (ARN) for an Amazon Web Services resource or a <code>RelatedItem</code> ID.
-    InternalServerException: {}
-    EventData:
+    GetTimelineEventOutput:
+      type: object
+      required:
+      - event
+      properties:
+        event:
+          allOf:
+          - $ref: '#/components/schemas/TimelineEvent'
+          - description: Details about the timeline event.
+    UUID:
       type: string
       minLength: 0
-      maxLength: 12000
-    ResourceNotFoundException: {}
+      maxLength: 50
+    InternalServerException: {}
+    EventReferenceList:
+      type: array
+      items:
+        $ref: '#/components/schemas/EventReference'
+      minItems: 0
+      maxItems: 10
     TimelineEvent:
       type: object
       required:
@@ -262,6 +305,17 @@ components:
           - description: The Amazon Resource Name (ARN) of the incident that the event occurred during.
       description: 'A significant event that happened during the incident. '
     ValidationException: {}
+    ThrottlingException: {}
+    ResourceNotFoundException: {}
+    TimelineEventType:
+      type: string
+      minLength: 0
+      maxLength: 100
+    EventData:
+      type: string
+      minLength: 0
+      maxLength: 12000
+    AccessDeniedException: {}
     GeneratedId:
       type: string
       pattern: ^related-item/(ANALYSIS|INCIDENT|METRIC|PARENT|ATTACHMENT|OTHER|AUTOMATION|INVOLVED_RESOURCE|TASK)/([0-9]|[A-F]){32}$
@@ -270,65 +324,11 @@ components:
     Timestamp:
       type: string
       format: date-time
-    UUID:
-      type: string
-      minLength: 0
-      maxLength: 50
     Arn:
       type: string
       pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
       minLength: 0
       maxLength: 1000
-    ThrottlingException: {}
-    EventReferenceList:
-      type: array
-      items:
-        $ref: '#/components/schemas/EventReference'
-      minItems: 0
-      maxItems: 10
-  parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
   securitySchemes:
     hmac:
       type: apiKey

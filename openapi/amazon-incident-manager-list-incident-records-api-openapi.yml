@@ -202,16 +202,78 @@ paths:
       tags:
       - List Incident Records
 components:
+  parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    FilterKeyString:
+    Impact:
+      type: integer
+      minimum: 1
+      maximum: 5
+    ListIncidentRecordsOutput:
+      type: object
+      required:
+      - incidentRecordSummaries
+      properties:
+        incidentRecordSummaries:
+          allOf:
+          - $ref: '#/components/schemas/IncidentRecordSummaryList'
+          - description: The details of each listed incident record.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The pagination token to continue to the next page of results.
+    IncidentRecordSummaryList:
+      type: array
+      items:
+        $ref: '#/components/schemas/IncidentRecordSummary'
+      minItems: 0
+      maxItems: 100
+    IncidentRecordStatus:
       type: string
-      minLength: 0
-      maxLength: 50
-    AccessDeniedException: {}
-    IncidentTitle:
-      type: string
-      minLength: 0
-      maxLength: 200
+      enum:
+      - OPEN
+      - RESOLVED
     Condition:
       type: object
       properties:
@@ -228,79 +290,39 @@ components:
           - $ref: '#/components/schemas/AttributeValueList'
           - description: 'The value is equal to the provided string or integer. '
       description: A conditional statement with which to compare a value, after a timestamp, before a timestamp, or equal to a string or integer. If multiple conditions are specified, the conditionals become an <code>AND</code>ed statement. If multiple values are specified for a conditional, the values are <code>OR</code>d.
+    StringList:
+      type: array
+      items:
+        $ref: '#/components/schemas/StringListMemberString'
+      minItems: 0
+      maxItems: 100
+    InternalServerException: {}
+    ValidationException: {}
+    ThrottlingException: {}
+    IncidentTitle:
+      type: string
+      minLength: 0
+      maxLength: 200
+    Integer:
+      type: integer
+    ServicePrincipal:
+      type: string
+      minLength: 0
+      maxLength: 1000
+    IncidentSource:
+      type: string
+      minLength: 0
+      maxLength: 50
     IntegerList:
       type: array
       items:
         $ref: '#/components/schemas/Integer'
       minItems: 0
       maxItems: 100
-    Integer:
-      type: integer
-    AttributeValueList:
-      type: object
-      properties:
-        integerValues:
-          allOf:
-          - $ref: '#/components/schemas/IntegerList'
-          - description: The list of integer values that the filter matches.
-        stringValues:
-          allOf:
-          - $ref: '#/components/schemas/StringList'
-          - description: The list of string values that the filter matches.
-      description: Use the AttributeValueList to filter by string or integer values.
-    IncidentRecordStatus:
-      type: string
-      enum:
-      - OPEN
-      - RESOLVED
-    InternalServerException: {}
-    ServicePrincipal:
-      type: string
-      minLength: 0
-      maxLength: 1000
-    Filter:
-      type: object
-      required:
-      - condition
-      - key
-      properties:
-        condition:
-          allOf:
-          - $ref: '#/components/schemas/Condition'
-          - description: The condition accepts before or after a specified time, equal to a string, or equal to an integer.
-        key:
-          allOf:
-          - $ref: '#/components/schemas/FilterKeyString'
-          - description: The key that you're filtering on.
-      description: Filter the selection by using a condition.
-    ListIncidentRecordsOutput:
-      type: object
-      required:
-      - incidentRecordSummaries
-      properties:
-        incidentRecordSummaries:
-          allOf:
-          - $ref: '#/components/schemas/IncidentRecordSummaryList'
-          - description: The details of each listed incident record.
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The pagination token to continue to the next page of results.
-    IncidentSource:
-      type: string
-      minLength: 0
-      maxLength: 50
-    IncidentRecordSummaryList:
-      type: array
-      items:
-        $ref: '#/components/schemas/IncidentRecordSummary'
-      minItems: 0
-      maxItems: 100
     StringListMemberString:
       type: string
       minLength: 0
       maxLength: 1000
-    ValidationException: {}
     IncidentRecordSummary:
       type: object
       required:
@@ -340,15 +362,6 @@ components:
           - $ref: '#/components/schemas/IncidentTitle'
           - description: The title of the incident. This value is either provided by the response plan or overwritten on creation.
       description: Details describing an incident record.
-    Timestamp:
-      type: string
-      format: date-time
-    StringList:
-      type: array
-      items:
-        $ref: '#/components/schemas/StringListMemberString'
-      minItems: 0
-      maxItems: 100
     IncidentRecordSource:
       type: object
       required:
@@ -372,63 +385,50 @@ components:
           - $ref: '#/components/schemas/IncidentSource'
           - description: The service that started the incident. This can be manually created from Incident Manager, automatically created using an Amazon CloudWatch alarm, or Amazon EventBridge event.
       description: Details about what created the incident record and when it was created.
-    Impact:
-      type: integer
-      minimum: 1
-      maximum: 5
+    AccessDeniedException: {}
+    Filter:
+      type: object
+      required:
+      - condition
+      - key
+      properties:
+        condition:
+          allOf:
+          - $ref: '#/components/schemas/Condition'
+          - description: The condition accepts before or after a specified time, equal to a string, or equal to an integer.
+        key:
+          allOf:
+          - $ref: '#/components/schemas/FilterKeyString'
+          - description: The key that you're filtering on.
+      description: Filter the selection by using a condition.
+    Timestamp:
+      type: string
+      format: date-time
     Arn:
       type: string
       pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
       minLength: 0
       maxLength: 1000
-    ThrottlingException: {}
     NextToken:
       type: string
       minLength: 0
       maxLength: 2000
-  parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
+    FilterKeyString:
+      type: string
+      minLength: 0
+      maxLength: 50
+    AttributeValueList:
+      type: object
+      properties:
+        integerValues:
+          allOf:
+          - $ref: '#/components/schemas/IntegerList'
+          - description: The list of integer values that the filter matches.
+        stringValues:
+          allOf:
+          - $ref: '#/components/schemas/StringList'
+          - description: The list of string values that the filter matches.
+      description: Use the AttributeValueList to filter by string or integer values.
   securitySchemes:
     hmac:
       type: apiKey
