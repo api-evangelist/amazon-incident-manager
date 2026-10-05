@@ -1,0 +1,175 @@
+slug: amazon-incident-manager
+provider: Amazon Incident Manager
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 17
+edges:
+- tag: GetIncidentRecord
+  spec_file: amazon-incident-manager-getincidentrecord-api-openapi.yml
+  capability_id: BC-4220.30
+  capability_id_l1: BC-4220
+  capability_name: Incident Response Management
+  confidence: 0.9
+  evidence: GET /getIncidentRecord#arn; schemas IncidentRecord, IncidentRecordStatus, IncidentTitle, ChatChannel,
+    NotificationTargetSet
+  reason: Retrieves production incident records with status, source and notification targets — core incident
+    detection/coordination surface.
+- tag: List Incident Records
+  spec_file: amazon-incident-manager-list-incident-records-api-openapi.yml
+  capability_id: BC-4220.30
+  capability_id_l1: BC-4220
+  capability_name: Incident Response Management
+  confidence: 0.9
+  evidence: POST /listIncidentRecords; schemas IncidentRecordSummaryList, IncidentRecordStatus, IncidentRecordSource
+  reason: Lists and filters production incident records — IT/SaaS incident response management.
+- tag: Start Incident
+  spec_file: amazon-incident-manager-start-incident-api-openapi.yml
+  capability_id: BC-4220.30
+  capability_id_l1: BC-4220
+  capability_name: Incident Response Management
+  confidence: 0.9
+  evidence: POST /startIncident  StartIncident; schemas IncidentSource, PagerDutyIncidentDetail, StartIncidentOutput
+  reason: Declaring/opening an incident with PagerDuty linkage is squarely production incident response
+    for a hosted application, not ITSM ticketing of a corporate IT estate.
+- tag: Delete Incident Record
+  spec_file: amazon-incident-manager-delete-incident-record-api-openapi.yml
+  capability_id: BC-4220.30
+  capability_id_l1: BC-4220
+  capability_name: Incident Response Management
+  confidence: 0.88
+  evidence: POST /deleteIncidentRecord DeleteIncidentRecord; "incident management console designed to
+    help users mitigate and recover from incidents affecting their Amazon Web Services-hosted applications"
+  reason: Operation manages incident records in an IT incident management console for production incidents,
+    matching Incident Response Management.
+- tag: Update Incident Record
+  spec_file: amazon-incident-manager-update-incident-record-api-openapi.yml
+  capability_id: BC-4220.30
+  capability_id_l1: BC-4220
+  capability_name: Incident Response Management
+  confidence: 0.88
+  evidence: POST /updateIncidentRecord  UpdateIncidentRecord; schemas NotificationTargetItem, ChatbotSnsConfigurationSet,
+    EmptyChatChannel
+  reason: Updating the incident record with chat channel and notification targets is incident coordination
+    and communication during a production incident.
+- tag: Delete Response Plan
+  spec_file: amazon-incident-manager-delete-response-plan-api-openapi.yml
+  capability_id: BC-4220.30
+  capability_id_l1: BC-4220
+  capability_name: Incident Response Management
+  confidence: 0.85
+  evidence: POST /deleteResponsePlan DeleteResponsePlan; vendor "automating response plans and engaging
+    responders across notification channels"
+  reason: Response plans define on-call/responder engagement for production incidents — incident response
+    management, not a business continuity plan artefact.
+- tag: GetResponsePlan
+  spec_file: amazon-incident-manager-getresponseplan-api-openapi.yml
+  capability_id: BC-4220.30
+  capability_id_l1: BC-4220
+  capability_name: Incident Response Management
+  confidence: 0.85
+  evidence: GET /getResponsePlan#arn; schemas IncidentTemplate, EngagementSet, SsmContactsArn, PagerDutyConfigurationNameString
+  reason: Response plan retrieval exposes incident templates, responder engagement sets and PagerDuty
+    integration — on-call incident response.
+- tag: List Response Plans
+  spec_file: amazon-incident-manager-list-response-plans-api-openapi.yml
+  capability_id: BC-4220.30
+  capability_id_l1: BC-4220
+  capability_name: Incident Response Management
+  confidence: 0.85
+  evidence: POST /listResponsePlans; schemas ResponsePlanSummaryList, ResponsePlanDisplayName
+  reason: Lists incident response plans used to engage responders for production incidents.
+- tag: Delete Timeline Event
+  spec_file: amazon-incident-manager-delete-timeline-event-api-openapi.yml
+  capability_id: BC-4220.30
+  capability_id_l1: BC-4220
+  capability_name: Incident Response Management
+  confidence: 0.82
+  evidence: POST /deleteTimelineEvent DeleteTimelineEvent, schema TimelineEvent
+  reason: Timeline events are the chronology recorded against an incident record during incident coordination.
+- tag: GetTimelineEvent
+  spec_file: amazon-incident-manager-gettimelineevent-api-openapi.yml
+  capability_id: BC-4220.30
+  capability_id_l1: BC-4220
+  capability_name: Incident Response Management
+  confidence: 0.82
+  evidence: GET /getTimelineEvent#eventId&incidentRecordArn, schema TimelineEvent, EventReferenceList
+  reason: Timeline events are retrieved against an incidentRecordArn, part of incident coordination and
+    recordkeeping.
+- tag: Update Response Plan
+  spec_file: amazon-incident-manager-update-response-plan-api-openapi.yml
+  capability_id: BC-4220.30
+  capability_id_l1: BC-4220
+  capability_name: Incident Response Management
+  confidence: 0.82
+  evidence: 'POST /updateResponsePlan  UpdateResponsePlan; schemas SsmContactsArn, SsmAutomation, Action,
+    NotificationTargetItem — vendor: "automating response plans and engaging responders across notification
+    channels"'
+  reason: Response plans define engagement of responders and automated actions for production incidents,
+    i.e. on-call/incident response configuration.
+- tag: Create Response Plan
+  spec_file: amazon-incident-manager-create-response-plan-api-openapi.yml
+  capability_id: BC-4220.30
+  capability_id_l1: BC-4220
+  capability_name: Incident Response Management
+  confidence: 0.8
+  evidence: CreateResponsePlan — "incident management console designed to help users mitigate and recover
+    from incidents affecting their Amazon Web Services-hosted applications"
+  reason: Defines automated response plans with contacts, chat channels and notification targets for production
+    application incidents — incident response and responder engagement.
+- tag: List Timeline Events
+  spec_file: amazon-incident-manager-list-timeline-events-api-openapi.yml
+  capability_id: BC-4220.30
+  capability_id_l1: BC-4220
+  capability_name: Incident Response Management
+  confidence: 0.8
+  evidence: POST /listTimelineEvents  ListTimelineEvents; schemas TimelineEventType, EventSummaryList
+    — within "an incident management console designed to help users mitigate and recover from incidents
+    affecting their ... hosted applications"
+  reason: Timeline events are the chronological record of a production incident's handling, part of incident
+    detection/coordination for a hosted service rather than any business-domain alerting.
+- tag: Update Related Items
+  spec_file: amazon-incident-manager-update-related-items-api-openapi.yml
+  capability_id: BC-4220.30
+  capability_id_l1: BC-4220
+  capability_name: Incident Response Management
+  confidence: 0.78
+  evidence: POST /updateRelatedItems  UpdateRelatedItems; schemas RelatedItem, PagerDutyIncidentDetail,
+    MetricDefinition
+  reason: Attaching metrics, URLs and PagerDuty incident details to an open incident is evidence-gathering
+    within production incident response.
+- tag: Update Timeline Event
+  spec_file: amazon-incident-manager-update-timeline-event-api-openapi.yml
+  capability_id: BC-4220.30
+  capability_id_l1: BC-4220
+  capability_name: Incident Response Management
+  confidence: 0.78
+  evidence: POST /updateTimelineEvent  UpdateTimelineEvent; schemas EventReference, UpdateTimelineEventOutput
+  reason: Editing incident timeline events supports coordination and the chronological record during production
+    incident response.
+- tag: Create Timeline Event
+  spec_file: amazon-incident-manager-create-timeline-event-api-openapi.yml
+  capability_id: BC-4220.30
+  capability_id_l1: BC-4220
+  capability_name: Incident Response Management
+  confidence: 0.75
+  evidence: POST /createTimelineEvent  CreateTimelineEvent, schema CreateTimelineEventOutput
+  reason: Records timeline events against a production incident for coordination and post-incident review;
+    part of incident response operations, though a single thin operation.
+- tag: List Related Items
+  spec_file: amazon-incident-manager-list-related-items-api-openapi.yml
+  capability_id: BC-4220.30
+  capability_id_l1: BC-4220
+  capability_name: Incident Response Management
+  confidence: 0.75
+  evidence: POST /listRelatedItems; schemas RelatedItemList, PagerDutyIncidentDetail, MetricDefinition
+  reason: Related items are artefacts (metrics, PagerDuty incidents, URLs) attached to an incident during
+    response; clearly incident response context.
