@@ -562,6 +562,12 @@ apis:
   - type: FAQ
     url: https://aws.amazon.com/systems-manager/faq/
 common:
+- type: Plans
+  url: plans/amazon-incident-manager-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/amazon-incident-manager-rate-limits.yml
+- type: FinOps
+  url: finops/amazon-incident-manager-finops.yml
 - type: CapabilityMap
   url: capabilities/amazon-incident-manager-capability-edges.yml
   name: Amazon Incident Manager Business Capability Map
