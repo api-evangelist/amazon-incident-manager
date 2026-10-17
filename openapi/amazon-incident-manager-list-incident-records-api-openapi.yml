@@ -202,54 +202,15 @@ paths:
       tags:
       - List Incident Records
 components:
-  parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    Impact:
+    IncidentRecordStatus:
+      type: string
+      enum:
+      - OPEN
+      - RESOLVED
+    Integer:
       type: integer
-      minimum: 1
-      maximum: 5
+    ThrottlingException: {}
     ListIncidentRecordsOutput:
       type: object
       required:
@@ -263,48 +224,10 @@ components:
           allOf:
           - $ref: '#/components/schemas/NextToken'
           - description: The pagination token to continue to the next page of results.
-    IncidentRecordSummaryList:
-      type: array
-      items:
-        $ref: '#/components/schemas/IncidentRecordSummary'
-      minItems: 0
-      maxItems: 100
-    IncidentRecordStatus:
-      type: string
-      enum:
-      - OPEN
-      - RESOLVED
-    Condition:
-      type: object
-      properties:
-        after:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: After the specified timestamp.
-        before:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: Before the specified timestamp
-        equals:
-          allOf:
-          - $ref: '#/components/schemas/AttributeValueList'
-          - description: 'The value is equal to the provided string or integer. '
-      description: A conditional statement with which to compare a value, after a timestamp, before a timestamp, or equal to a string or integer. If multiple conditions are specified, the conditionals become an <code>AND</code>ed statement. If multiple values are specified for a conditional, the values are <code>OR</code>d.
-    StringList:
-      type: array
-      items:
-        $ref: '#/components/schemas/StringListMemberString'
-      minItems: 0
-      maxItems: 100
-    InternalServerException: {}
-    ValidationException: {}
-    ThrottlingException: {}
     IncidentTitle:
       type: string
       minLength: 0
       maxLength: 200
-    Integer:
-      type: integer
     ServicePrincipal:
       type: string
       minLength: 0
@@ -313,16 +236,52 @@ components:
       type: string
       minLength: 0
       maxLength: 50
+    InternalServerException: {}
     IntegerList:
       type: array
       items:
         $ref: '#/components/schemas/Integer'
       minItems: 0
       maxItems: 100
-    StringListMemberString:
+    Timestamp:
       type: string
+      format: date-time
+    Arn:
+      type: string
+      pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
       minLength: 0
       maxLength: 1000
+    Impact:
+      type: integer
+      minimum: 1
+      maximum: 5
+    FilterKeyString:
+      type: string
+      minLength: 0
+      maxLength: 50
+    AccessDeniedException: {}
+    NextToken:
+      type: string
+      minLength: 0
+      maxLength: 2000
+    IncidentRecordSummaryList:
+      type: array
+      items:
+        $ref: '#/components/schemas/IncidentRecordSummary'
+      minItems: 0
+      maxItems: 100
+    AttributeValueList:
+      type: object
+      properties:
+        integerValues:
+          allOf:
+          - $ref: '#/components/schemas/IntegerList'
+          - description: The list of integer values that the filter matches.
+        stringValues:
+          allOf:
+          - $ref: '#/components/schemas/StringList'
+          - description: The list of string values that the filter matches.
+      description: Use the AttributeValueList to filter by string or integer values.
     IncidentRecordSummary:
       type: object
       required:
@@ -362,6 +321,11 @@ components:
           - $ref: '#/components/schemas/IncidentTitle'
           - description: The title of the incident. This value is either provided by the response plan or overwritten on creation.
       description: Details describing an incident record.
+    ValidationException: {}
+    StringListMemberString:
+      type: string
+      minLength: 0
+      maxLength: 1000
     IncidentRecordSource:
       type: object
       required:
@@ -385,7 +349,12 @@ components:
           - $ref: '#/components/schemas/IncidentSource'
           - description: The service that started the incident. This can be manually created from Incident Manager, automatically created using an Amazon CloudWatch alarm, or Amazon EventBridge event.
       description: Details about what created the incident record and when it was created.
-    AccessDeniedException: {}
+    StringList:
+      type: array
+      items:
+        $ref: '#/components/schemas/StringListMemberString'
+      minItems: 0
+      maxItems: 100
     Filter:
       type: object
       required:
@@ -401,34 +370,65 @@ components:
           - $ref: '#/components/schemas/FilterKeyString'
           - description: The key that you're filtering on.
       description: Filter the selection by using a condition.
-    Timestamp:
-      type: string
-      format: date-time
-    Arn:
-      type: string
-      pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
-      minLength: 0
-      maxLength: 1000
-    NextToken:
-      type: string
-      minLength: 0
-      maxLength: 2000
-    FilterKeyString:
-      type: string
-      minLength: 0
-      maxLength: 50
-    AttributeValueList:
+    Condition:
       type: object
       properties:
-        integerValues:
+        after:
           allOf:
-          - $ref: '#/components/schemas/IntegerList'
-          - description: The list of integer values that the filter matches.
-        stringValues:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: After the specified timestamp.
+        before:
           allOf:
-          - $ref: '#/components/schemas/StringList'
-          - description: The list of string values that the filter matches.
-      description: Use the AttributeValueList to filter by string or integer values.
+          - $ref: '#/components/schemas/Timestamp'
+          - description: Before the specified timestamp
+        equals:
+          allOf:
+          - $ref: '#/components/schemas/AttributeValueList'
+          - description: 'The value is equal to the provided string or integer. '
+      description: A conditional statement with which to compare a value, after a timestamp, before a timestamp, or equal to a string or integer. If multiple conditions are specified, the conditionals become an <code>AND</code>ed statement. If multiple values are specified for a conditional, the values are <code>OR</code>d.
+  parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

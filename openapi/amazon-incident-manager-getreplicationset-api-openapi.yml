@@ -188,26 +188,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
       required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
@@ -224,70 +212,19 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    ReplicationSetStatus:
-      type: string
-      enum:
-      - ACTIVE
-      - CREATING
-      - UPDATING
-      - DELETING
-      - FAILED
-    InternalServerException: {}
-    ValidationException: {}
-    ThrottlingException: {}
-    ResourceNotFoundException: {}
-    RegionInfoMap:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/RegionInfo'
-    Boolean:
-      type: boolean
-    RegionInfo:
-      type: object
-      required:
-      - status
-      - statusUpdateDateTime
-      properties:
-        sseKmsKeyId:
-          allOf:
-          - $ref: '#/components/schemas/SseKmsKey'
-          - description: The ID of the KMS key used to encrypt the data in this Amazon Web Services Region.
-        status:
-          allOf:
-          - $ref: '#/components/schemas/RegionStatus'
-          - description: The status of the Amazon Web Services Region in the replication set.
-        statusMessage:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: Information displayed about the status of the Amazon Web Services Region.
-        statusUpdateDateTime:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: The most recent date and time that Incident Manager updated the Amazon Web Services Region's status.
-      description: Information about a Amazon Web Services Region in your replication set.
-    RegionStatus:
-      type: string
-      enum:
-      - ACTIVE
-      - CREATING
-      - DELETING
-      - FAILED
-    AccessDeniedException: {}
-    Timestamp:
-      type: string
-      format: date-time
-    String:
-      type: string
-    SseKmsKey:
-      type: string
-      minLength: 0
-      maxLength: 2048
-    Arn:
-      type: string
-      pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
-      minLength: 0
-      maxLength: 1000
     GetReplicationSetOutput:
       type: object
       required:
@@ -297,6 +234,22 @@ components:
           allOf:
           - $ref: '#/components/schemas/ReplicationSet'
           - description: Details of the replication set.
+    RegionStatus:
+      type: string
+      enum:
+      - ACTIVE
+      - CREATING
+      - DELETING
+      - FAILED
+    RegionInfoMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/RegionInfo'
+    ThrottlingException: {}
+    Boolean:
+      type: boolean
+    String:
+      type: string
     ReplicationSet:
       type: object
       required:
@@ -341,6 +294,53 @@ components:
           - $ref: '#/components/schemas/ReplicationSetStatus'
           - description: The status of the replication set. If the replication set is still pending, you can't use Incident Manager functionality.
       description: 'The set of Amazon Web Services Region that your Incident Manager data will be replicated to and the KMS key used to encrypt the data. '
+    ReplicationSetStatus:
+      type: string
+      enum:
+      - ACTIVE
+      - CREATING
+      - UPDATING
+      - DELETING
+      - FAILED
+    InternalServerException: {}
+    RegionInfo:
+      type: object
+      required:
+      - status
+      - statusUpdateDateTime
+      properties:
+        sseKmsKeyId:
+          allOf:
+          - $ref: '#/components/schemas/SseKmsKey'
+          - description: The ID of the KMS key used to encrypt the data in this Amazon Web Services Region.
+        status:
+          allOf:
+          - $ref: '#/components/schemas/RegionStatus'
+          - description: The status of the Amazon Web Services Region in the replication set.
+        statusMessage:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Information displayed about the status of the Amazon Web Services Region.
+        statusUpdateDateTime:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The most recent date and time that Incident Manager updated the Amazon Web Services Region's status.
+      description: Information about a Amazon Web Services Region in your replication set.
+    Timestamp:
+      type: string
+      format: date-time
+    Arn:
+      type: string
+      pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
+      minLength: 0
+      maxLength: 1000
+    AccessDeniedException: {}
+    SseKmsKey:
+      type: string
+      minLength: 0
+      maxLength: 2048
+    ResourceNotFoundException: {}
+    ValidationException: {}
   securitySchemes:
     hmac:
       type: apiKey

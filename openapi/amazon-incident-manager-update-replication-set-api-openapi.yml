@@ -213,26 +213,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
       required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
@@ -249,9 +237,41 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
     ConflictException: {}
+    ThrottlingException: {}
+    DeleteRegionAction:
+      type: object
+      required:
+      - regionName
+      properties:
+        regionName:
+          allOf:
+          - $ref: '#/components/schemas/RegionName'
+          - description: The name of the Amazon Web Services Region you're deleting from the replication set.
+      description: Defines the information about the Amazon Web Services Region you're deleting from your replication set.
     InternalServerException: {}
+    AccessDeniedException: {}
+    SseKmsKey:
+      type: string
+      minLength: 0
+      maxLength: 2048
+    ResourceNotFoundException: {}
+    UpdateReplicationSetOutput:
+      type: object
+      properties: {}
     UpdateReplicationSetAction:
       type: object
       properties:
@@ -264,9 +284,6 @@ components:
           - $ref: '#/components/schemas/DeleteRegionAction'
           - description: Details about the Amazon Web Services Region that you're deleting to the replication set.
       description: Details used when updating the replication set.
-    ValidationException: {}
-    ThrottlingException: {}
-    ResourceNotFoundException: {}
     AddRegionAction:
       type: object
       required:
@@ -281,28 +298,11 @@ components:
           - $ref: '#/components/schemas/SseKmsKey'
           - description: The KMS key ID to use to encrypt your replication set.
       description: 'Defines the Amazon Web Services Region and KMS key to add to the replication set. '
+    ValidationException: {}
     RegionName:
       type: string
       minLength: 0
       maxLength: 20
-    AccessDeniedException: {}
-    UpdateReplicationSetOutput:
-      type: object
-      properties: {}
-    DeleteRegionAction:
-      type: object
-      required:
-      - regionName
-      properties:
-        regionName:
-          allOf:
-          - $ref: '#/components/schemas/RegionName'
-          - description: The name of the Amazon Web Services Region you're deleting from the replication set.
-      description: Defines the information about the Amazon Web Services Region you're deleting from your replication set.
-    SseKmsKey:
-      type: string
-      minLength: 0
-      maxLength: 2048
   securitySchemes:
     hmac:
       type: apiKey

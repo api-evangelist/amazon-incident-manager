@@ -182,31 +182,41 @@ paths:
       - GetIncidentRecord
 components:
   schemas:
-    ChatbotSnsConfigurationSet:
-      type: array
-      items:
-        $ref: '#/components/schemas/SnsArn'
-      minItems: 1
-      maxItems: 5
-    IncidentSummary:
-      type: string
-      minLength: 0
-      maxLength: 8000
-    Impact:
-      type: integer
-      minimum: 1
-      maximum: 5
     IncidentRecordStatus:
       type: string
       enum:
       - OPEN
       - RESOLVED
-    InternalServerException: {}
-    ValidationException: {}
-    EmptyChatChannel:
+    ChatChannel:
       type: object
-      properties: {}
-      description: Used to remove the chat channel from an incident record or response plan.
+      properties:
+        chatbotSns:
+          allOf:
+          - $ref: '#/components/schemas/ChatbotSnsConfigurationSet'
+          - description: 'The Amazon SNS targets that Chatbot uses to notify the chat channel of updates to an incident. You can also make updates to the incident through the chat channel by using the Amazon SNS topics. '
+        empty:
+          allOf:
+          - $ref: '#/components/schemas/EmptyChatChannel'
+          - description: Used to remove the chat channel from an incident record or response plan.
+      description: The Chatbot chat channel used for collaboration during an incident.
+    GetIncidentRecordOutput:
+      type: object
+      required:
+      - incidentRecord
+      properties:
+        incidentRecord:
+          allOf:
+          - $ref: '#/components/schemas/IncidentRecord'
+          - description: Details the structure of the incident record.
+    IncidentSummary:
+      type: string
+      minLength: 0
+      maxLength: 8000
+    ThrottlingException: {}
+    IncidentTitle:
+      type: string
+      minLength: 0
+      maxLength: 200
     AutomationExecution:
       type: object
       properties:
@@ -215,16 +225,6 @@ components:
           - $ref: '#/components/schemas/Arn'
           - description: The Amazon Resource Name (ARN) of the automation process.
       description: The Systems Manager automation document process to start as the runbook at the beginning of the incident.
-    ThrottlingException: {}
-    ResourceNotFoundException: {}
-    IncidentTitle:
-      type: string
-      minLength: 0
-      maxLength: 200
-    DedupeString:
-      type: string
-      minLength: 0
-      maxLength: 1000
     ServicePrincipal:
       type: string
       minLength: 0
@@ -233,6 +233,27 @@ components:
       type: string
       minLength: 0
       maxLength: 50
+    InternalServerException: {}
+    DedupeString:
+      type: string
+      minLength: 0
+      maxLength: 1000
+    EmptyChatChannel:
+      type: object
+      properties: {}
+      description: Used to remove the chat channel from an incident record or response plan.
+    Timestamp:
+      type: string
+      format: date-time
+    Arn:
+      type: string
+      pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
+      minLength: 0
+      maxLength: 1000
+    Impact:
+      type: integer
+      minimum: 1
+      maximum: 5
     IncidentRecord:
       type: object
       required:
@@ -303,18 +324,33 @@ components:
           - $ref: '#/components/schemas/IncidentTitle'
           - description: The title of the incident.
       description: The record of the incident that's created when an incident occurs.
-    ChatChannel:
+    AccessDeniedException: {}
+    NotificationTargetItem:
       type: object
       properties:
-        chatbotSns:
+        snsTopicArn:
           allOf:
-          - $ref: '#/components/schemas/ChatbotSnsConfigurationSet'
-          - description: 'The Amazon SNS targets that Chatbot uses to notify the chat channel of updates to an incident. You can also make updates to the incident through the chat channel by using the Amazon SNS topics. '
-        empty:
-          allOf:
-          - $ref: '#/components/schemas/EmptyChatChannel'
-          - description: Used to remove the chat channel from an incident record or response plan.
-      description: The Chatbot chat channel used for collaboration during an incident.
+          - $ref: '#/components/schemas/Arn'
+          - description: The Amazon Resource Name (ARN) of the SNS topic.
+      description: The SNS targets that are notified when updates are made to an incident.
+    ResourceNotFoundException: {}
+    SnsArn:
+      type: string
+      minLength: 0
+      maxLength: 1000
+    NotificationTargetSet:
+      type: array
+      items:
+        $ref: '#/components/schemas/NotificationTargetItem'
+      minItems: 0
+      maxItems: 10
+    ValidationException: {}
+    ChatbotSnsConfigurationSet:
+      type: array
+      items:
+        $ref: '#/components/schemas/SnsArn'
+      minItems: 1
+      maxItems: 5
     IncidentRecordSource:
       type: object
       required:
@@ -338,48 +374,12 @@ components:
           - $ref: '#/components/schemas/IncidentSource'
           - description: The service that started the incident. This can be manually created from Incident Manager, automatically created using an Amazon CloudWatch alarm, or Amazon EventBridge event.
       description: Details about what created the incident record and when it was created.
-    NotificationTargetSet:
-      type: array
-      items:
-        $ref: '#/components/schemas/NotificationTargetItem'
-      minItems: 0
-      maxItems: 10
-    AccessDeniedException: {}
-    GetIncidentRecordOutput:
-      type: object
-      required:
-      - incidentRecord
-      properties:
-        incidentRecord:
-          allOf:
-          - $ref: '#/components/schemas/IncidentRecord'
-          - description: Details the structure of the incident record.
-    SnsArn:
-      type: string
-      minLength: 0
-      maxLength: 1000
     AutomationExecutionSet:
       type: array
       items:
         $ref: '#/components/schemas/AutomationExecution'
       minItems: 0
       maxItems: 100
-    Timestamp:
-      type: string
-      format: date-time
-    Arn:
-      type: string
-      pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
-      minLength: 0
-      maxLength: 1000
-    NotificationTargetItem:
-      type: object
-      properties:
-        snsTopicArn:
-          allOf:
-          - $ref: '#/components/schemas/Arn'
-          - description: The Amazon Resource Name (ARN) of the SNS topic.
-      description: The SNS targets that are notified when updates are made to an incident.
   parameters:
     X-Amz-Signature:
       name: X-Amz-Signature
@@ -387,26 +387,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
       required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
@@ -419,6 +407,18 @@ components:
       required: false
     X-Amz-Security-Token:
       name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
