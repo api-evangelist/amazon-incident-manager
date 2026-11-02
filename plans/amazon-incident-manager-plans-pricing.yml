@@ -1,0 +1,149 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-28'
+method: searched
+source: https://aws.amazon.com/systems-manager/pricing/
+sources:
+- https://aws.amazon.com/systems-manager/pricing/
+provenance:
+  tool: engine/economics/harvest_pricing.py
+  run: 20261028T161713
+  grounding: every price_text was found verbatim in the fetched page text
+audience: developer-api
+pricing_basis: usage-other
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-10-28'
+  managed_tier: Response plans $7 per response plan per month
+published: true
+note: AWS Systems Manager pricing page; Incident Manager section notes it is no longer open to new customers.
+  Many per-feature usage prices listed; subset captured.
+plan_count: 8
+currency: USD
+plans:
+- name: Incident Manager – Response plans
+  price_text: $7 per response plan per month
+  price: 7
+  currency: USD
+  period: month
+  unit: response plan
+  included_quota: Incident Manager includes 100 SMS or Voice message free per month
+  overage: Per message, based on destination country rates for SMS and 1-minute Voice messages
+- name: OpsCenter – OpsItems
+  price_text: $2.97 per 1,000 OpsItems
+  price: 2.97
+  currency: USD
+  period: per-use
+  unit: 1,000 OpsItems
+- name: OpsCenter – API requests
+  price_text: $0.039 per 1,000 requests
+  price: 0.039
+  currency: USD
+  period: per-use
+  unit: 1,000 Get, Describe, Update, GetOpsSummary requests
+- name: Just-in-time node access (first 72,000 hours)
+  price_text: $0.0137
+  price: 0.0137
+  currency: USD
+  period: per-use
+  unit: per node per hour
+  included_quota: one-time free trial
+- name: Change Manager – change request
+  price_text: $0.296 per change request
+  price: 0.296
+  currency: USD
+  period: per-use
+  unit: change request
+- name: Automation – step
+  price_text: $0.002 per step
+  price: 0.002
+  currency: USD
+  period: per-use
+  unit: step
+- name: AppConfig – configuration requests
+  price_text: $0.0000002 per configuration request
+  price: 2.0e-07
+  currency: USD
+  period: per-use
+  unit: configuration request
+- name: Parameter Store – advanced
+  price_text: $0.05 per advanced parameter per month
+  price: 0.05
+  currency: USD
+  period: month
+  unit: advanced parameter
+  included_quota: 'Standard parameters: No additional charge'
+x-canonical:
+  generated: '2026-11-01'
+  vocabulary: engine/economics/plans-canonical.yml
+  models:
+  - hybrid
+  - subscription
+  units:
+  - compute
+  - request
+  plans:
+  - name: Incident Manager – Response plans
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - other
+    periods:
+    - month
+  - name: OpsCenter – OpsItems
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: OpsCenter – API requests
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - request
+    periods:
+    - other
+  - name: Just-in-time node access (first 72,000 hours)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: Change Manager – change request
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - request
+    periods:
+    - other
+  - name: Automation – step
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: AppConfig – configuration requests
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - request
+    periods:
+    - other
+  - name: Parameter Store – advanced
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - month
